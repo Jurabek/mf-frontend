@@ -1,0 +1,61 @@
+﻿@using mf_frontend.Models
+
+@model mf_frontend.Models.tb_content
+
+@{
+    ViewBag.Title = Model.page_title;
+}
+
+<div style="margin-top:20px;">
+    @if (ViewBag.Id == 57 || ViewBag.Id == 10 || ViewBag.Id == 110)
+    {
+        foreach (tb_region region in ViewBag.Organizations){
+            <h2>@region.name_ru</h2>
+            <ul>
+                @foreach (tb_organization item in region.tb_organization)
+                {
+                    if (@item.Id != 1)
+                    {
+                        <li><a href="@("http://"+item.link+ "/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName)">@item.name</a></li>
+                    }
+                }
+            </ul>
+        }
+    }
+    else
+    {
+        @Html.Raw(Model.page_content)
+    }
+</div>
+
+@if (Model.tb_file_on_page.Count > 0)
+{
+    <h4 style="border-bottom: 1px solid lightgray; padding-top:50px;">Нормативно-правовые документы</h4>
+
+    <table class="table-files">
+        <tr>
+            <th style="width: 100px;">Дата загрузки</th>
+            <th style="width: 250px;">Имя файла</th>
+            <th>
+                Описание
+            </th>
+        </tr>
+
+
+        @foreach (tb_file_on_page row in Model.tb_file_on_page)
+        {
+            <tr>
+                <td>
+                    @(row.tb_files.date_create.Date.ToString().Substring(0, 10))
+                </td>
+                <td>
+                    @row.tb_files.title
+                </td>
+                <td>
+                    @row.tb_files.description
+                </td>
+            </tr>
+
+        }
+    </table>
+}

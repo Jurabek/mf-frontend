@@ -1,0 +1,17 @@
+﻿@using mf_frontend.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="padding-bottom:20px;">Каталог печатных изданий</h2>
+
+@foreach (tb_prints row in ViewBag.Prints) { 
+<div style="margin:10px; width: 200px; float:left">
+    <h2 style="font-size:16px; text-decoration:none"><a style="text-decoration:none" href="@("/Prints/Content/"+row.id)">@row.name</a></h2>
+    <img src="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_prints/"+row.image)" style="width:190px;"/>
+    <div style="width:200px; font-size: 12px; line-height: 18px;">
+        @row.description
+    </div>
+</div>
+}

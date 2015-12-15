@@ -1,0 +1,83 @@
+﻿@using mf_frontend.Models;
+
+@{
+    ViewBag.Title = "Содержание предыдущих номеров ";
+}
+
+<h2>Содержание предыдущих номеров </h2>
+<br />
+
+@{
+    int y=0;
+    foreach (tb_prints_content row in ViewBag.Year)
+    {
+        if (row.year.Value != y) { 
+            <a href="@("/"+System.Threading.Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName+"/Prints/ContentList/"+row.year)" style="margin-left:10px; font-size:22px; text-decoration:none">
+                @row.year
+            </a>
+             
+
+            y = row.year.Value;
+        }
+        
+    }
+}
+
+<br />
+<br />
+<h3>Выпуски журналов за @ViewBag.ShowYear год</h3>
+<br /> 
+@foreach (tb_prints_content row in ViewBag.Contents) { 
+    <div style="width: 170px; margin:10px; border: 1px solid lightgray; text-align:center; padding:10px;">
+        @row.tb_prints.name
+        <a href="@("/" + System.Threading.Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName + "/Prints/Contents/" + row.id)">
+        <img src="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_prints_content/"+row.image)" style="width:150px; padding-top:7px;" />
+        <br />
+        @GetMonthName(row.month.Value)
+        </a>
+    </div>
+}
+
+
+
+@helper GetMonthName(int id) { 
+    switch (id){
+        case 1:
+            @:Январь
+            break;
+        case 2:
+            @:Февраль
+            break;
+        case 3:
+            @:Март
+            break;
+        case 4:
+            @:Апрель
+            break;
+        case 5:
+            @:Май
+            break;
+        case 6:
+            @:Июнь
+            break;
+        case 7:
+            @:Июль
+            break;
+        case 8:
+            @:Август
+            break;
+        case 9:
+            @:Сентябрь
+            break;
+        case 10:
+            @:Октябрь
+            break;
+        case 11:
+            @:Ноябрь
+            break;
+        case 12:
+            @:Декабрь
+            break;
+            
+    }
+    }

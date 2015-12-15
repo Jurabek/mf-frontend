@@ -1,0 +1,252 @@
+﻿@using mf_frontend.Models;
+@using mf_frontend.App_LocalResources;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Content/material.js"></script>
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/material.css" rel="stylesheet" />
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/owl-carousel/owl-carousel/owl.theme.css" rel="stylesheet" />
+    <link href="~/Content/owl-carousel/owl-carousel/owl.carousel.css" rel="stylesheet" />
+    <script src="~/Content/owl-carousel/owl-carousel/owl.carousel.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        a {
+            color: #486078;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+    </style>
+    <meta name="description" content="The description of my page" />
+</head>
+<body>
+    <div id="header">
+        <div id="navBar1">
+            <div class="mdl-layout__header-row">
+                <ul>
+                    <li class="headerList1">
+                        <a href="@("http://moliya.tj/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/Home/Index")"> @GlobalRes.main</a>
+                    </li>
+                    <li class="headerList1">
+                        <span><a href="#"> @GlobalRes.AboutMinistry</a></span>
+                        <ul class="sub-menu">
+                            @GetSubMenu(2, 35, 41)
+                        </ul>
+                    </li>
+                    <li class="headerList1">
+                        <span><a href="#"> @GlobalRes.HotLine</a></span>
+                        <ul class="sub-menu">
+                            @GetSubMenu(3, 36, 43)
+                            <li style="border-top: 1px dotted lightgray; margin-top:5px;"></li>
+                            @GetQuestionCategory()
+                        </ul>
+                    </li>
+                    <li class="headerList1">
+                        <span><a href="#"> @GlobalRes.Media</a></span>
+                        <ul class="sub-menu">
+                            @GetSubMenu(4, 37, 44)
+                            <li style="border-top: 1px dotted lightgray; margin-top:5px;"></li>
+                            @GetNewsType()
+                        </ul>
+                    </li>
+                    <li class="headerList1">
+                        <span><a href="#"> @GlobalRes.RegulatoryInformation</a></span>
+                        <ul class="sub-menu">
+                            @GetSubMenu(5, 38, 45)
+                            <li style="border-top: 1px dotted lightgray; margin-top:5px;"></li>
+                            @GetFileCategorys()
+                        </ul>
+                    </li>
+                    <li class="headerList1">
+                        <span><a href="#"> @GlobalRes.Analytics</a></span>
+                        <ul class="sub-menu">
+                            @GetSubMenu(6, 39, 46)
+                        </ul>
+                    </li>
+                    <li class="headerList1">
+                        <span><a href="#"> @GlobalRes.PFMReforms</a></span>
+                        <ul class="sub-menu">
+                            @GetSubMenu(49, 51, 52)
+                        </ul>
+                    </li>
+                    <li class="">
+                        <span><a href="#"> @GlobalRes.Prints</a></span>
+                        <ul class="sub-menu">
+                            @GetSubMenu(7, 40, 47)
+                        </ul>
+                    </li>
+                </ul>
+                <div class="mdl-layout-spacer"></div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+                    <label class="mdl-button mdl-js-button mdl-button--icon"
+                           for="fixed-header-drawer-exp">
+                        <i class="material-icons">search</i>
+                    </label>
+                    <form>
+                        <div class="mdl-textfield__expandable-holder">
+                            <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp">
+                        </div>
+                    </form>
+                </div>                
+            </div>           
+        </div>
+        <div style="float:right">
+            <div class="lang @GetActiveLang("tg")">
+                <span><a href="/tg">ТОҶ</a></span>
+            </div>
+            <div class="lang @GetActiveLang("ru")">
+                <span><a href="/ru">РУС</a></span>
+            </div>
+            <div class="lang @GetActiveLang("en")">
+                <span><a href="/en">ENG</a></span>
+            </div>
+        </div>
+    </div>
+    <div style="height:100px">
+    </div>
+    <div class="main mdl-shadow--8dp">
+        <header class="span4">
+            <div class="banner">
+                @*<h1>@System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName</h1>*@
+                @*<div style="margin:10px">
+
+                    </div>*@
+                <div style="padding:20px">
+                    <span>
+                        <img src="/Content/images/gerb_logo.png" style="float: left; width:100px; height:100px; margin-right:20px; margin-bottom:10px" />
+                    </span>
+                    <h6 style="font-family:Roboto-Light;margin-top:10px">@GlobalRes.OfficialSite</h6>
+                    <h4 style="font-family:Roboto-Light; margin:0; margin-top:-10px">
+                        <span>@ViewBag.Header @ViewBag.HeaderSecond</span>
+                    </h4>
+                </div>
+            </div>
+        </header>
+        <div id="container" class="cf">
+            @RenderBody()
+        </div>
+        <footer>
+            <div class="gerb">
+                <img src="/Content/images/gerb.png" style="float: left" />
+                <br />
+            </div>
+            <div>
+                @GlobalRes.Footer1
+                <br /><br />
+                @GlobalRes.Footer2
+                <br />
+                @GlobalRes.Footer3
+                <br /><br />
+                <a href="http://minfin.tj" target="_blank" style="font-size:16px;">@GlobalRes.OldSite</a>
+                <div style="padding:20px">
+                    <!-- Yandex.Metrika informer -->
+                    <a href="https://metrika.yandex.ru/stat/?id=30503142&amp;from=informer"
+                       target="_blank" rel="nofollow">
+                        <img src="//bs.yandex.ru/informer/30503142/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+                             style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:30503142,lang:'ru'});return false}catch(e){}" />
+                    </a>
+                    <!-- /Yandex.Metrika informer -->
+                    <!-- Yandex.Metrika counter -->
+                    <script type="text/javascript">
+                        (function (d, w, c) {
+                            (w[c] = w[c] || []).push(function () {
+                                try {
+                                    w.yaCounter30503142 = new Ya.Metrika({
+                                        id: 30503142,
+                                        clickmap: true,
+                                        trackLinks: true,
+                                        accurateTrackBounce: true
+                                    });
+                                } catch (e) { }
+                            });
+                            var n = d.getElementsByTagName("script")[0],
+                            s = d.createElement("script"),
+                            f = function () { n.parentNode.insertBefore(s, n); };
+                            s.type = "text/javascript";
+                            s.async = true;
+                            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+                            if (w.opera == "[object Opera]") {
+                                d.addEventListener("DOMContentLoaded", f, false);
+                            } else { f(); }
+                        })(document, window, "yandex_metrika_callbacks");
+                    </script>
+                    <noscript><div><img src="//mc.yandex.ru/watch/30503142" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+                    <!-- /Yandex.Metrika counter -->
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+
+@helper GetSubMenu(int main_id, int main_id_tj, int main_id_en)
+{
+mfEntities db = new mfEntities();
+IEnumerable<tb_content> content = db.tb_content.Where(t => t.main_id == main_id && t.is_active == true).OrderBy(t => t.order_id); ;
+//if (System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "ru")
+//{
+//    content = db.tb_content.Where(t => t.main_id == main_id && t.is_active == true).OrderBy(t => t.order_id);
+//}
+if (System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "tg")
+{
+    content = db.tb_content.Where(t => t.main_id == main_id_tj && t.is_active == true).OrderBy(t => t.order_id);
+}
+if (System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "en")
+{
+    content = db.tb_content.Where(t => t.main_id == main_id_en && t.is_active == true).OrderBy(t => t.order_id);
+}
+foreach (tb_content row in content)
+{
+    if (row.fixed_url != null)
+    {
+            @Html.Raw("<li><a href='http://moliya.tj/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + row.fixed_url + "'>" + row.name + "</a></li>")
+    }
+    else
+    {
+            @Html.Raw("<li><a href='http://moliya.tj/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/Content/Item/" + row.id + "'>" + row.name + "</a></li>")
+    }
+}
+}
+@helper GetQuestionCategory()
+{
+mfEntities db = new mfEntities();
+IEnumerable<tb_question_categorys> qc = db.tb_question_categorys.Where(t => t.is_active == true && t.tb_lang.code == System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName);
+foreach (tb_question_categorys row in qc)
+{
+        @Html.Raw("<li><a href='http://moliya.tj/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/Question/Index?Category=" + row.id + "'>" + row.name + "</a></li>")
+}
+}
+@helper GetNewsType()
+{
+mfEntities db = new mfEntities();
+IEnumerable<tb_news_type> nt = db.tb_news_type.Where(t => t.is_active == true && t.tb_lang.code == System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName);
+foreach (tb_news_type row in nt)
+{
+        @Html.Raw("<li><a href='http://moliya.tj/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/News/Index/" + row.id + "'>" + row.name + "</a></li>")
+}
+}
+@helper GetFileCategorys()
+{
+mfEntities db = new mfEntities();
+IEnumerable<tb_files_category> fc = db.tb_files_category.Where(t => t.is_active == true && t.is_menu == true && t.tb_lang.code == System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName);
+foreach (tb_files_category row in fc)
+{
+        @Html.Raw("<li><a href='http://moliya.tj/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/Files?Category=" + row.id + "'>" + row.name + "</a></li>")
+}
+}
+@helper GetActiveLang(string lang)
+{
+if (lang == System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName)
+{
+        @:lang-active
+}
+}

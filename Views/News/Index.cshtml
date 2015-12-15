@@ -1,0 +1,57 @@
+﻿@model PagedList.IPagedList<mf_frontend.Models.tb_news>
+@using mf_frontend.Models;
+@using PagedList.Mvc;
+
+
+
+@{
+    ViewBag.Title = "Новости МФ РТ";
+}
+
+<h2 style="padding-top:20px">Новости МФ РТ / @ViewBag.MainName</h2>
+
+
+<div style="padding-top:40px; width: 700px; float:left;">
+    
+    @foreach (tb_news row in ViewBag.News) { 
+        <div style="padding-top:2px; background-color: #486078; color:white; width: 80px; text-align:center; font-size:12px; float:left">
+            @row.event_date.ToString().Substring(0,10)
+        </div>
+        <div>
+            <a href="@("/"+System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/News/Item/"+row.id)" style="text-decoration:none">
+                <h1 style="color: #486078; font-size:16px; margin-left:90px; margin-top:-3px; line-height: 30px;">
+                    @row.title
+                </h1>
+            </a>
+        </div>
+        <div style="padding-top:5px; font-size:13px; line-height:18px; ">
+            @row.descriptoin
+        </div>
+        <hr style="margin-top:20px; margin-bottom:20px;" />
+    }
+
+    Страница @(ViewBag.News.PageCount < ViewBag.News.PageNumber ? 0 : ViewBag.News.PageNumber) из @ViewBag.News.PageCount
+
+    
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+</div>
+
+
+
+<div style="background-color:lightgray; width:230px; float:left; margin-left:20px; margin-top:-30px;">
+    <div class="" style="height: 200px !important">
+        <div class="news-title">
+            <i class="fa fa-file-text-o news-title-icon"></i><span class="news-title-text">Категории новостей</span>
+        </div>
+        <div class="news-body" style="padding:15px; ">
+
+            @foreach (tb_news_type row in ViewBag.NewsCategory)
+            {
+                <div style="padding-top:4px; border-bottom: 1px dotted white; padding-bottom:4px; width: 200px;">
+                    <a href="@("/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/News/Index/" + row.id)">@row.name</a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

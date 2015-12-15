@@ -1,0 +1,17 @@
+﻿@model mf_frontend.Models.tb_prints
+
+@{
+    ViewBag.Title = @Model.name;
+}
+
+<h2>@Model.name</h2>
+<br />
+<div style="width: 300px;  float:left">
+    <img src="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_prints/"+ Model.image)" style="width: 300px; margin-bottom:20px;"/>
+   
+    <strong>@Model.description</strong>
+</div>
+
+<div style="float:left; width: 600px; padding-left:30px;">
+    @Html.Raw(Model.text)
+</div>

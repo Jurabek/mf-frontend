@@ -1,0 +1,19 @@
+﻿@model mf_frontend.Models.tb_prints_content
+
+@{
+    ViewBag.Title = (Model.tb_prints.name +" выпуск от "+ Model.month+ "."+Model.year +"г.");
+}
+<br />
+<h2>@(Model.tb_prints.name +" выпуск от  "+ Model.month+ "."+Model.year +"г.")</h2>
+<br />
+<div style="width: 300px;  float:left">
+    <img src="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_prints_content/"+ Model.image)" style="width: 300px; margin-bottom:20px; margin-top:20px;" />
+
+    <strong>@Model.tb_prints.description</strong>
+</div>
+
+<div style="float:left; width: 600px; padding-left:50px;">
+    @Html.Raw(Model.text)
+</div>
+
+

@@ -1,0 +1,32 @@
+﻿@model mf_frontend.Models.tb_questions
+@using mf_frontend.App_LocalResources
+@{
+    ViewBag.Title = Model.question_title;
+}
+
+<h2>@GlobalRes.HotLine / @Model.tb_question_categorys.name / @Model.tb_question_sub_categorys.name</h2>
+<br />
+<div class="faq-q-title">
+    <i class="fa fa-comment-o faq-ico"> </i>
+    @Model.question_title
+</div>
+<div class="faq-q-body">
+    @Html.Raw(Model.question)
+</div>
+<div class="faq-q-footer">
+    <i class="fa fa-user" style="font-size:11px;"> @Model.question_author_fio</i>
+    <span> | </span>
+    <i class="fa fa-calendar" style="font-size:11px;"> @Model.question_date</i>
+</div>
+<div class="faq-line">
+
+</div>
+<i class="fa fa-comments-o faq-ico" style="float:left; padding-left:20px; padding-top:10px;"> </i>
+<div class="faq-a">
+    @Html.Raw(Model.answer)
+</div>
+<div class="faq-q-footer">
+    <i class="fa fa-user" style="font-size:11px;"> @Model.answer_author_fio (@Model.answer_author_position)</i>
+    <span> | </span>
+    <i class="fa fa-calendar" style="font-size:11px;"> @Model.answer_date</i>
+</div>

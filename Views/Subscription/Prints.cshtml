@@ -1,0 +1,50 @@
+﻿@model mf_frontend.Models.tb_subscription_request
+
+@{
+    ViewBag.Title = "Оформление заявки на подписку";
+}
+<br />
+<h2>Оформление заявки на подписку</h2>
+<br /> 
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    
+    <table class="table-form">
+        <tr>
+            <td style="width: 250px;" align="right">
+                ФИО(*)
+            </td>
+            <td >
+                @Html.TextBoxFor(model => model.fio, new { @class = "text-box", required = "required" })
+            </td>
+        </tr>
+        <tr>
+            <td align="right">E-mail(*)</td>
+            <td>@Html.TextBoxFor(model => model.email, new { @class = "text-box", required = "required" })</td>
+        </tr>
+        <tr>
+            <td align="right">Наименование организации</td>
+            <td>@Html.TextBoxFor(model => model.organization, new { @class = "text-box" })</td>
+        </tr>
+        <tr>
+            <td align="right">Должность</td>
+            <td>@Html.TextBoxFor(model => model.position, new { @class = "text-box" })</td>
+        </tr>
+        <tr>
+            <td align="right">Контактный телефон(*)</td>
+            <td>@Html.TextBoxFor(model => model.phone, new { @class = "text-box", required = "required" })</td>
+        </tr>
+        <tr>
+            <td align="right">Издания на которое оформляется подписка(*)</td>
+            <td>@Html.DropDownList("prints_id")</td>
+        </tr>
+         <tr>
+             <td></td>
+             <td>
+                 <input class="btn" type="submit" value="Отправить заявку" /> | <a href="/">Отказаться</a>
+             </td>
+         </tr>
+    </table>
+}

@@ -1,0 +1,48 @@
+﻿@using mf_frontend.Models;
+@using mf_frontend.App_LocalResources;
+@{
+    ViewBag.Title = GlobalRes.DataCenter;
+}
+<link href="/Content/lightgallery/skins/default/style.css" type="text/css" media="screen" rel="stylesheet" />
+<script src="/Content/lightgallery/lightgallery.min.js" type="text/javascript"></script>
+<script>lightgallery.init();</script>
+
+<h2>
+    @GlobalRes.DataCenter
+    
+    @if (ViewBag.CurrentCategory != null) { 
+        <span> / @ViewBag.CurrentCategory</span>
+        
+    }
+</h2>
+
+<br />
+<form action="@("/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/DataCenter")" method="get">
+    <table>
+        <tr>
+            <td style="width:40px; height:40px;">@*Категория*@</td>
+            <td>@Html.DropDownList("Category", null, "Все категории", new { style = "width:400px;" })
+                <input type="submit" value="Фильтровать" class="btn" />
+            </td>
+        </tr>
+        @*<tr>
+            <td></td>
+            <td style="padding-top:10px;">
+                <input type="submit" value="Фильтровать" class="btn" /> | <a href="@("/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/DataCenter")">Убрать фильтр</a>
+            </td>
+        </tr>*@
+    </table>
+</form>
+<br />
+@foreach (tb_dc row in ViewBag.DC) { 
+    <div style="border: 1px solid lightgray; float:left; margin:5px;">
+    <div class="dc-title">@row.title</div>
+    <div class="dc-image">
+        <a href="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_dc/" + row.image)" rel="@("lightgallery["+row.id.ToString()+"]")">
+            <div style="width: 455px; height:242px; margin:5px; background-image: url(@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_dc/" + row.image));background-position:center; background-repeat:no-repeat; background-size: 455px;">
+            </div>
+        </a>
+</div>
+    </div>
+}
+

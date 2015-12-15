@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = ViewBag.News.title;
+}
+
+<h2 style="padding-top:20px;">@ViewBag.News.title</h2>
+<br />
+
+<img src="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_news/"+ViewBag.News.image)" style="max-height:400px; max-width:1000px;"  />
+
+<br /><br />
+
+<i>@ViewBag.News.descriptoin</i>
+
+<br /><br />
+
+@Html.Raw(ViewBag.News.text)

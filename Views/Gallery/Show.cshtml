@@ -1,0 +1,19 @@
+﻿@using mf_frontend.Models
+
+@{
+    ViewBag.Title = "Фотогалерея/" + ViewBag.CategoryName;
+}
+
+<h2 style="font-weight:100; font-size: 18px;"><a style="text-decoration:none" href="/Gallery">Фотогалерея</a> <strong>/</strong> @ViewBag.CategoryName</h2>
+
+
+<link href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.3/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.3/fotorama.js"></script> <!-- 16 KB -->
+<!-- 2. Add images to <div class="fotorama"></div>. -->
+<br />
+<div class="fotorama" data-thumbmargin="5" data-thumbheight="120" data-thumbwidth="100" data-nav="thumbs" data-stopautoplayontouch="true" data-allowfullscreen="true" data-autoplay="3500" data-width="100%" data-ratio="9/3" style="margin: auto;">
+    @foreach (tb_gallery row in ViewBag.Images)
+    {
+        <img src="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_gallery/" + row.image)" />
+    }
+</div>
