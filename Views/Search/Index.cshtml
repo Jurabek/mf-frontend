@@ -1,0 +1,62 @@
+﻿@model PagedList.IPagedList<mf_frontend.Models.SearchResult>
+    @using mf_frontend.Models;
+    @using PagedList.Mvc;
+
+    @{
+        ViewBag.Title = ViewBag.SearchedText;
+    }
+    <script src="~/Scripts/jquery.highlight.js"></script>
+
+    <style>
+        .title {
+             color: #1a0dab;
+             max-width:700px; 
+             font-size:18px; 
+             line-height: 1.2; 
+             text-align: left;
+             padding:0;
+             margin:0;             
+        }
+        .highlight { 
+            background-color: yellow 
+
+        }
+    </style>
+<div>
+    <h5>Поиск: <span id="searchedValue">@ViewBag.SearchedText</span> - @ViewBag.SearchedItemsCount результатов</h5>
+</div>
+<div style="padding-top:25px;width:700px;padding-left:15px" id="searchedContent">
+    @foreach (SearchResult row in ViewBag.Results) {
+        <div>           
+            <div>
+                @if(row.SearchResultType == SearchResultType.News)
+                {
+                    <a href="@("/"+System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/News/Item/"+ row.Id)" >
+                        <h1 class="title" style="width: 700px;overflow: hidden;white-space: nowrap; text-overflow: ellipsis;">
+                            @row.Title
+                        </h1>
+                    </a>
+                    <cite style="color: #006621; font-style: normal;">http://moliya.tj/@System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName/News/Item/@row.Id</cite>
+                }
+                else{
+                    <a href="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_files/" + row.FileName)" >
+                        <h1 class="title" style="width: 700px;overflow: hidden;white-space: nowrap; text-overflow: ellipsis;">
+                            @row.Title
+                        </h1>
+                    </a>
+                    <cite style="color: #006621; font-style: normal;">http://moliya.tj/@row.FileName | @row.SearchResultType</cite>            
+                }
+            </div>
+            <div style="font-size:13px;color: #545454;">
+                @row.Descreption
+            </div>
+            <br style="margin-top:20px; margin-bottom:20px;" />
+        </div>
+    }
+    <script>
+        var val = $("#searchedValue").html();
+        $('#searchedContent').highlight($.trim(val));
+    </script>
+    Страница @(ViewBag.Results.PageCount < ViewBag.Results.PageNumber ? 0 : ViewBag.Results.PageNumber) из @ViewBag.Results.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Index","Search", new { page } ))
+</div>

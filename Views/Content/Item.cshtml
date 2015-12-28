@@ -10,9 +10,20 @@
     @if (ViewBag.Id == 57 || ViewBag.Id == 10 || ViewBag.Id == 110)
     {
         foreach (tb_region region in ViewBag.Organizations){
-            <h2>@region.name_ru</h2>
+            if (System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "ru")
+            { 
+                <h2>@region.name_ru</h2>
+            }
+            else if (System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "tg")
+            {
+                <h2>@region.name_tj</h2>
+            }
+            else if (System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "en")
+            {
+                <h2>@region.name_en</h2>
+            }
             <ul>
-                @foreach (tb_organization item in region.tb_organization)
+                @foreach (tb_organization item in region.tb_organization.Where(o => o.tb_lang.code == System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName))
                 {
                     if (@item.Id != 1)
                     {
@@ -49,7 +60,9 @@
                     @(row.tb_files.date_create.Date.ToString().Substring(0, 10))
                 </td>
                 <td>
-                    @row.tb_files.title
+                    <a href="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"]+"upload_files/"+row.tb_files.file_name)">
+                        @row.tb_files.title
+                    </a>
                 </td>
                 <td>
                     @row.tb_files.description

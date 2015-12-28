@@ -6,12 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
-    <script src="~/Content/material.js"></script>
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
     <link href="~/Content/style.css" rel="stylesheet" />
-    <link href="~/Content/material.css" rel="stylesheet" />
+    <link href="~/Content/material.min.css" rel="stylesheet" />
     <link href="~/Content/PagedList.css" rel="stylesheet" />
-    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Content/owl-carousel/owl-carousel/owl.theme.css" rel="stylesheet" />
     <link href="~/Content/owl-carousel/owl-carousel/owl.carousel.css" rel="stylesheet" />
     <script src="~/Content/owl-carousel/owl-carousel/owl.carousel.js"></script>
@@ -21,17 +19,17 @@
             color: #486078;
             text-decoration: none;
         }
-
-            a:hover {
-                text-decoration: underline;
-            }
+        h2{
+            font-size:24px;
+            font-style:normal;
+        }
     </style>
     <meta name="description" content="The description of my page" />
 </head>
 <body>
     <div id="header">
         <div id="navBar1">
-            <div class="mdl-layout__header-row">
+            <div class="mdl-layout__header-row" style="height:45px;">
                 <ul>
                     <li class="headerList1">
                         <a href="@("http://moliya.tj/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/Home/Index")"> @GlobalRes.main</a>
@@ -78,7 +76,7 @@
                             @GetSubMenu(49, 51, 52)
                         </ul>
                     </li>
-                    <li class="">
+                    <li class="headerList1">
                         <span><a href="#"> @GlobalRes.Prints</a></span>
                         <ul class="sub-menu">
                             @GetSubMenu(7, 40, 47)
@@ -87,39 +85,44 @@
                 </ul>
                 <div class="mdl-layout-spacer"></div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
-                    <label class="mdl-button mdl-js-button mdl-button--icon"
-                           for="fixed-header-drawer-exp">
+                    <label class="mdl-button mdl-js-button mdl-button--icon" style="bottom:13px"
+                           for="fixed-header-drawer-exp" onclick="searchClick();">
                         <i class="material-icons">search</i>
                     </label>
-                    <form>
+                    <script type="text/javascript">
+                        function searchClick() {
+                            var text = document.getElementsByName("searchText");
+                            if (text.value != null) {
+                                alert("Salom");
+                            }
+                        }
+                    </script>
+                    <form action="/@System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName/Search/Index" method="get" role="form">
                         <div class="mdl-textfield__expandable-holder">
-                            <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp">
+                            <input class="mdl-textfield__input" type="text" placeholder="Поиск" style="font-size:12px" name="searchText" id="fixed-header-drawer-exp">
+                            <input type="submit" value="Search" style="display:none"/>
                         </div>
                     </form>
                 </div>                
             </div>           
-        </div>
-        <div style="float:right">
-            <div class="lang @GetActiveLang("tg")">
-                <span><a href="/tg">ТОҶ</a></span>
-            </div>
-            <div class="lang @GetActiveLang("ru")">
-                <span><a href="/ru">РУС</a></span>
-            </div>
-            <div class="lang @GetActiveLang("en")">
-                <span><a href="/en">ENG</a></span>
-            </div>
         </div>
     </div>
     <div style="height:100px">
     </div>
     <div class="main mdl-shadow--8dp">
         <header class="span4">
+            <div style="float:right; margin:5px 5px 5px 5px">
+                <div class="lang @GetActiveLang("tg")">
+                    <span><a href="/tg">ТОҶ</a></span>
+                </div>
+                <div class="lang @GetActiveLang("ru")">
+                    <span><a href="/ru">РУС</a></span>
+                </div>
+                <div class="lang @GetActiveLang("en")">
+                    <span><a href="/en">ENG</a></span>
+                </div>
+            </div>
             <div class="banner">
-                @*<h1>@System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName</h1>*@
-                @*<div style="margin:10px">
-
-                    </div>*@
                 <div style="padding:20px">
                     <span>
                         <img src="/Content/images/gerb_logo.png" style="float: left; width:100px; height:100px; margin-right:20px; margin-bottom:10px" />
@@ -129,7 +132,7 @@
                         <span>@ViewBag.Header @ViewBag.HeaderSecond</span>
                     </h4>
                 </div>
-            </div>
+            </div>            
         </header>
         <div id="container" class="cf">
             @RenderBody()
@@ -190,63 +193,60 @@
 
 @helper GetSubMenu(int main_id, int main_id_tj, int main_id_en)
 {
-mfEntities db = new mfEntities();
-IEnumerable<tb_content> content = db.tb_content.Where(t => t.main_id == main_id && t.is_active == true).OrderBy(t => t.order_id); ;
-//if (System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "ru")
-//{
-//    content = db.tb_content.Where(t => t.main_id == main_id && t.is_active == true).OrderBy(t => t.order_id);
-//}
-if (System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "tg")
-{
-    content = db.tb_content.Where(t => t.main_id == main_id_tj && t.is_active == true).OrderBy(t => t.order_id);
-}
-if (System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "en")
-{
-    content = db.tb_content.Where(t => t.main_id == main_id_en && t.is_active == true).OrderBy(t => t.order_id);
-}
-foreach (tb_content row in content)
-{
-    if (row.fixed_url != null)
+    mfEntities db = new mfEntities();
+    IEnumerable<tb_content> content = db.tb_content.Where(t => t.main_id == main_id && t.is_active == true).OrderBy(t => t.order_id); ;
+    if (System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "tg")
     {
-            @Html.Raw("<li><a href='http://moliya.tj/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + row.fixed_url + "'>" + row.name + "</a></li>")
+        content = db.tb_content.Where(t => t.main_id == main_id_tj && t.is_active == true).OrderBy(t => t.order_id);
     }
-    else
+    if (System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "en")
     {
-            @Html.Raw("<li><a href='http://moliya.tj/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/Content/Item/" + row.id + "'>" + row.name + "</a></li>")
+        content = db.tb_content.Where(t => t.main_id == main_id_en && t.is_active == true).OrderBy(t => t.order_id);
     }
-}
+    foreach (tb_content row in content)
+    {
+        if (row.fixed_url != null)
+        {
+                @Html.Raw("<li><a href='/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + row.fixed_url + "'>" + row.name + "</a></li>")
+        }
+        else
+        {
+                @Html.Raw("<li><a href='/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/Content/Item/" + row.id + "'>" + row.name + "</a></li>")
+        }
+    }
 }
 @helper GetQuestionCategory()
 {
-mfEntities db = new mfEntities();
-IEnumerable<tb_question_categorys> qc = db.tb_question_categorys.Where(t => t.is_active == true && t.tb_lang.code == System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName);
-foreach (tb_question_categorys row in qc)
-{
-        @Html.Raw("<li><a href='http://moliya.tj/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/Question/Index?Category=" + row.id + "'>" + row.name + "</a></li>")
-}
+    mfEntities db = new mfEntities();
+    IEnumerable<tb_question_categorys> qc = db.tb_question_categorys.Where(t => t.is_active == true && t.tb_lang.code == System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName);
+    foreach (tb_question_categorys row in qc)
+    {
+            @Html.Raw("<li><a href='http://moliya.tj/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/Question/Index?Category=" + row.id + "'>" + row.name + "</a></li>")
+    }
 }
 @helper GetNewsType()
 {
-mfEntities db = new mfEntities();
-IEnumerable<tb_news_type> nt = db.tb_news_type.Where(t => t.is_active == true && t.tb_lang.code == System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName);
-foreach (tb_news_type row in nt)
-{
-        @Html.Raw("<li><a href='http://moliya.tj/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/News/Index/" + row.id + "'>" + row.name + "</a></li>")
-}
+    mfEntities db = new mfEntities();
+    IEnumerable<tb_news_type> nt = db.tb_news_type.Where(t => t.is_active == true && t.tb_lang.code == System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName);
+    foreach (tb_news_type row in nt)
+    {
+            @Html.Raw("<li><a href='http://moliya.tj/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/News/Index/" + row.id + "'>" + row.name + "</a></li>")
+    }
 }
 @helper GetFileCategorys()
 {
-mfEntities db = new mfEntities();
-IEnumerable<tb_files_category> fc = db.tb_files_category.Where(t => t.is_active == true && t.is_menu == true && t.tb_lang.code == System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName);
-foreach (tb_files_category row in fc)
-{
+    mfEntities db = new mfEntities();
+    IEnumerable<tb_files_category> fc = db.tb_files_category.Where(t => t.is_active == true && t.is_menu == true && t.tb_lang.code == System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName);
+    foreach (tb_files_category row in fc)
+    {
         @Html.Raw("<li><a href='http://moliya.tj/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/Files?Category=" + row.id + "'>" + row.name + "</a></li>")
-}
+    }
 }
 @helper GetActiveLang(string lang)
 {
-if (lang == System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName)
-{
-        @:lang-active
+    if (lang == System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName)
+    {
+            @:lang-active
+    }
 }
-}
+<script src="~/Content/material.js"></script>
