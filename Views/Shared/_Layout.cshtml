@@ -19,7 +19,7 @@
             color: #486078;
             text-decoration: none;
         }
-        h2{
+        h2 {
             font-size:24px;
             font-style:normal;
         }
@@ -91,10 +91,8 @@
                     </label>
                     <script type="text/javascript">
                         function searchClick() {
-                            var text = document.getElementsByName("searchText");
-                            if (text.value != null) {
-                                alert("Salom");
-                            }
+                            var b = $("input[searchText]").val();
+                            alert(b);
                         }
                     </script>
                     <form action="/@System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName/Search/Index" method="get" role="form">

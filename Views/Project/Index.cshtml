@@ -1,0 +1,109 @@
+﻿@model PagedList.IPagedList<mf_frontend.Models.tb_projects>
+@using mf_frontend.Models;
+@using mf_frontend.App_LocalResources;
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<style>
+    summary::-webkit-details-marker {
+        color: #000000;
+        font-size: 110%;
+        margin-right: 10px;
+    }
+
+    summary:focus {
+        outline-style: none;
+    }
+
+    article > details > summary {
+        color: #31a2ed;
+        font-size: 18px;
+        margin-top: 16px;
+    }
+
+    summary:hover {
+        cursor: pointer;
+    }
+
+    details > p {
+        margin-top: 10px;
+        margin-left: 30px;
+    }
+
+    .noselect {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    details details {
+        margin-left: 36px;
+    }
+
+        details details summary {
+            font-size: 16px;
+        }
+</style>
+<div style="margin:30px 30px 30px 30px">
+
+    <h4 style="color:#31a2ed; padding-bottom:10px">@GlobalRes.ProjectsMf</h4>
+
+    <div>
+        @foreach (tb_projects row in ViewBag.Projects)
+        {
+            <section>
+                <article>
+                    <details>
+                        <summary class="noselect">@GlobalRes.Project @row.name</summary>
+                        <p>@row.full_text</p>
+                    </details>
+                </article>
+            </section>
+        }
+    </div>
+
+    <h4 style="border-bottom: 1px solid lightgray; padding-top:30px;">Нормативно-правовые документы</h4>
+
+    <table class="table-files">
+        <tr>
+            <th style="width: 100px;">Дата загрузки</th>
+            <th style="width: 250px;">Имя файла</th>
+            <th>
+                Описание
+            </th>
+        </tr>
+
+
+        @foreach (tb_secondary_files row in ViewBag.Files)
+        {
+            <tr>
+                <td>
+                    @(row.pub_date.Date.ToString().Substring(0, 10))
+                </td>
+                <td>
+                    <a href="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"]+"upload_files/"+row.file_name)">
+                        @row.name
+                    </a>
+                </td>
+                <td>
+                    @row.descreption
+                </td>
+            </tr>
+
+        }
+    </table>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+<script src="~/Content/jquery.details.js"></script>
+<script>
+    $(function () {
+        // Add conditional classname based on support
+        $('html').addClass($.fn.details.support ? 'details' : 'no-details');
+        // Emulate <details> where necessary and enable open/close event handlers
+        $('details').details();
+    });
+</script>

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 11/16/2015 13:09:00
+-- Date Created: 01/13/2016 13:59:55
 -- Generated from EDMX file: C:\builds\mf\mf-frontend\mf-frontend\Models\Main.edmx
 -- --------------------------------------------------
 
@@ -113,6 +113,33 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_tb_langtb_organization]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[tb_organization] DROP CONSTRAINT [FK_tb_langtb_organization];
 GO
+IF OBJECT_ID(N'[dbo].[FK_tb_langtb_economic]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tb_economic] DROP CONSTRAINT [FK_tb_langtb_economic];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tb_langtb_vacancy]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tb_vacancy] DROP CONSTRAINT [FK_tb_langtb_vacancy];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tb_organizationtb_vacancy]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tb_vacancy] DROP CONSTRAINT [FK_tb_organizationtb_vacancy];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tb_info_mftb_ministr_mf]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tb_info_mf] DROP CONSTRAINT [FK_tb_info_mftb_ministr_mf];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tb_info_mftb_zam_mf]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tb_zam_mf] DROP CONSTRAINT [FK_tb_info_mftb_zam_mf];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tb_info_mftb_ruk_depart_mf]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tb_ruk_depart_mf] DROP CONSTRAINT [FK_tb_info_mftb_ruk_depart_mf];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tb_langtb_info_mf]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tb_info_mf] DROP CONSTRAINT [FK_tb_langtb_info_mf];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tb_langtb_projects]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tb_projects] DROP CONSTRAINT [FK_tb_langtb_projects];
+GO
+IF OBJECT_ID(N'[dbo].[FK_secondary_file_typetb_secondary_files]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tb_secondary_files] DROP CONSTRAINT [FK_secondary_file_typetb_secondary_files];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -219,6 +246,30 @@ IF OBJECT_ID(N'[dbo].[tb_structure_organization]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[tb_region]', 'U') IS NOT NULL
     DROP TABLE [dbo].[tb_region];
+GO
+IF OBJECT_ID(N'[dbo].[tb_economic]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_economic];
+GO
+IF OBJECT_ID(N'[dbo].[tb_vacancy]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_vacancy];
+GO
+IF OBJECT_ID(N'[dbo].[tb_secondary_files]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_secondary_files];
+GO
+IF OBJECT_ID(N'[dbo].[tb_info_mf]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_info_mf];
+GO
+IF OBJECT_ID(N'[dbo].[tb_ministr_mf]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_ministr_mf];
+GO
+IF OBJECT_ID(N'[dbo].[tb_zam_mf]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_zam_mf];
+GO
+IF OBJECT_ID(N'[dbo].[tb_ruk_depart_mf]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_ruk_depart_mf];
+GO
+IF OBJECT_ID(N'[dbo].[secondary_file_type]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[secondary_file_type];
 GO
 
 -- --------------------------------------------------
@@ -388,6 +439,7 @@ CREATE TABLE [dbo].[tb_news] (
     [event_date] datetime  NOT NULL,
     [type_id] int  NOT NULL,
     [is_active] bit  NOT NULL,
+    [is_important] bit  NULL,
     [tb_organization_Id] int  NOT NULL
 );
 GO
@@ -444,7 +496,8 @@ CREATE TABLE [dbo].[tb_projects] (
     [name] nvarchar(1024)  NOT NULL,
     [description] nvarchar(max)  NOT NULL,
     [full_text] nvarchar(max)  NOT NULL,
-    [is_active] bit  NOT NULL
+    [is_active] bit  NOT NULL,
+    [tb_lang_id] int  NOT NULL
 );
 GO
 
@@ -615,6 +668,93 @@ CREATE TABLE [dbo].[tb_region] (
     [name_tj] nvarchar(max)  NOT NULL,
     [name_ru] nvarchar(max)  NOT NULL,
     [name_en] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'tb_economic'
+CREATE TABLE [dbo].[tb_economic] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [name] nvarchar(max)  NOT NULL,
+    [value] nvarchar(max)  NOT NULL,
+    [tb_lang_id] int  NOT NULL
+);
+GO
+
+-- Creating table 'tb_vacancy'
+CREATE TABLE [dbo].[tb_vacancy] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [open_date] datetime  NOT NULL,
+    [close_date] datetime  NOT NULL,
+    [is_closed] bit  NOT NULL,
+    [title] nvarchar(max)  NOT NULL,
+    [description] nvarchar(max)  NOT NULL,
+    [text] nvarchar(max)  NOT NULL,
+    [tb_lang_id] int  NOT NULL,
+    [tb_organization_Id] int  NOT NULL
+);
+GO
+
+-- Creating table 'tb_secondary_files'
+CREATE TABLE [dbo].[tb_secondary_files] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [pub_date] datetime  NOT NULL,
+    [file_name] nvarchar(max)  NOT NULL,
+    [descreption] nvarchar(max)  NOT NULL,
+    [is_active] bit  NOT NULL,
+    [name] nvarchar(max)  NOT NULL,
+    [secondary_file_type_Id] int  NOT NULL
+);
+GO
+
+-- Creating table 'tb_info_mf'
+CREATE TABLE [dbo].[tb_info_mf] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [tb_ministr_mf_Id] int  NOT NULL,
+    [tb_lang_id] int  NOT NULL
+);
+GO
+
+-- Creating table 'tb_ministr_mf'
+CREATE TABLE [dbo].[tb_ministr_mf] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [name] nvarchar(max)  NOT NULL,
+    [full_name] nvarchar(max)  NOT NULL,
+    [last_name] nvarchar(max)  NOT NULL,
+    [bio] nvarchar(max)  NOT NULL,
+    [logo_file_name] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'tb_zam_mf'
+CREATE TABLE [dbo].[tb_zam_mf] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [doljnost] nvarchar(max)  NOT NULL,
+    [name] nvarchar(max)  NOT NULL,
+    [last_name] nvarchar(max)  NOT NULL,
+    [full_name] nvarchar(max)  NOT NULL,
+    [bio] nvarchar(max)  NOT NULL,
+    [logo_file_name] nvarchar(max)  NOT NULL,
+    [tb_info_mf_Id] int  NOT NULL
+);
+GO
+
+-- Creating table 'tb_ruk_depart_mf'
+CREATE TABLE [dbo].[tb_ruk_depart_mf] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [doljnost] nvarchar(max)  NOT NULL,
+    [name] nvarchar(max)  NOT NULL,
+    [last_name] nvarchar(max)  NOT NULL,
+    [full_name] nvarchar(max)  NOT NULL,
+    [bio] nvarchar(max)  NOT NULL,
+    [logo_file_name] nvarchar(max)  NOT NULL,
+    [tb_info_mf_Id] int  NOT NULL
+);
+GO
+
+-- Creating table 'secondary_file_type'
+CREATE TABLE [dbo].[secondary_file_type] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [name] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -823,6 +963,54 @@ GO
 -- Creating primary key on [Id] in table 'tb_region'
 ALTER TABLE [dbo].[tb_region]
 ADD CONSTRAINT [PK_tb_region]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'tb_economic'
+ALTER TABLE [dbo].[tb_economic]
+ADD CONSTRAINT [PK_tb_economic]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'tb_vacancy'
+ALTER TABLE [dbo].[tb_vacancy]
+ADD CONSTRAINT [PK_tb_vacancy]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'tb_secondary_files'
+ALTER TABLE [dbo].[tb_secondary_files]
+ADD CONSTRAINT [PK_tb_secondary_files]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'tb_info_mf'
+ALTER TABLE [dbo].[tb_info_mf]
+ADD CONSTRAINT [PK_tb_info_mf]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'tb_ministr_mf'
+ALTER TABLE [dbo].[tb_ministr_mf]
+ADD CONSTRAINT [PK_tb_ministr_mf]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'tb_zam_mf'
+ALTER TABLE [dbo].[tb_zam_mf]
+ADD CONSTRAINT [PK_tb_zam_mf]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'tb_ruk_depart_mf'
+ALTER TABLE [dbo].[tb_ruk_depart_mf]
+ADD CONSTRAINT [PK_tb_ruk_depart_mf]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'secondary_file_type'
+ALTER TABLE [dbo].[secondary_file_type]
+ADD CONSTRAINT [PK_secondary_file_type]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -1308,6 +1496,141 @@ GO
 CREATE INDEX [IX_FK_tb_langtb_organization]
 ON [dbo].[tb_organization]
     ([tb_lang_id]);
+GO
+
+-- Creating foreign key on [tb_lang_id] in table 'tb_economic'
+ALTER TABLE [dbo].[tb_economic]
+ADD CONSTRAINT [FK_tb_langtb_economic]
+    FOREIGN KEY ([tb_lang_id])
+    REFERENCES [dbo].[tb_lang]
+        ([id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tb_langtb_economic'
+CREATE INDEX [IX_FK_tb_langtb_economic]
+ON [dbo].[tb_economic]
+    ([tb_lang_id]);
+GO
+
+-- Creating foreign key on [tb_lang_id] in table 'tb_vacancy'
+ALTER TABLE [dbo].[tb_vacancy]
+ADD CONSTRAINT [FK_tb_langtb_vacancy]
+    FOREIGN KEY ([tb_lang_id])
+    REFERENCES [dbo].[tb_lang]
+        ([id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tb_langtb_vacancy'
+CREATE INDEX [IX_FK_tb_langtb_vacancy]
+ON [dbo].[tb_vacancy]
+    ([tb_lang_id]);
+GO
+
+-- Creating foreign key on [tb_organization_Id] in table 'tb_vacancy'
+ALTER TABLE [dbo].[tb_vacancy]
+ADD CONSTRAINT [FK_tb_organizationtb_vacancy]
+    FOREIGN KEY ([tb_organization_Id])
+    REFERENCES [dbo].[tb_organization]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tb_organizationtb_vacancy'
+CREATE INDEX [IX_FK_tb_organizationtb_vacancy]
+ON [dbo].[tb_vacancy]
+    ([tb_organization_Id]);
+GO
+
+-- Creating foreign key on [tb_ministr_mf_Id] in table 'tb_info_mf'
+ALTER TABLE [dbo].[tb_info_mf]
+ADD CONSTRAINT [FK_tb_info_mftb_ministr_mf]
+    FOREIGN KEY ([tb_ministr_mf_Id])
+    REFERENCES [dbo].[tb_ministr_mf]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tb_info_mftb_ministr_mf'
+CREATE INDEX [IX_FK_tb_info_mftb_ministr_mf]
+ON [dbo].[tb_info_mf]
+    ([tb_ministr_mf_Id]);
+GO
+
+-- Creating foreign key on [tb_info_mf_Id] in table 'tb_zam_mf'
+ALTER TABLE [dbo].[tb_zam_mf]
+ADD CONSTRAINT [FK_tb_info_mftb_zam_mf]
+    FOREIGN KEY ([tb_info_mf_Id])
+    REFERENCES [dbo].[tb_info_mf]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tb_info_mftb_zam_mf'
+CREATE INDEX [IX_FK_tb_info_mftb_zam_mf]
+ON [dbo].[tb_zam_mf]
+    ([tb_info_mf_Id]);
+GO
+
+-- Creating foreign key on [tb_info_mf_Id] in table 'tb_ruk_depart_mf'
+ALTER TABLE [dbo].[tb_ruk_depart_mf]
+ADD CONSTRAINT [FK_tb_info_mftb_ruk_depart_mf]
+    FOREIGN KEY ([tb_info_mf_Id])
+    REFERENCES [dbo].[tb_info_mf]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tb_info_mftb_ruk_depart_mf'
+CREATE INDEX [IX_FK_tb_info_mftb_ruk_depart_mf]
+ON [dbo].[tb_ruk_depart_mf]
+    ([tb_info_mf_Id]);
+GO
+
+-- Creating foreign key on [tb_lang_id] in table 'tb_info_mf'
+ALTER TABLE [dbo].[tb_info_mf]
+ADD CONSTRAINT [FK_tb_langtb_info_mf]
+    FOREIGN KEY ([tb_lang_id])
+    REFERENCES [dbo].[tb_lang]
+        ([id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tb_langtb_info_mf'
+CREATE INDEX [IX_FK_tb_langtb_info_mf]
+ON [dbo].[tb_info_mf]
+    ([tb_lang_id]);
+GO
+
+-- Creating foreign key on [tb_lang_id] in table 'tb_projects'
+ALTER TABLE [dbo].[tb_projects]
+ADD CONSTRAINT [FK_tb_langtb_projects]
+    FOREIGN KEY ([tb_lang_id])
+    REFERENCES [dbo].[tb_lang]
+        ([id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tb_langtb_projects'
+CREATE INDEX [IX_FK_tb_langtb_projects]
+ON [dbo].[tb_projects]
+    ([tb_lang_id]);
+GO
+
+-- Creating foreign key on [secondary_file_type_Id] in table 'tb_secondary_files'
+ALTER TABLE [dbo].[tb_secondary_files]
+ADD CONSTRAINT [FK_secondary_file_typetb_secondary_files]
+    FOREIGN KEY ([secondary_file_type_Id])
+    REFERENCES [dbo].[secondary_file_type]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_secondary_file_typetb_secondary_files'
+CREATE INDEX [IX_FK_secondary_file_typetb_secondary_files]
+ON [dbo].[tb_secondary_files]
+    ([secondary_file_type_Id]);
 GO
 
 -- --------------------------------------------------

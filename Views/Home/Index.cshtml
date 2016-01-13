@@ -1,16 +1,17 @@
 ﻿@using mf_frontend.Models;
 @using mf_frontend.App_LocalResources;
 @{
-ViewBag.Title = GlobalRes.mf;
+    ViewBag.Title = GlobalRes.mf;
 }
 <div class="span4">
     @*<img src="/Content/images/news.jpg" style="float:left" />*@
     <div id="owl-demo" class="owl-carousel owl-theme" style="width:548px; height:284px; float:left;">
-        @foreach (tb_news row in ViewBag.Srochnoe) {
+        @foreach (tb_news row in ViewBag.Srochnoe)
+        {
             <div class="item">
                 <div style="width:100%; height: 284px; background-repeat:no-repeat; background-size:cover; background-image:url(@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_news/" + row.image))">
                     <div style="width: 520px; position:absolute; bottom: 10px; left: 10px; background-image:url(/Content/images/tr.png); padding:5px; color:white; font-size: 12px; line-height:18px;">
-                        <span style="font-size: 16px; font-weight:bold">@row.event_date.ToString().Substring(0,10)</span>
+                        <span style="font-size: 16px; font-weight:bold">@row.event_date.ToString().Substring(0, 10)</span>
                         <br />
                         @row.title
                     </div>
@@ -19,434 +20,479 @@ ViewBag.Title = GlobalRes.mf;
         }
     </div>
     <script>
-    $(document).ready(function () {
-    var time = 7; // time in seconds
-    var $progressBar,
-    $bar,
-    $elem,
-    isPause,
-    tick,
-    percentTime;
-    //Init the carousel
-    $("#owl-demo").owlCarousel({
-    slideSpeed: 500,
-    paginationSpeed: 500,
-    singleItem: true,
-    afterInit: progressBar,
-    afterMove: moved,
-    startDragging: pauseOnDragging
-    });
-    //Init progressBar where elem is $("#owl-demo")
-    function progressBar(elem) {
-    $elem = elem;
-    //build progress bar elements
-    buildProgressBar();
-    //start counting
-    start();
-    }
-    //create div#progressBar and div#bar then prepend to $("#owl-demo")
-    function buildProgressBar() {
-    $progressBar = $("<div>", {
-        id: "progressBar"
-        });
-        $bar = $("<div>", {
-            id: "bar"
+        $(document).ready(function () {
+            var time = 7; // time in seconds
+            var $progressBar,
+            $bar,
+            $elem,
+            isPause,
+            tick,
+            percentTime;
+            //Init the carousel
+            $("#owl-demo").owlCarousel({
+                slideSpeed: 500,
+                paginationSpeed: 500,
+                singleItem: true,
+                afterInit: progressBar,
+                afterMove: moved,
+                startDragging: pauseOnDragging
             });
-            $progressBar.append($bar).prependTo($elem);
+            //Init progressBar where elem is $("#owl-demo")
+            function progressBar(elem) {
+                $elem = elem;
+                //build progress bar elements
+                buildProgressBar();
+                //start counting
+                start();
+            }
+            //create div#progressBar and div#bar then prepend to $("#owl-demo")
+            function buildProgressBar() {
+                $progressBar = $("<div>", {
+                    id: "progressBar"
+                });
+                $bar = $("<div>", {
+                    id: "bar"
+                });
+                $progressBar.append($bar).prependTo($elem);
             }
             function start() {
-            //reset timer
-            percentTime = 0;
-            isPause = false;
-            //run interval every 0.01 second
-            tick = setInterval(interval, 5);
+                //reset timer
+                percentTime = 0;
+                isPause = false;
+                //run interval every 0.01 second
+                tick = setInterval(interval, 5);
             };
             function interval() {
-            if (isPause === false) {
-            percentTime += 1 / time;
-            $bar.css({
-            width: percentTime + "%"
-            });
-            //if percentTime is equal or greater than 100
-            if (percentTime >= 100) {
-            //slide to next item
-            $elem.trigger('owl.next')
-            }
-            }
+                if (isPause === false) {
+                    percentTime += 1 / time;
+                    $bar.css({
+                        width: percentTime + "%"
+                    });
+                    //if percentTime is equal or greater than 100
+                    if (percentTime >= 100) {
+                        //slide to next item
+                        $elem.trigger('owl.next')
+                    }
+                }
             }
             //pause while dragging
             function pauseOnDragging() {
-            isPause = true;
+                isPause = true;
             }
             //moved callback
             function moved() {
-            //clear interval
-            clearTimeout(tick);
-            //start again
-            start();
+                //clear interval
+                clearTimeout(tick);
+                //start again
+                start();
             }
             //uncomment this to make pause on mouseover
             $elem.on('mouseover', function () {
-            isPause = true;
+                isPause = true;
             })
             $elem.on('mouseout', function () {
-            isPause = false;
+                isPause = false;
             })
-            });
-            </script>
-            
-            <div class="news mdl-shadow--2dp">
-                <dl class="accordion">
-                    <dt class="accordion__title"><i class="fa fa-file-text-o" style="padding-right:4px;" ></i><span class="uppercase"> @GlobalRes.News</span></dt>
-                    <dd class="accordion__content">
-                    <div style="padding-left:40px; padding-top:5px;">
-                        <div class="news-body colored">
-                            @foreach (tb_news row in ViewBag.News) {
-                                <div class="news-item">
-                                    <a href="@("/news/item/"+row.id)" style="text-decoration:none; color:black">
-                                        <span style="color:blue;">@row.event_date.ToString().Substring(0, 10)</span>  @row.title
-                                    </a>
-                                </div>
-                            }
-                            <div>
-                                <a style="float:right; padding-top:10px; padding-right:30px;" href="/News">@GlobalRes.AllNews</a>
+        });
+    </script>
+
+    <div class="news mdl-shadow--2dp">
+        <dl class="accordion">
+            <dt class="accordion__title"><i class="fa fa-file-text-o" style="padding-right:4px;"></i><span class="uppercase"> @GlobalRes.News</span></dt>
+            <dd class="accordion__content">
+                <div style="padding-left:40px; padding-top:5px;">
+                    <div class="news-body colored">
+                        @foreach (tb_news row in ViewBag.News)
+                        {
+                            <div class="news-item">
+                                <a href="@("/news/item/"+row.id)" style="text-decoration:none; color:black">
+                                    <span style="color:blue;">@row.event_date.ToString().Substring(0, 10)</span>  @row.title
+                                </a>
                             </div>
+                        }
+                        <div>
+                            <a style="float:right; padding-top:10px; padding-right:30px;color:red; " href="@("/"+System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName+ "/News")">@GlobalRes.AllNews</a>
                         </div>
                     </div>
-                    </dd>
-                    <dt class="accordion__title"><i class="fa fa-bullhorn" style="padding-right:4px;"></i><span class="uppercase">@GlobalRes.Announcements</span></dt>
-                    <dd class="accordion__content">
-                    <div style="padding-left:40px; padding-top:5px;">
-                        <div class="news-body colored">
-                            @foreach (tb_news row in ViewBag.Anonsy)
-                            {
+                </div>
+            </dd>
+            <dt class="accordion__title"><i class="fa fa-bullhorn" style="padding-right:4px;"></i><span class="uppercase">@GlobalRes.Announcements</span></dt>
+            <dd class="accordion__content">
+                <div style="padding-left:40px; padding-top:5px;">
+                    <div class="news-body colored">
+                        @foreach (tb_news row in ViewBag.Anonsy)
+                        {
                             <div class="news-item">
                                 <a href="@("/news/item/"+row.id)" style="text-decoration:none; color:black">
                                     <span style="color:blue;"> @row.event_date.ToString().Substring(0, 10)</span>  @row.title
                                 </a>
                             </div>
-                            }
-                            <div>
-                                <a style="float:right; padding-top:10px; padding-right:30px;" href="/News">Все анонсы</a>
-                            </div>
+                        }
+                        <div>
+                            <a style="float:right; padding-top:10px; color:red; padding-right:30px;" href="@("/"+System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName+ "/News/Index/4")">@GlobalRes.AllAnoncy</a>
                         </div>
                     </div>
-                    </dd>
-                    <dt class="accordion__title"><i class="fa fa-file-text-o" style="padding-right:4px;"></i><span class="uppercase">@GlobalRes.Files</span></dt>
-                    <dd class="accordion__content">
-                    <div style="padding-left:40px; padding-top:5px;">
-                        <div class="news-body colored">
-                            @foreach (tb_files row in ViewBag.Files) {
+                </div>
+            </dd>
+            <dt class="accordion__title"><i class="fa fa-file-text-o" style="padding-right:4px;"></i><span class="uppercase">@GlobalRes.Files</span></dt>
+            <dd class="accordion__content">
+                <div style="padding-left:40px; padding-top:5px;">
+                    <div class="news-body colored">
+                        @foreach (tb_files row in ViewBag.Files)
+                        {
                             <div class="news-item">
                                 <a href="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_files/"+row.file_name)" style="text-decoration:none; color:black">
                                     <span style="color:blue">@row.date_create.ToString().Substring(0, 10)</span>  @row.title
                                 </a>
                             </div>
-                            }
-                            <a href="http://moliya.tj/ru/Files" style="float:right; margin-top:10px; margin-right:10px">@GlobalRes.FilesArchive</a>
+                        }
+                        <div>
+                            <a href="http://moliya.tj/ru/Files" style="float:right; margin-top:10px; color:red; margin-right:10px">@GlobalRes.FilesArchive</a>
                         </div>
                     </div>
-                    </dd>
-                </dl>
-                
-                <script>
-                    if ($(window).width() > 768) {
-                        // Hide all but first tab content on larger viewports
-                        $('.accordion__content:not(:first)').hide();
-                        // Activate first tab
-                        $('.accordion__title:first-child').addClass('active');
-                    } else {
-                        // Hide all content items on narrow viewports
-                        $('.accordion__content').hide();
-                    };
+                </div>
+            </dd>
+        </dl>
 
-                    // Wrap a div around content to create a scrolling container which we're going to use on narrow viewports
-                    $(".accordion__content").wrapInner("<div class='overflow-scrolling'></div>");
-                    // The clicking action
+        <script>
+            if ($(window).width() > 768) {
+                // Hide all but first tab content on larger viewports
+                $('.accordion__content:not(:first)').hide();
+                // Activate first tab
+                $('.accordion__title:first-child').addClass('active');
+            } else {
+                // Hide all content items on narrow viewports
+                $('.accordion__content').hide();
+            };
 
-                    $('.accordion__title').on('click', function () {
-                        $('.accordion__content').hide();
-                        $(this).next().show().prev().addClass('active').siblings().removeClass('active');
-                    });
-                </script>
-                
-            </div>
+            // Wrap a div around content to create a scrolling container which we're going to use on narrow viewports
+            $(".accordion__content").wrapInner("<div class='overflow-scrolling'></div>");
+            // The clicking action
+
+            $('.accordion__title').on('click', function () {
+                $('.accordion__content').hide();
+                $(this).next().show().prev().addClass('active').siblings().removeClass('active');
+            });
+        </script>
+
+    </div>
+</div>
+<div class="line span4"></div>
+<div class="span4">
+    <div class="q-button">
+        <img src="/Content/images/btn-ico1.jpg" class="q-ico" />
+        <div class="q-title">
+            @GlobalRes.OrganizationalStructure
         </div>
-        <div class="line span4"></div>
-        <div class="span4">
-            <div class="q-button">
-                <img src="/Content/images/btn-ico1.jpg" class="q-ico" />
-                <div class="q-title">
-                    @GlobalRes.OrganizationalStructure
-                </div>
-            </div>
-            <div class="q-button">
-                <img src="/Content/images/btn-ico2.jpg" class="q-ico" />
-                <div class="q-title">
-                    @GlobalRes.StateBudget
-                </div>
-            </div>
-            <div class="q-button">
-                <img src="/Content/images/btn-ico3.jpg" class="q-ico" />
-                <div class="q-title">
-                    @GlobalRes.BudgetImplementation
-                </div>
-            </div>
-            <div class="q-button q-button-last">
-                <img src="/Content/images/btn-ico4.jpg" class="q-ico" />
-                <div class="q-title">
-                    @GlobalRes.PublicBudget
-                </div>
-            </div>
+    </div>
+    <div class="q-button">
+        <img src="/Content/images/btn-ico2.jpg" class="q-ico" />
+        <div class="q-title">
+            @GlobalRes.StateBudget
         </div>
-        <div class="span4 line"></div>
-        <div class="span2 mdl-shadow--2dp">
-            <div class="faq-title">
-                <i class="fa fa-comments-o news-title-icon"></i> <span class="news-title-text">@GlobalRes.QuestionsAskedOverTheSite</span>
-            </div>
-            <div class="faq-body">
-                @if (ViewBag.Question != null) {
-                <table style="width:465px;">
-                    @foreach(tb_questions row in ViewBag.Question){
+    </div>
+    <div class="q-button">
+        <img src="/Content/images/btn-ico3.jpg" class="q-ico" />
+        <div class="q-title">
+            @GlobalRes.BudgetImplementation
+        </div>
+    </div>
+    <div class="q-button q-button-last">
+        <img src="/Content/images/btn-ico4.jpg" class="q-ico" />
+        <div class="q-title">
+            @GlobalRes.PublicBudget
+        </div>
+    </div>
+</div>
+<div class="span4 line"></div>
+<div class="span2 mdl-shadow--2dp">
+    <div class="faq-title">
+        <i class="fa fa-comments-o news-title-icon"></i> <span class="news-title-text">@GlobalRes.QuestionsAskedOverTheSite</span>
+    </div>
+    <div class="faq-body">
+        @if (ViewBag.Question != null)
+        {
+            <table style="width:100%">
+                @foreach (tb_questions row in ViewBag.Question)
+                {
                     <tr>
-                        <td style="width: 80px; border-bottom:1px dotted lightgray" align="center">
+                        <td style="border-bottom:1px dotted lightgray" align="center">
                             @row.question_date.Value.Date.ToString().Split(' ')[0]
                         </td>
                         <td style="padding: 5px; border-bottom: 1px dotted lightgray">
                             <a href="@("/"+System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName+"/Question/View/"+row.id)">
                                 @row.question_title
-                            </td>
-                        </tr>
-                        }
-                    </table>
-                    @*<div class="faq-q-title">
-                        <i class="fa fa-comment-o faq-ico"> </i>
-                        @ViewBag.Question.question_title
-                    </div>
-                    <div class="faq-q-body">
-                        @Html.Raw(ViewBag.Question.question)
-                    </div>
-                    <div class="faq-q-footer">
-                        <i class="fa fa-user" style="font-size:11px;"> @ViewBag.Question.question_author_fio</i>
-                        <span> | </span>
-                        <i class="fa fa-calendar" style="font-size:11px;"> @ViewBag.Question.question_date</i>
-                    </div>
-                    <div class="faq-line">
-                    </div>
-                    <i class="fa fa-comments-o faq-ico" style="float:left; padding-left:20px; padding-top:10px;"> </i>
-                    <div class="faq-a">
-                        @Html.Raw(ViewBag.Question.answer)
-                    </div>
-                    <div class="faq-q-footer">
-                        <i class="fa fa-user" style="font-size:11px;"> @ViewBag.Question.answer_author_fio (@ViewBag.Question.answer_author_position)</i>
-                        <span> | </span>
-                        <i class="fa fa-calendar" style="font-size:11px;"> @ViewBag.Question.answer_date</i>
-                    </div>*@
-                    }
-                    
-                </div>
-            </div>
-            <div class="span1 mdl-shadow--2dp" style="margin-left:8px;">
-                <div class="faq-title">
-                    <span class="news-title-text"> @GlobalRes.ImportantThingsnBrief </span>
-                </div>
-                <div class="faq-body colored courses">
-                    <table width="100%">
-                        <tbody>
-                            <tr>
-                                <td colspan="2" style="border-top: none; border-bottom: 1px dotted lightgray; vertical-align: middle" colspan="2">
-                                    <span style="">@GlobalRes.On_text @ViewBag.UpdateDate</span>
-                                </td>
-                                <td style="border-top: none;padding:10px 0 10px 0; border-bottom: 1px dotted lightgray; vertical-align: middle">
-                                    <span>
-                                        @GlobalRes.Nbt_tjs
-                                    </span>
-                                </td>
-                            </tr>
-                            @foreach (Currency currency in ViewBag.Courses)
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+
+    </div>
+</div>
+<div class="span1 mdl-shadow--2dp" style="margin-left:8px;">
+    <div class="faq-title">
+        <span class="news-title-text"> @GlobalRes.ImportantThingsnBrief </span>
+    </div>
+    <div class="faq-body colored courses" style="height:auto;overflow-y:auto; height:262px">
+        <table style="width:100%">
+            <tbody>
+                <tr>
+                    <td colspan="2" style="border-top: none; border-bottom: 1px dotted lightgray; vertical-align: middle" colspan="2">
+                        <span style="">@GlobalRes.On_text @ViewBag.UpdateDate</span>
+                    </td>
+                    <td style="border-top: none;padding:10px 0 10px 0; border-bottom: 1px dotted lightgray; vertical-align: middle">
+                        <span>
+                            @GlobalRes.Nbt_tjs
+                        </span>
+                    </td>
+                </tr>
+                @foreach (Currency currency in ViewBag.Courses)
+                {
+                    <tr>
+                        <td style="border-top: none; border-bottom: 1px dotted lightgray; padding:5px;vertical-align: middle">
+                            @if (currency.CurrencyCode == "840")
                             {
-                            <tr>
-                                <td style="border-top: none; border-bottom: 1px dotted lightgray; padding:5px;vertical-align: middle">
-                                    @if (currency.CurrencyCode == "840")
-                                    {
-                                    <img src="~/Content/images/dollar.png" width="15" height="15" />
-                                    }
-                                    @if (currency.CurrencyCode == "978")
-                                    {
-                                    <img src="~/Content/images/euro1.png" width="15" height="15" />
-                                    }
-                                    @if (currency.CurrencyCode == "810")
-                                    {
-                                    <img src="~/Content/images/ruble.png" width="15" height="15" />
-                                    }
-                                </td>
-                                <td style="border-top: none; border-bottom: 1px dotted lightgray;color: #3350cb;vertical-align: middle" title="Курс долара США">
-                                    @if (currency.CurrencyCode == "840")
-                                    {
-                                    <span>1 USD</span>
-                                    }
-                                    @if (currency.CurrencyCode == "978")
-                                    {
-                                    <span>1 EUR</span>
-                                    }
-                                    @if (currency.CurrencyCode == "810")
-                                    {
-                                    <span>1 RUB</span>
-                                    }
-                                </td>
-                                <td style="border-top: none; border-bottom: 1px dotted lightgray;vertical-align: middle" title="">
-                                    @currency.Rate
-                                </td>
-                            </tr>
+                                <img src="~/Content/images/dollar.png" width="15" height="15" />
                             }
-                        </tbody>
-                    </table>
-                    <div class="all-courses">
-                        <a href="#">Все индексы</a>
+                            @if (currency.CurrencyCode == "978")
+                            {
+                                <img src="~/Content/images/euro1.png" width="15" height="15" />
+                            }
+                            @if (currency.CurrencyCode == "810")
+                            {
+                                <img src="~/Content/images/ruble.png" width="15" height="15" />
+                            }
+                        </td>
+                        <td style="border-top: none; border-bottom: 1px dotted lightgray;color: #3350cb;vertical-align: middle" title="Курс долара США">
+                            @if (currency.CurrencyCode == "840")
+                            {
+                                <span>1 USD</span>
+                            }
+                            @if (currency.CurrencyCode == "978")
+                            {
+                                <span>1 EUR</span>
+                            }
+                            @if (currency.CurrencyCode == "810")
+                            {
+                                <span>1 RUB</span>
+                            }
+                        </td>
+                        <td style="border-top: none; border-bottom: 1px dotted lightgray;vertical-align: middle" title="">
+                            @currency.Rate
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <style>
+            #economic td {
+                border-bottom: 1px dotted lightgray;
+                padding: 5px;
+            }
+        </style>
+        <table id="economic" style="width:100%">
+            @foreach (var item in ViewBag.Economic)
+            {
+                if (item.name == "золото" || item.name == "тилло" || item.name == "golden")
+                {
+                    <tr>
+                        <td>
+                            <span>Котировки металлов:</span>
+                        </td>
+                    </tr>
+                }
+                <tr>                   
+                    <td style="color:#0ea4e6;">@item.name</td>
+                    <td>@item.value</td>
+                </tr>
+            }
+
+            @*<tr>
+                <td style="color:#0ea4e6;">МРОТ:</td>
+                <td>85</td>
+            </tr>
+
+            <tr>
+                <td style="color:#0ea4e6;">Уровень ВВП:</td>
+                <td>85</td>
+            </tr>
+            <tr>
+                <td style="color:#0ea4e6;">Рейтинг по ведению бизнеса:</td>
+                <td>85</td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Котировки металлов:</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color:#0ea4e6;">золото:</td>
+                <td>85</td>
+            </tr>
+            <tr>
+                <td style="color:#0ea4e6;">серебро:</td>
+                <td>85</td>
+            </tr>
+            <tr>
+                <td style="color:#0ea4e6;">платина:</td>
+                <td>85</td>
+            </tr>
+            <tr>
+                <td style="color:#0ea4e6;">алюминий:</td>
+                <td>85</td>
+            </tr>*@
+        </table>
+
+        <table id="economic" style="width:100%"></table>
+    </div>
+</div>
+<div class="span1 mdl-shadow--2dp" style="margin-left:8px;">
+    <div class="faq-title">
+        <span class="news-title-text">@GlobalRes.MessagesOfThePresident</span>
+    </div>
+    <div class="faq-body colored">
+        <div class="prezident">
+            <img src="/Content/images/prezident.jpg" />
+        </div>
+        <div class="prezident-text">Продвижение грамотной и устойчивой финансовой политики во все времена является основ- ным фактором стабильности государства.</div>
+    </div>
+</div>
+<div class="span4 line"></div>
+<div class="span2 mdl-shadow--2dp">
+    <div class="news-title">
+        <i class="fa fa-bar-chart-o news-title-icon"></i><span class="news-title-text">@GlobalRes.DataCenter</span>
+    </div>
+    <div class="dc-body">
+        @if (ViewBag.DC != null)
+        {
+            <a href="@("/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName+"/DataCenter")">
+                <div class="dc-title">@ViewBag.DC.title</div>
+                <div class="dc-image">
+                    <div style="margin-left:5px; background-image: url(@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_dc/" + ViewBag.DC.image));background-position:center; background-repeat:no-repeat; background-size: 465px;">
                     </div>
+                    @*<img src="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_dc/" + ViewBag.DC.image)" />*@
                 </div>
-            </div>
-            <div class="span1 mdl-shadow--2dp" style="margin-left:8px;">
-                <div class="faq-title">
-                    <span class="news-title-text">@GlobalRes.MessagesOfThePresident</span>
-                </div>
-                <div class="faq-body colored">
-                    <div class="prezident">
-                        <img src="/Content/images/prezident.jpg" />
-                    </div>
-                    <div class="prezident-text">Продвижение грамотной и устойчивой финансовой политики во все времена является основ- ным фактором стабильности государства.</div>
-                </div>
-            </div>
-            <div class="span4 line"></div>
-            <div class="span2 mdl-shadow--2dp">
-                <div class="news-title">
-                    <i class="fa fa-bar-chart-o news-title-icon"></i><span class="news-title-text">@GlobalRes.DataCenter</span>
-                </div>
-                <div class="dc-body">
-                    @if (ViewBag.DC != null) {
-                    <a href="@("/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName+"/DataCenter")">
-                        <div class="dc-title">@ViewBag.DC.title</div>
-                        <div class="dc-image">
-                            <div style="width: 465px; height:242px; margin-left:5px; background-image: url(@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_dc/" + ViewBag.DC.image));background-position:center; background-repeat:no-repeat; background-size: 465px;">
-                            </div>
-                            @*<img src="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_dc/" + ViewBag.DC.image)" />*@
-                        </div>
-                    </a>
-                    }
-                    
-                </div>
-            </div>
-            <script type="text/javascript">
-            var topElementId = '0', t;
-            $(document).ready(function () {
-            
-            var el = $('#frame').children();
-            // проверяем количество элементов в списке: если элементов больше
-            // чем вмещается в видимую область, то начинаем скролирование
-            if (el.size() > 1) {
+            </a>
+        }
+
+    </div>
+</div>
+<script type="text/javascript">
+    var topElementId = '0', t;
+    $(document).ready(function () {
+
+        var el = $('#frame').children();
+        // проверяем количество элементов в списке: если элементов больше
+        // чем вмещается в видимую область, то начинаем скролирование
+        if (el.size() > 1) {
             // присваиваем каждому элементу списка свой ID
             el.each(function (i) {
-            $(this).attr('id', 'row' + i);
+                $(this).attr('id', 'row' + i);
             });
             // запускаем таймер. число задает количество милисекунд между
             // загрузкой страницы и началом скролирования
             t = setTimeout('listSlideUp()', 3000);
-            }
-            });
-            function listSlideUp() {
-            // для самого верхнего элемента списка (не видимого на странице)
-            // вызываем функцию плавного уменьшения высоты
-            $('#row' + topElementId).slideUp(1000, function () {
+        }
+    });
+    function listSlideUp() {
+        // для самого верхнего элемента списка (не видимого на странице)
+        // вызываем функцию плавного уменьшения высоты
+        $('#row' + topElementId).slideUp(1000, function () {
             // тут определяем кол-бэк функцию, выполняющуюся после завершения
             // работы slideup
             // если текущий элемент не вспомогательный,
             // то переносим его в конец списка
             if (topElementId > 0) {
-            // создаем копию верхнего элемента
-            var topElement = jQuery('#row' + topElementId).clone().show();
-            // убираем верхний элемент из списка
-            $('#row' + topElementId).remove();
-            // добавляем скопированный элемент в конец списка
-            $('#frame').append(topElement);
+                // создаем копию верхнего элемента
+                var topElement = jQuery('#row' + topElementId).clone().show();
+                // убираем верхний элемент из списка
+                $('#row' + topElementId).remove();
+                // добавляем скопированный элемент в конец списка
+                $('#frame').append(topElement);
             }
             topElementId++;
             // если номер верхнего элемента больше количества элементов,
             // то сбрасываем его в 1
             if (topElementId >= jQuery('#frame').children().size()) {
-            topElementId = 1;
+                topElementId = 1;
             }
-            });
-            // опять запускаем таймер
-            t = setTimeout('listSlideUp()', 4000);
-            }
-            </script>
-            <div class="span2  mdl-shadow--2dp" style="margin-left:8px;">
-                <div class="news-title">
-                    <i class="fa fa-file-text-o news-title-icon"></i><span class="news-title-text">@GlobalRes.UsefulFiles</span>
-                </div>
-                <div class="dc-body">
-                    <div class="scroller">
-                        <div id="frame">
-                            <div style="height:20px; width:300px;"></div>
-                            @foreach (tb_files row in ViewBag.FilesOnMain)
-                            {
-                            <div style="width:450px; padding-top:20px;">
-                                <table>
-                                    <tr>
-                                        
-                                        <td >
-                                            <div style="float:left; ">
-                                                @GetIcon(row.file_name.Split('.')[1])
-                                            </div>
-                                            <div style="color: #486078;line-height:16px; padding-left:50px; ">
-                                                <a href="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"]+"upload_files/"+row.file_name)" target="_blank">
-                                                    @row.title
-                                                </a>
-                                            </div>
-                                            
-                                            <div style="font-size:11px; line-height:13px; padding-top:4px; margin-left:50px; padding-bottom:7px; border-bottom:1px dotted lightgray">@row.description</div>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            }
-                        </div>
+        });
+        // опять запускаем таймер
+        t = setTimeout('listSlideUp()', 4000);
+    }
+</script>
+<div class="span2  mdl-shadow--2dp" style="margin-left:8px;">
+    <div class="news-title">
+        <i class="fa fa-file-text-o news-title-icon"></i><span class="news-title-text">@GlobalRes.UsefulFiles</span>
+    </div>
+    <div class="dc-body">
+        <div class="scroller">
+            <div id="frame">
+                <div style="height:20px; width:300px;"></div>
+                @foreach (tb_files row in ViewBag.FilesOnMain)
+                {
+                    <div style="width:450px; padding-top:20px;">
+                        <table>
+                            <tr>
+
+                                <td>
+                                    <div style="float:left; ">
+                                        @GetIcon(row.file_name.Split('.')[1])
+                                    </div>
+                                    <div style="color: #486078;line-height:16px; padding-left:50px; ">
+                                        <a href="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"]+"upload_files/"+row.file_name)" target="_blank">
+                                            @row.title
+                                        </a>
+                                    </div>
+
+                                    <div style="font-size:11px; line-height:13px; padding-top:4px; margin-left:50px; padding-bottom:7px; border-bottom:1px dotted lightgray">@row.description</div>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
-                </div>
+                }
             </div>
-            <link href="/Content/lightgallery/skins/default/style.css" type="text/css" media="screen" rel="stylesheet" />
-            <script src="Content/lightgallery/lightgallery.min.js" type="text/javascript"></script>
-            <script>lightgallery.init();</script>
-            <div class="span4 line"></div>
-            <div class="span4  mdl-shadow--2dp">
-                <div class="news-title">
-                    <i class="fa fa-camera news-title-icon"></i><span class="news-title-text">@GlobalRes.Gallery</span>
+        </div>
+    </div>
+</div>
+<link href="/Content/lightgallery/skins/default/style.css" type="text/css" media="screen" rel="stylesheet" />
+<script src="Content/lightgallery/lightgallery.min.js" type="text/javascript"></script>
+<script>lightgallery.init();</script>
+<div class="span4 line"></div>
+<div class="span4  mdl-shadow--2dp">
+    <div class="news-title">
+        <i class="fa fa-camera news-title-icon"></i><span class="news-title-text">@GlobalRes.Gallery</span>
+    </div>
+    <div class="photogalery">
+        <img src="/Content/images/foto/1.jpg" />
+        @foreach (tb_gallery row in ViewBag.Gallery)
+        {
+            <a href="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_gallery/" + row.image)" rel="@("lightgallery[1]")">
+                <div class="item" style="background-image: url(@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_gallery/" + row.image))" title="@(row.description)">
                 </div>
-                <div class="photogalery">
-                    <img src="/Content/images/foto/1.jpg" />
-                    @foreach (tb_gallery row in ViewBag.Gallery)
-                    {
-                    <a href="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_gallery/" + row.image)" rel="@("lightgallery[1]")">
-                        <div class="item" style="background-image: url(@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_gallery/" + row.image))" title="@(row.description)">
-                        </div>
-                    </a>
-                    @*<img style="width:198px;" src="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_news/" + row.image)" />*@
-                    }
-                    @*<img src="/Content/images/foto/1.jpg" />
-                    <img src="/Content/images/foto/2.jpg" />
-                    <img src="/Content/images/foto/3.jpg" />
-                    <img src="/Content/images/foto/4.jpg" />
-                    <img src="/Content/images/foto/5.jpg" />
-                    <img src="/Content/images/foto/6.jpg" />
-                    <img src="/Content/images/foto/7.jpg" />*@
-                </div>
-            </div>
-            
-@helper GetIcon(string type) {
-if (type == "doc" || type == "docx") {
-<img src="/Content/Images/docx.jpg" />
+            </a>
+            @*<img style="width:198px;" src="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_news/" + row.image)" />*@
+        }
+        @*<img src="/Content/images/foto/1.jpg" />
+            <img src="/Content/images/foto/2.jpg" />
+            <img src="/Content/images/foto/3.jpg" />
+            <img src="/Content/images/foto/4.jpg" />
+            <img src="/Content/images/foto/5.jpg" />
+            <img src="/Content/images/foto/6.jpg" />
+            <img src="/Content/images/foto/7.jpg" />*@
+    </div>
+</div>
+
+@helper GetIcon(string type)
+{
+if (type == "doc" || type == "docx")
+{
+        <img src="/Content/Images/docx.jpg" />
 }
-if (type == "pdf" ) {
-<img src="/Content/Images/pdf.jpg" />
+if (type == "pdf")
+{
+        <img src="/Content/Images/pdf.jpg" />
 }
 }
