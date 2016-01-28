@@ -3,41 +3,46 @@
 @{
     ViewBag.Title = "Заявка на размещения рекламы";
 }
-<br />
 <h2>Заявка на размещения рекламы</h2>
-<br />
-<br />
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
+    <table class="table-form" style="width:50%; margin:auto">
+        <tr>
+            <td>
+                <div class="mdl-textfield mdl-js-textfield">
+                    @Html.TextBoxFor(model => model.fio, new { @class = "mdl-textfield__input" , required = "required" })
+                    <label class="mdl-textfield__label" for="sample1">ФИО(*)</label>
+                </div>
+            </td>
+        </tr>
 
-    <table class="table-form">
         <tr>
-            <td style="width: 250px;" align="right">
-                ФИО(*)
-            </td>
             <td>
-                @Html.TextBoxFor(model => model.fio, new { @class = "text-box", required = "required" })
+                <div class="mdl-textfield mdl-js-textfield">
+                    @Html.TextBoxFor(model => model.organization, new { @class = "mdl-textfield__input" })
+                    <label class="mdl-textfield__label" for="sample1">Наименование организации</label>
+                </div>
             </td>
         </tr>
-       
+
         <tr>
-            <td align="right">Наименование организации</td>
-            <td>@Html.TextBoxFor(model => model.organization, new { @class = "text-box" })</td>
-        </tr>
-     
-        <tr>
-            <td align="right">Контактный телефон(*)</td>
-            <td>@Html.TextBoxFor(model => model.phone, new { @class = "text-box", required = "required" })</td>
-        </tr>
-      
-        <tr>
-            <td></td>
+
             <td>
-                <input class="btn" type="submit" value="Отправить заявку" /> | <a href="/">Отказаться</a>
+                <div class="mdl-textfield mdl-js-textfield">
+                    @Html.TextBoxFor(model => model.phone, new { @class = "mdl-textfield__input", required = "required" })
+                    <label class="mdl-textfield__label" for="sample1">Контактный телефон(*)</label>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="text-transform:capitalize;" type="submit" value="Отправить заявку" /> | <a href="/">Отказаться</a>
             </td>
         </tr>
     </table>
 }
+

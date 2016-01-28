@@ -1,6 +1,15 @@
 ﻿@using mf_frontend.Models;
 @using mf_frontend.App_LocalResources;
-<div class="span2 mdl-shadow--3dp" style="width:548px;height:282px">
+<link href="~/Content/tab.css" rel="stylesheet" />
+<style>
+    .min-height {
+        min-height:350px;
+    }
+    .scroller{
+        margin-top:0;
+    }
+</style>
+<div class="span2 mdl-shadow--3dp min-height">
     <div class="news-title" style="background:#BDBDBD">
         <i class="fa fa-file-text-o news-title-icon"></i><span class="news-title-text">@GlobalRes.TasksAndFunctions</span>
     </div>
@@ -11,64 +20,55 @@
     }
     </div>
 </div>
-<div class="news mdl-shadow--2dp">
-    <dl class="accordion">
-        <dt class="accordion__title"><i class="fa fa-file-text-o" style="padding-right:4px;" ></i><span class="uppercase"> @GlobalRes.News</span></dt>
-        <dd class="accordion__content">
-        <div style="padding-left:40px; padding-top:5px;">
-            <div class="news-body colored">
-                @foreach (tb_news row in ViewBag.News) {
-                <div class="news-item">
-                    <a href="@("/news/item/"+row.id)" style="text-decoration:none; color:black">
-                        @row.event_date.ToString().Substring(0,10) - @row.title
-                    </a>
-                </div>
+
+<div class="margin8 span2 mdl-shadow--2dp min-height">
+    <div class="tab-wrap">
+        <input type="radio" name="tabs" id="tab1" checked>
+        <div class="tab-label-content" id="tab1-content">
+            <label for="tab1">@GlobalRes.News</label>
+            <div class="tab-content">
+                @foreach (tb_news row in ViewBag.News)
+                {
+                    <div class="news-item">
+                        <a href="@("/news/item/"+row.id)" style="text-decoration:none;">
+                            <span class="mdl-color-text--black">@row.event_date.ToString().Substring(0, 10)</span>  @row.title
+                        </a>
+                    </div>
                 }
                 <div>
-                    <a style="float:right; padding-top:10px; padding-right:30px;" href=@("/"+System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName+"/News")>@GlobalRes.AllNews</a>
-                </div>
-            </div>
-        </div>
-        </dd>
-        <dt class="accordion__title"><i class="fa fa-file-text-o" style="padding-right:4px;"></i><span class="uppercase">@GlobalRes.Files</span></dt>
-        <dd class="accordion__content">
-        <div style="padding-left:40px; padding-top:5px;">
-            <div class="news-body colored">
-                @foreach (tb_files row in ViewBag.Files) {
-                <div class="news-item">
-                    <a href="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_files/"+row.file_name)" style="text-decoration:none; color:black">
-                        @row.date_create.ToString().Substring(0, 10) - @row.title
+                    <a style="float:right; padding-top:10px; padding-right:30px;" class="mdl-color-text--red"
+                       href="@("http://moliya.tj/"+ViewBag.Lan+ "/News")">
+                        @GlobalRes.AllNews
                     </a>
                 </div>
+            </div>
+
+        </div>
+
+        <input type="radio" name="tabs" id="tab3">
+        <div class="tab-label-content" id="tab3-content">
+            <label for="tab3">@GlobalRes.Files</label>
+            <div class="tab-content">
+                @foreach (tb_files row in ViewBag.Files)
+            {
+                    <div class="news-item">
+                        <a href="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_files/"+row.file_name)" style="text-decoration:none; color:black">
+                            <span style="color:blue">@row.date_create.ToString().Substring(0, 10)</span>  @row.title
+                        </a>
+                    </div>
                 }
+                <div>
+                    <a href="@("http://moliya.tj/" + ViewBag.Lan + "/Files")" style="float:right; padding-top:10px;padding-right:10px" class="mdl-color-text--red">
+                        @GlobalRes.FilesArchive
+                    </a>
+                </div>
             </div>
         </div>
-        </dd>
-    </dl>
-    
-    <script>
-    if ($(window).width() > 768)
-    {
-    // Hide all but first tab content on larger viewports
-    $('.accordion__content:not(:first)').hide();
-    // Activate first tab
-    $('.accordion__title:first-child').addClass('active');
-    }
-    else
-    {
-    // Hide all content items on narrow viewports
-    $('.accordion__content').hide();
-    };
-    // Wrap a div around content to create a scrolling container which we're going to use on narrow viewports
-    $(".accordion__content").wrapInner("<div class='overflow-scrolling'></div>");
-    // The clicking action
-    $('.accordion__title').on('click', function () {
-    $('.accordion__content').hide();
-    $(this).next().show().prev().addClass('active').siblings().removeClass('active');
-    });
-    </script>
+
+    </div>
 </div>
-<div class="span2 mdl-shadow--2dp colored" style="margin-top:25px; width:548px; margin-right:14px">
+
+<div class="span2 mdl-shadow--2dp colored">
     <div class="news-title">
         <i class="fa fa-bar-chart-o news-title-icon"></i><span class="news-title-text">@GlobalRes.DataCenter</span>
     </div>
@@ -85,6 +85,7 @@
         }
     </div>
 </div>
+
 <script type="text/javascript">
 var topElementId = '0', t;
 $(document).ready(function () {
@@ -128,7 +129,7 @@ topElementId = 1;
 t = setTimeout('listSlideUp()', 4000);
 }
 </script>
-<div class="span2  mdl-shadow--2dp" style="margin-top:25px; width:400px;">
+<div class="span2  mdl-shadow--2dp margin8">
     <div class="news-title">
         <i class="fa fa-file-text-o news-title-icon"></i><span class="news-title-text">@GlobalRes.UsefulFiles</span>
     </div>
@@ -162,7 +163,7 @@ t = setTimeout('listSlideUp()', 4000);
     </div>
 </div>
 
-<div class="span2 mdl-shadow--2dp colored" style="margin-top:35px; width:548px; margin-right:14px">
+<div class="span2 mdl-shadow--2dp colored">
     <div class="news-title">
         <span class="news-title-text" >@GlobalRes.StructureOrganization</span>
     </div>
@@ -188,7 +189,7 @@ t = setTimeout('listSlideUp()', 4000);
     </div>
 </div>
 
-<div class="span2 mdl-shadow--2dp colored" style="margin-top:35px; width:400px;">
+<div class="span2 mdl-shadow--2dp colored margin8">
     <div class="news-title">
        <span class="news-title-text" >@GlobalRes.AboutAndContacts</span>
     </div>

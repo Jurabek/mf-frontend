@@ -1,0 +1,171 @@
+﻿@using mf_frontend.App_LocalResources
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="~/Content/material.css" />
+    <script src="~/Content/material.js"></script>
+    <style>
+        @@media only screen and (min-width:851px) {
+            .mdl-layout__drawer-button {
+                display: none;
+            }
+        }
+
+        .main {
+            width:1044px;
+            padding: 80px 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row mdl-layout--large-screen-only">
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation">
+                    <div>
+                        <button id="demo-menu-lower-left" style="color:white" class="mdl-button mdl-js-button">
+                            Асосӣ
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                            for="demo-menu-lower-left">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+
+
+                    <div>
+                        <button id="demo-menu-lower-left1" style="color:white" class="mdl-button mdl-js-button">
+                            Дар бораи вазорат
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                            for="demo-menu-lower-left1">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+
+
+                    <div>
+                        <button id="demo-menu-lower-left2" style="color:white" class="mdl-button mdl-js-button">
+                            Хати доимамалкунанда
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                            for="demo-menu-lower-left2">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+
+
+                    <div>
+                        <button id="demo-menu-lower-left2" style="color:white" class="mdl-button mdl-js-button">
+                            Маълумоти меъёрӣ
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                            for="demo-menu-lower-left2">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+
+
+                    <div>
+                        <button id="demo-menu-lower-left2" style="color:white" class="mdl-button mdl-js-button">
+                            Таҳлилҳо
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                            for="demo-menu-lower-left2">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <button id="demo-menu-lower-left2" style="color:white" class="mdl-button mdl-js-button">
+                            Ислоҳоти ИМД
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                            for="demo-menu-lower-left2">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <button id="demo-menu-lower-left2" style="color:white" class="mdl-button mdl-js-button">
+                            Интишороти чопӣ
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                            for="demo-menu-lower-left2">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="mdl-layout-spacer"></div>
+
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+                    <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
+                        <i class="material-icons">search</i>
+                    </label>
+
+                    <div class="mdl-textfield__expandable-holder">
+                        <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp">
+                    </div>
+                </div>
+
+            </div>
+        </header>
+        <div class="mdl-layout mdl-layout__drawer mdl-layout--small-screen-only">
+            <span class="mdl-layout-title">Title</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Link</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="main">
+                <div class="page-content" style="height: 1000px">
+                    <div class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--6-col mdl-color--grey">4</div>
+                        <div class="mdl-cell mdl-cell--4-col mdl-color--grey">4</div>
+                        <div class="mdl-cell mdl-cell--4-col mdl-color--grey">4</div>
+                        <div class="mdl-cell mdl-cell--3-col mdl-color--grey">4</div>
+                        <div class="mdl-cell mdl-cell--3-col mdl-color--grey">4</div>
+                        <div class="mdl-cell mdl-cell--5-col mdl-color--grey">4</div>
+                        <div class="mdl-cell mdl-cell--5-col mdl-color--grey">4</div>
+                        <div class="mdl-cell mdl-cell--10-col mdl-color--grey">4</div>
+
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+</body>
+</html>

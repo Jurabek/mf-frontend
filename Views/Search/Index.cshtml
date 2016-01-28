@@ -7,16 +7,7 @@
     }
     <script src="~/Scripts/jquery.highlight.js"></script>
 
-    <style>
-        .title {
-             color: #1a0dab;
-             max-width:700px; 
-             font-size:18px; 
-             line-height: 1.2; 
-             text-align: left;
-             padding:0;
-             margin:0;             
-        }
+    <style>        
         .highlight { 
             background-color: yellow 
 
@@ -25,14 +16,14 @@
 <div>
     <h5>Поиск: <span id="searchedValue">@ViewBag.SearchedText</span> - @ViewBag.SearchedItemsCount результатов</h5>
 </div>
-<div style="padding-top:25px;width:700px;padding-left:15px" id="searchedContent">
+<div style="padding-top:25px;width:70%;padding-left:15px" id="searchedContent">
     @foreach (SearchResult row in ViewBag.Results) {
         <div>           
             <div>
                 @if(row.SearchResultType == SearchResultType.News)
                 {
                     <a href="@("/"+System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/News/Item/"+ row.Id)" >
-                        <h1 class="title" style="width: 700px;overflow: hidden;white-space: nowrap; text-overflow: ellipsis;">
+                        <h1 class="title text-wrap">
                             @row.Title
                         </h1>
                     </a>
@@ -40,7 +31,7 @@
                 }
                 else{
                     <a href="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_files/" + row.FileName)" >
-                        <h1 class="title" style="width: 700px;overflow: hidden;white-space: nowrap; text-overflow: ellipsis;">
+                        <h1 class="title text-wrap">
                             @row.Title
                         </h1>
                     </a>

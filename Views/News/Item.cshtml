@@ -9,9 +9,14 @@
     <img src="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_news/"+ ViewBag.News.image)" style="max-height:400px; width:80%; max-width:1000px;" />
     <div style="text-align: justify; -ms-text-justify: inter-word; text-justify: inter-word; width:90%; margin:10px 0 10px 0; margin-top:30px">
         <p class="mdl-color-text--blue-grey-600" style="font-weight:bold">@ViewBag.News.descriptoin</p>
-        <div>
+        <div class="text-body">
             @Html.Raw(ViewBag.News.text)
         </div>
+        <script>
+        $('.text-body').html(function (i, h) {
+            return h.replace(/&nbsp;/g, '');
+        });
+        </script>
     </div>
 
 </div>

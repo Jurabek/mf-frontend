@@ -5,70 +5,71 @@
 @{
     ViewBag.Title = Model.page_title;
 }
-
-<div style="margin-top:20px;">
-    @if (ViewBag.Id == 57 || ViewBag.Id == 10 || ViewBag.Id == 110)
+<div style="margin:40px 40px 40px 40px">
+    <div style="margin-top:20px;">
+        @if (ViewBag.Id == 57 || ViewBag.Id == 10 || ViewBag.Id == 110)
     {
         foreach (tb_region region in ViewBag.Organizations){
             if (System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "ru")
-            { 
-                <h2>@region.name_ru</h2>
+            {
+    <h2>@region.name_ru</h2>
             }
             else if (System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "tg")
             {
-                <h2>@region.name_tj</h2>
+    <h2>@region.name_tj</h2>
             }
             else if (System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "en")
             {
-                <h2>@region.name_en</h2>
+    <h2>@region.name_en</h2>
             }
-            <ul>
-                @foreach (tb_organization item in region.tb_organization.Where(o => o.tb_lang.code == System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName))
+    <ul>
+        @foreach (tb_organization item in region.tb_organization.Where(o => o.tb_lang.code == System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName))
                 {
                     if (@item.Id != 1)
                     {
-                        <li><a href="@("http://"+item.link+ "/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName)">@item.name</a></li>
+                <li><a href="@("http://"+item.link+ "/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName)">@item.name</a></li>
                     }
                 }
-            </ul>
+    </ul>
         }
     }
     else
     {
-        @Html.Raw(Model.page_content)
+    @Html.Raw(Model.page_content)
     }
-</div>
+    </div>
 
-@if (Model.tb_file_on_page.Count > 0)
-{
-    <h4 style="border-bottom: 1px solid lightgray; padding-top:50px;">Нормативно-правовые документы</h4>
+    @if (Model.tb_file_on_page.Count > 0)
+    {
+        <h4 style="border-bottom: 1px solid lightgray; padding-top:50px;">Нормативно-правовые документы</h4>
 
-    <table class="table-files">
-        <tr>
-            <th style="width: 100px;">Дата загрузки</th>
-            <th style="width: 250px;">Имя файла</th>
-            <th>
-                Описание
-            </th>
-        </tr>
-
-
-        @foreach (tb_file_on_page row in Model.tb_file_on_page)
-        {
+        <table class="table-files">
             <tr>
-                <td>
-                    @(row.tb_files.date_create.Date.ToString().Substring(0, 10))
-                </td>
-                <td>
-                    <a href="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"]+"upload_files/"+row.tb_files.file_name)">
-                        @row.tb_files.title
-                    </a>
-                </td>
-                <td>
-                    @row.tb_files.description
-                </td>
+                <th style="width: 100px;">Дата загрузки</th>
+                <th style="width: 250px;">Имя файла</th>
+                <th>
+                    Описание
+                </th>
             </tr>
 
+
+            @foreach (tb_file_on_page row in Model.tb_file_on_page)
+        {
+        <tr>
+            <td>
+                @(row.tb_files.date_create.Date.ToString().Substring(0, 10))
+            </td>
+            <td>
+                <a href="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"]+"upload_files/"+row.tb_files.file_name)">
+                    @row.tb_files.title
+                </a>
+            </td>
+            <td>
+                @row.tb_files.description
+            </td>
+        </tr>
+
         }
-    </table>
-}
+        </table>
+    }
+</div>

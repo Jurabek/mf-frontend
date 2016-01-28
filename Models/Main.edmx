@@ -1,0 +1,3138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="mfModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="mfModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="mfModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_ads_request" EntityType="mfModel.Store.tb_ads_request" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_content" EntityType="mfModel.Store.tb_content" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_courses" EntityType="mfModel.Store.tb_courses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_courses_status" EntityType="mfModel.Store.tb_courses_status" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_dc" EntityType="mfModel.Store.tb_dc" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_dc_type" EntityType="mfModel.Store.tb_dc_type" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_donors" EntityType="mfModel.Store.tb_donors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_file_on_page" EntityType="mfModel.Store.tb_file_on_page" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_files" EntityType="mfModel.Store.tb_files" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_files_category" EntityType="mfModel.Store.tb_files_category" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_gallery" EntityType="mfModel.Store.tb_gallery" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_gallery_category" EntityType="mfModel.Store.tb_gallery_category" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_lang" EntityType="mfModel.Store.tb_lang" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_news" EntityType="mfModel.Store.tb_news" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_news_type" EntityType="mfModel.Store.tb_news_type" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_pages" EntityType="mfModel.Store.tb_pages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_prints" EntityType="mfModel.Store.tb_prints" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_prints_content" EntityType="mfModel.Store.tb_prints_content" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_projects" EntityType="mfModel.Store.tb_projects" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_question_categorys" EntityType="mfModel.Store.tb_question_categorys" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_question_sub_categorys" EntityType="mfModel.Store.tb_question_sub_categorys" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_questions" EntityType="mfModel.Store.tb_questions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_subscription_request" EntityType="mfModel.Store.tb_subscription_request" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_user_in_role" EntityType="mfModel.Store.tb_user_in_role" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_user_roles" EntityType="mfModel.Store.tb_user_roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_users" EntityType="mfModel.Store.tb_users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_subscription_news_request" EntityType="mfModel.Store.tb_subscription_news_request" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_question_request" EntityType="mfModel.Store.tb_question_request" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_organization" EntityType="mfModel.Store.tb_organization" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_tasks" EntityType="mfModel.Store.tb_tasks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_about_organization" EntityType="mfModel.Store.tb_about_organization" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_structure_organization" EntityType="mfModel.Store.tb_structure_organization" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_region" EntityType="mfModel.Store.tb_region" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_economic" EntityType="mfModel.Store.tb_economic" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_vacancy" EntityType="mfModel.Store.tb_vacancy" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_secondary_files" EntityType="mfModel.Store.tb_secondary_files" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_info_mf" EntityType="mfModel.Store.tb_info_mf" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_ministr_mf" EntityType="mfModel.Store.tb_ministr_mf" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_zam_mf" EntityType="mfModel.Store.tb_zam_mf" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_ruk_depart_mf" EntityType="mfModel.Store.tb_ruk_depart_mf" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="secondary_file_type" EntityType="mfModel.Store.secondary_file_type" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_events_leaders" EntityType="mfModel.Store.tb_events_leaders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_event_leaders_category" EntityType="mfModel.Store.tb_event_leaders_category" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_tb_content_tb_lang" Association="mfModel.Store.FK_tb_content_tb_lang">
+      <End Role="tb_lang" EntitySet="tb_lang" />
+      <End Role="tb_content" EntitySet="tb_content" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_file_on_page_tb_content" Association="mfModel.Store.FK_tb_file_on_page_tb_content">
+      <End Role="tb_content" EntitySet="tb_content" />
+      <End Role="tb_file_on_page" EntitySet="tb_file_on_page" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_courses_tb_courses_status" Association="mfModel.Store.FK_tb_courses_tb_courses_status">
+      <End Role="tb_courses_status" EntitySet="tb_courses_status" />
+      <End Role="tb_courses" EntitySet="tb_courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_dc_tb_dc_type" Association="mfModel.Store.FK_tb_dc_tb_dc_type">
+      <End Role="tb_dc_type" EntitySet="tb_dc_type" />
+      <End Role="tb_dc" EntitySet="tb_dc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_dc_type_tb_lang" Association="mfModel.Store.FK_tb_dc_type_tb_lang">
+      <End Role="tb_lang" EntitySet="tb_lang" />
+      <End Role="tb_dc_type" EntitySet="tb_dc_type" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_file_on_page_tb_files" Association="mfModel.Store.FK_tb_file_on_page_tb_files">
+      <End Role="tb_files" EntitySet="tb_files" />
+      <End Role="tb_file_on_page" EntitySet="tb_file_on_page" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_files_tb_files_category" Association="mfModel.Store.FK_tb_files_tb_files_category">
+      <End Role="tb_files_category" EntitySet="tb_files_category" />
+      <End Role="tb_files" EntitySet="tb_files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_files_tb_lang" Association="mfModel.Store.FK_tb_files_tb_lang">
+      <End Role="tb_lang" EntitySet="tb_lang" />
+      <End Role="tb_files" EntitySet="tb_files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_files_category_tb_lang" Association="mfModel.Store.FK_tb_files_category_tb_lang">
+      <End Role="tb_lang" EntitySet="tb_lang" />
+      <End Role="tb_files_category" EntitySet="tb_files_category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_gallery_tb_gallery_category" Association="mfModel.Store.FK_tb_gallery_tb_gallery_category">
+      <End Role="tb_gallery_category" EntitySet="tb_gallery_category" />
+      <End Role="tb_gallery" EntitySet="tb_gallery" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_news_type_tb_lang" Association="mfModel.Store.FK_tb_news_type_tb_lang">
+      <End Role="tb_lang" EntitySet="tb_lang" />
+      <End Role="tb_news_type" EntitySet="tb_news_type" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_question_categorys_tb_lang" Association="mfModel.Store.FK_tb_question_categorys_tb_lang">
+      <End Role="tb_lang" EntitySet="tb_lang" />
+      <End Role="tb_question_categorys" EntitySet="tb_question_categorys" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_question_sub_categorys_tb_lang" Association="mfModel.Store.FK_tb_question_sub_categorys_tb_lang">
+      <End Role="tb_lang" EntitySet="tb_lang" />
+      <End Role="tb_question_sub_categorys" EntitySet="tb_question_sub_categorys" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_news_tb_news_type" Association="mfModel.Store.FK_tb_news_tb_news_type">
+      <End Role="tb_news_type" EntitySet="tb_news_type" />
+      <End Role="tb_news" EntitySet="tb_news" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_prints_content_tb_prints" Association="mfModel.Store.FK_tb_prints_content_tb_prints">
+      <End Role="tb_prints" EntitySet="tb_prints" />
+      <End Role="tb_prints_content" EntitySet="tb_prints_content" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_subscription_request_tb_prints" Association="mfModel.Store.FK_tb_subscription_request_tb_prints">
+      <End Role="tb_prints" EntitySet="tb_prints" />
+      <End Role="tb_subscription_request" EntitySet="tb_subscription_request" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_questions_tb_question_categorys" Association="mfModel.Store.FK_tb_questions_tb_question_categorys">
+      <End Role="tb_question_categorys" EntitySet="tb_question_categorys" />
+      <End Role="tb_questions" EntitySet="tb_questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_questions_tb_question_sub_categorys" Association="mfModel.Store.FK_tb_questions_tb_question_sub_categorys">
+      <End Role="tb_question_sub_categorys" EntitySet="tb_question_sub_categorys" />
+      <End Role="tb_questions" EntitySet="tb_questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_user_in_role_tb_user_roles" Association="mfModel.Store.FK_tb_user_in_role_tb_user_roles">
+      <End Role="tb_user_roles" EntitySet="tb_user_roles" />
+      <End Role="tb_user_in_role" EntitySet="tb_user_in_role" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_user_in_role_tb_users" Association="mfModel.Store.FK_tb_user_in_role_tb_users">
+      <End Role="tb_users" EntitySet="tb_users" />
+      <End Role="tb_user_in_role" EntitySet="tb_user_in_role" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_question_request_tb_question_sub_categorys" Association="mfModel.Store.FK_tb_question_request_tb_question_sub_categorys">
+      <End Role="tb_question_sub_categorys" EntitySet="tb_question_sub_categorys" />
+      <End Role="tb_question_request" EntitySet="tb_question_request" />
+    </AssociationSet>
+    <AssociationSet Name="tb_organizationtb_files" Association="mfModel.Store.tb_organizationtb_files">
+      <End Role="tb_organization" EntitySet="tb_organization" />
+      <End Role="tb_files" EntitySet="tb_files" />
+    </AssociationSet>
+    <AssociationSet Name="tb_organizationtb_structure_organization" Association="mfModel.Store.tb_organizationtb_structure_organization">
+      <End Role="tb_organization" EntitySet="tb_organization" />
+      <End Role="tb_structure_organization" EntitySet="tb_structure_organization" />
+    </AssociationSet>
+    <AssociationSet Name="tb_organizationtb_dc" Association="mfModel.Store.tb_organizationtb_dc">
+      <End Role="tb_organization" EntitySet="tb_organization" />
+      <End Role="tb_dc" EntitySet="tb_dc" />
+    </AssociationSet>
+    <AssociationSet Name="tb_organizationtb_tasks" Association="mfModel.Store.tb_organizationtb_tasks">
+      <End Role="tb_organization" EntitySet="tb_organization" />
+      <End Role="tb_tasks" EntitySet="tb_tasks" />
+    </AssociationSet>
+    <AssociationSet Name="tb_organizationtb_about_organization" Association="mfModel.Store.tb_organizationtb_about_organization">
+      <End Role="tb_organization" EntitySet="tb_organization" />
+      <End Role="tb_about_organization" EntitySet="tb_about_organization" />
+    </AssociationSet>
+    <AssociationSet Name="tb_organizationtb_news" Association="mfModel.Store.tb_organizationtb_news">
+      <End Role="tb_organization" EntitySet="tb_organization" />
+      <End Role="tb_news" EntitySet="tb_news" />
+    </AssociationSet>
+    <AssociationSet Name="tb_regiontb_organization" Association="mfModel.Store.tb_regiontb_organization">
+      <End Role="tb_region" EntitySet="tb_region" />
+      <End Role="tb_organization" EntitySet="tb_organization" />
+    </AssociationSet>
+    <AssociationSet Name="tb_langtb_tasks" Association="mfModel.Store.tb_langtb_tasks">
+      <End Role="tb_lang" EntitySet="tb_lang" />
+      <End Role="tb_tasks" EntitySet="tb_tasks" />
+    </AssociationSet>
+    <AssociationSet Name="tb_langtb_about_organization" Association="mfModel.Store.tb_langtb_about_organization">
+      <End Role="tb_lang" EntitySet="tb_lang" />
+      <End Role="tb_about_organization" EntitySet="tb_about_organization" />
+    </AssociationSet>
+    <AssociationSet Name="tb_langtb_structure_organization" Association="mfModel.Store.tb_langtb_structure_organization">
+      <End Role="tb_lang" EntitySet="tb_lang" />
+      <End Role="tb_structure_organization" EntitySet="tb_structure_organization" />
+    </AssociationSet>
+    <AssociationSet Name="tb_langtb_organization" Association="mfModel.Store.tb_langtb_organization">
+      <End Role="tb_lang" EntitySet="tb_lang" />
+      <End Role="tb_organization" EntitySet="tb_organization" />
+    </AssociationSet>
+    <AssociationSet Name="tb_langtb_economic" Association="mfModel.Store.tb_langtb_economic">
+      <End Role="tb_lang" EntitySet="tb_lang" />
+      <End Role="tb_economic" EntitySet="tb_economic" />
+    </AssociationSet>
+    <AssociationSet Name="tb_langtb_vacancy" Association="mfModel.Store.tb_langtb_vacancy">
+      <End Role="tb_lang" EntitySet="tb_lang" />
+      <End Role="tb_vacancy" EntitySet="tb_vacancy" />
+    </AssociationSet>
+    <AssociationSet Name="tb_organizationtb_vacancy" Association="mfModel.Store.tb_organizationtb_vacancy">
+      <End Role="tb_organization" EntitySet="tb_organization" />
+      <End Role="tb_vacancy" EntitySet="tb_vacancy" />
+    </AssociationSet>
+    <AssociationSet Name="tb_info_mftb_ministr_mf" Association="mfModel.Store.tb_info_mftb_ministr_mf">
+      <End Role="tb_info_mf" EntitySet="tb_info_mf" />
+      <End Role="tb_ministr_mf" EntitySet="tb_ministr_mf" />
+    </AssociationSet>
+    <AssociationSet Name="tb_info_mftb_zam_mf" Association="mfModel.Store.tb_info_mftb_zam_mf">
+      <End Role="tb_info_mf" EntitySet="tb_info_mf" />
+      <End Role="tb_zam_mf" EntitySet="tb_zam_mf" />
+    </AssociationSet>
+    <AssociationSet Name="tb_info_mftb_ruk_depart_mf" Association="mfModel.Store.tb_info_mftb_ruk_depart_mf">
+      <End Role="tb_info_mf" EntitySet="tb_info_mf" />
+      <End Role="tb_ruk_depart_mf" EntitySet="tb_ruk_depart_mf" />
+    </AssociationSet>
+    <AssociationSet Name="tb_langtb_info_mf" Association="mfModel.Store.tb_langtb_info_mf">
+      <End Role="tb_lang" EntitySet="tb_lang" />
+      <End Role="tb_info_mf" EntitySet="tb_info_mf" />
+    </AssociationSet>
+    <AssociationSet Name="tb_langtb_projects" Association="mfModel.Store.tb_langtb_projects">
+      <End Role="tb_lang" EntitySet="tb_lang" />
+      <End Role="tb_projects" EntitySet="tb_projects" />
+    </AssociationSet>
+    <AssociationSet Name="secondary_file_typetb_secondary_files" Association="mfModel.Store.secondary_file_typetb_secondary_files">
+      <End Role="secondary_file_type" EntitySet="secondary_file_type" />
+      <End Role="tb_secondary_files" EntitySet="tb_secondary_files" />
+    </AssociationSet>
+    <AssociationSet Name="tb_langtb_events_leaders" Association="mfModel.Store.tb_langtb_events_leaders">
+      <End Role="tb_lang" EntitySet="tb_lang" />
+      <End Role="tb_events_leaders" EntitySet="tb_events_leaders" />
+    </AssociationSet>
+    <AssociationSet Name="tb_ministr_mftb_event_leaders_category" Association="mfModel.Store.tb_ministr_mftb_event_leaders_category">
+      <End Role="tb_ministr_mf" EntitySet="tb_ministr_mf" />
+      <End Role="tb_event_leaders_category" EntitySet="tb_event_leaders_category" />
+    </AssociationSet>
+    <AssociationSet Name="tb_event_leaders_categorytb_events_leaders" Association="mfModel.Store.tb_event_leaders_categorytb_events_leaders">
+      <End Role="tb_event_leaders_category" EntitySet="tb_event_leaders_category" />
+      <End Role="tb_events_leaders" EntitySet="tb_events_leaders" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" Nullable="true" />
+    <Property Name="definition" Type="varbinary(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tb_ads_request">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fio" Type="nvarchar" Nullable="true" MaxLength="512" />
+    <Property Name="organization" Type="nvarchar" Nullable="true" MaxLength="512" />
+    <Property Name="phone" Type="nvarchar" Nullable="true" MaxLength="32" />
+    <Property Name="create_date" Type="datetime" Nullable="true" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_content">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="main_id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="fixed_url" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="page_title" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="description" Type="nvarchar" Nullable="true" MaxLength="2048" />
+    <Property Name="page_content" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="order_id" Type="int" Nullable="true" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+    <Property Name="show_on_menu" Type="bit" Nullable="true" />
+    <Property Name="lang_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_courses">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="64" />
+    <Property Name="description" Type="nvarchar" Nullable="true" MaxLength="512" />
+    <Property Name="value" Type="nvarchar" Nullable="true" MaxLength="32" />
+    <Property Name="status_id" Type="int" Nullable="true" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_courses_status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="true" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="tb_dc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="description" Type="nvarchar" Nullable="false" MaxLength="2048" />
+    <Property Name="image" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="type_id" Type="int" Nullable="false" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+    <Property Name="tb_organization_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_dc_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="lang" Type="int" Nullable="false" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_donors">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="logo" Type="nvarchar" Nullable="true" MaxLength="128" />
+    <Property Name="name" Type="nvarchar" Nullable="true" MaxLength="1024" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="contacts" Type="nvarchar" Nullable="true" MaxLength="1024" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_file_on_page">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="file_id" Type="int" Nullable="false" />
+    <Property Name="content_page_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_files">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date_create" Type="datetime" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="file_name" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="lang_id" Type="int" Nullable="false" />
+    <Property Name="public_date" Type="datetime" Nullable="true" />
+    <Property Name="is_main" Type="bit" Nullable="false" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+    <Property Name="tb_organization_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_files_category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="is_menu" Type="bit" Nullable="false" />
+    <Property Name="lang" Type="int" Nullable="false" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_gallery">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="1024" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="image" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_gallery_category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="order_id" Type="int" Nullable="true" />
+    <Property Name="image" Type="nvarchar" Nullable="true" MaxLength="512" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_lang">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="true" MaxLength="64" />
+    <Property Name="code" Type="nvarchar" Nullable="true" MaxLength="2" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_news">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="1024" />
+    <Property Name="descriptoin" Type="nvarchar" Nullable="false" MaxLength="2024" />
+    <Property Name="text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="image" Type="nvarchar" Nullable="true" MaxLength="1024" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="event_date" Type="datetime" Nullable="false" />
+    <Property Name="type_id" Type="int" Nullable="false" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+    <Property Name="is_important" Type="bit" Nullable="true" />
+    <Property Name="tb_organization_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_news_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="description" Type="nvarchar" Nullable="true" MaxLength="512" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+    <Property Name="show_on_main" Type="bit" Nullable="false" />
+    <Property Name="lang" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_pages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="main_category_id" Type="int" Nullable="true" />
+    <Property Name="name" Type="nvarchar" Nullable="true" MaxLength="128" />
+    <Property Name="description" Type="nvarchar" Nullable="true" MaxLength="2048" />
+    <Property Name="is_active" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tb_prints">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="512" />
+    <Property Name="image" Type="nvarchar" Nullable="true" MaxLength="512" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="text" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="published_since" Type="datetime" Nullable="true" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_prints_content">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="year" Type="int" Nullable="true" />
+    <Property Name="month" Type="int" Nullable="true" />
+    <Property Name="date_print" Type="datetime" Nullable="true" />
+    <Property Name="image" Type="nvarchar" Nullable="true" MaxLength="512" />
+    <Property Name="text" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="prints_id" Type="int" Nullable="true" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_projects">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="1024" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="full_text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+    <Property Name="tb_lang_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_question_categorys">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="show_on_the_main" Type="bit" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="image" Type="nvarchar" Nullable="true" MaxLength="1024" />
+    <Property Name="description" Type="nvarchar" Nullable="true" MaxLength="2048" />
+    <Property Name="lang" Type="int" Nullable="false" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_question_sub_categorys">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="lang" Type="int" Nullable="false" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_questions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="category_sub_id" Type="int" Nullable="false" />
+    <Property Name="date_create" Type="datetime" Nullable="true" />
+    <Property Name="question_title" Type="nvarchar" Nullable="false" MaxLength="1024" />
+    <Property Name="question_date" Type="datetime" Nullable="true" />
+    <Property Name="question" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="question_author_fio" Type="nvarchar" Nullable="true" MaxLength="1024" />
+    <Property Name="question_author_email" Type="nvarchar" Nullable="true" MaxLength="1024" />
+    <Property Name="answer_date" Type="datetime" Nullable="true" />
+    <Property Name="answer_author_fio" Type="nvarchar" Nullable="true" MaxLength="1024" />
+    <Property Name="answer_author_position" Type="nvarchar" Nullable="true" MaxLength="1024" />
+    <Property Name="answer" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_subscription_request">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fio" Type="nvarchar" Nullable="true" MaxLength="512" />
+    <Property Name="email" Type="nvarchar" Nullable="true" MaxLength="512" />
+    <Property Name="organization" Type="nvarchar" Nullable="true" MaxLength="1024" />
+    <Property Name="position" Type="nvarchar" Nullable="true" MaxLength="512" />
+    <Property Name="phone" Type="nvarchar" Nullable="true" MaxLength="32" />
+    <Property Name="print_id" Type="int" Nullable="true" />
+    <Property Name="create_date" Type="datetime" Nullable="true" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_user_in_role">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="role_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_user_roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="64" />
+    <Property Name="description" Type="nvarchar" Nullable="true" MaxLength="512" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fio" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_subscription_news_request">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fio" Type="nvarchar" Nullable="true" MaxLength="512" />
+    <Property Name="email" Type="nvarchar" Nullable="true" MaxLength="512" />
+    <Property Name="organization" Type="nvarchar" Nullable="true" MaxLength="1024" />
+    <Property Name="position" Type="nvarchar" Nullable="true" MaxLength="512" />
+    <Property Name="phone" Type="nvarchar" Nullable="true" MaxLength="32" />
+    <Property Name="create_date" Type="datetime" Nullable="true" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_question_request">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fio" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="organization" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="position" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="phone" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="email" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="category_id" Type="int" Nullable="true" />
+    <Property Name="question" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tb_organization">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="link" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="index" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="tb_region_Id" Type="int" Nullable="false" />
+    <Property Name="tb_lang_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_tasks">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+    <Property Name="tb_organization_Id" Type="int" Nullable="false" />
+    <Property Name="tb_lang_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_about_organization">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="full_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="short_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="code" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="site" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="phone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+    <Property Name="tb_organization_Id" Type="int" Nullable="false" />
+    <Property Name="tb_lang_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_structure_organization">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_director" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="last_name_director" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="full_name_director" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="picture_director" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="bio_director" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="text_for_nachalniki" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+    <Property Name="tb_organization_Id" Type="int" Nullable="false" />
+    <Property Name="tb_lang_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_region">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_tj" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="name_ru" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="name_en" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_economic">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="value" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="tb_lang_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_vacancy">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="open_date" Type="datetime" Nullable="false" />
+    <Property Name="close_date" Type="datetime" Nullable="false" />
+    <Property Name="is_closed" Type="bit" Nullable="false" />
+    <Property Name="title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="tb_lang_id" Type="int" Nullable="false" />
+    <Property Name="tb_organization_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_secondary_files">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pub_date" Type="datetime" Nullable="false" />
+    <Property Name="file_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="descreption" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="secondary_file_type_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_info_mf">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tb_ministr_mf_Id" Type="int" Nullable="false" />
+    <Property Name="tb_lang_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_ministr_mf">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="full_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="last_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="bio" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="logo_file_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="contact_info" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_zam_mf">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="doljnost" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="last_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="full_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="bio" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="logo_file_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="tb_info_mf_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_ruk_depart_mf">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="doljnost" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="last_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="full_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="bio" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="logo_file_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="tb_info_mf_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="secondary_file_type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_events_leaders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="pub_date" Type="datetime" Nullable="false" />
+    <Property Name="image" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="tb_lang_id" Type="int" Nullable="false" />
+    <Property Name="tb_event_leaders_category_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_event_leaders_category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="tb_ministr_mf_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tb_content_tb_lang">
+    <End Role="tb_lang" Type="mfModel.Store.tb_lang" Multiplicity="1" />
+    <End Role="tb_content" Type="mfModel.Store.tb_content" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_lang">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_content">
+        <PropertyRef Name="lang_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_file_on_page_tb_content">
+    <End Role="tb_content" Type="mfModel.Store.tb_content" Multiplicity="1" />
+    <End Role="tb_file_on_page" Type="mfModel.Store.tb_file_on_page" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_content">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_file_on_page">
+        <PropertyRef Name="content_page_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_courses_tb_courses_status">
+    <End Role="tb_courses_status" Type="mfModel.Store.tb_courses_status" Multiplicity="0..1" />
+    <End Role="tb_courses" Type="mfModel.Store.tb_courses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_courses_status">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_courses">
+        <PropertyRef Name="status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_dc_tb_dc_type">
+    <End Role="tb_dc_type" Type="mfModel.Store.tb_dc_type" Multiplicity="1" />
+    <End Role="tb_dc" Type="mfModel.Store.tb_dc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_dc_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_dc">
+        <PropertyRef Name="type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_dc_type_tb_lang">
+    <End Role="tb_lang" Type="mfModel.Store.tb_lang" Multiplicity="1" />
+    <End Role="tb_dc_type" Type="mfModel.Store.tb_dc_type" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_lang">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_dc_type">
+        <PropertyRef Name="lang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_file_on_page_tb_files">
+    <End Role="tb_files" Type="mfModel.Store.tb_files" Multiplicity="1" />
+    <End Role="tb_file_on_page" Type="mfModel.Store.tb_file_on_page" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_files">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_file_on_page">
+        <PropertyRef Name="file_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_files_tb_files_category">
+    <End Role="tb_files_category" Type="mfModel.Store.tb_files_category" Multiplicity="1" />
+    <End Role="tb_files" Type="mfModel.Store.tb_files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_files_category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_files">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_files_tb_lang">
+    <End Role="tb_lang" Type="mfModel.Store.tb_lang" Multiplicity="1" />
+    <End Role="tb_files" Type="mfModel.Store.tb_files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_lang">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_files">
+        <PropertyRef Name="lang_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_files_category_tb_lang">
+    <End Role="tb_lang" Type="mfModel.Store.tb_lang" Multiplicity="1" />
+    <End Role="tb_files_category" Type="mfModel.Store.tb_files_category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_lang">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_files_category">
+        <PropertyRef Name="lang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_gallery_tb_gallery_category">
+    <End Role="tb_gallery_category" Type="mfModel.Store.tb_gallery_category" Multiplicity="1" />
+    <End Role="tb_gallery" Type="mfModel.Store.tb_gallery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_gallery_category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_gallery">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_news_type_tb_lang">
+    <End Role="tb_lang" Type="mfModel.Store.tb_lang" Multiplicity="1" />
+    <End Role="tb_news_type" Type="mfModel.Store.tb_news_type" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_lang">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_news_type">
+        <PropertyRef Name="lang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_question_categorys_tb_lang">
+    <End Role="tb_lang" Type="mfModel.Store.tb_lang" Multiplicity="1" />
+    <End Role="tb_question_categorys" Type="mfModel.Store.tb_question_categorys" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_lang">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_question_categorys">
+        <PropertyRef Name="lang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_question_sub_categorys_tb_lang">
+    <End Role="tb_lang" Type="mfModel.Store.tb_lang" Multiplicity="1" />
+    <End Role="tb_question_sub_categorys" Type="mfModel.Store.tb_question_sub_categorys" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_lang">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_question_sub_categorys">
+        <PropertyRef Name="lang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_news_tb_news_type">
+    <End Role="tb_news_type" Type="mfModel.Store.tb_news_type" Multiplicity="1" />
+    <End Role="tb_news" Type="mfModel.Store.tb_news" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_news_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_news">
+        <PropertyRef Name="type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_prints_content_tb_prints">
+    <End Role="tb_prints" Type="mfModel.Store.tb_prints" Multiplicity="0..1" />
+    <End Role="tb_prints_content" Type="mfModel.Store.tb_prints_content" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_prints">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_prints_content">
+        <PropertyRef Name="prints_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_subscription_request_tb_prints">
+    <End Role="tb_prints" Type="mfModel.Store.tb_prints" Multiplicity="0..1" />
+    <End Role="tb_subscription_request" Type="mfModel.Store.tb_subscription_request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_prints">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_subscription_request">
+        <PropertyRef Name="print_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_questions_tb_question_categorys">
+    <End Role="tb_question_categorys" Type="mfModel.Store.tb_question_categorys" Multiplicity="1" />
+    <End Role="tb_questions" Type="mfModel.Store.tb_questions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_question_categorys">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_questions">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_questions_tb_question_sub_categorys">
+    <End Role="tb_question_sub_categorys" Type="mfModel.Store.tb_question_sub_categorys" Multiplicity="1" />
+    <End Role="tb_questions" Type="mfModel.Store.tb_questions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_question_sub_categorys">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_questions">
+        <PropertyRef Name="category_sub_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_user_in_role_tb_user_roles">
+    <End Role="tb_user_roles" Type="mfModel.Store.tb_user_roles" Multiplicity="1" />
+    <End Role="tb_user_in_role" Type="mfModel.Store.tb_user_in_role" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_user_roles">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_user_in_role">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_user_in_role_tb_users">
+    <End Role="tb_users" Type="mfModel.Store.tb_users" Multiplicity="1" />
+    <End Role="tb_user_in_role" Type="mfModel.Store.tb_user_in_role" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_user_in_role">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_question_request_tb_question_sub_categorys">
+    <End Role="tb_question_sub_categorys" Type="mfModel.Store.tb_question_sub_categorys" Multiplicity="0..1" />
+    <End Role="tb_question_request" Type="mfModel.Store.tb_question_request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_question_sub_categorys">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_question_request">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_organizationtb_files">
+    <End Role="tb_organization" Type="mfModel.Store.tb_organization" Multiplicity="1" />
+    <End Role="tb_files" Type="mfModel.Store.tb_files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_organization">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tb_files">
+        <PropertyRef Name="tb_organization_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_organizationtb_structure_organization">
+    <End Role="tb_organization" Type="mfModel.Store.tb_organization" Multiplicity="1" />
+    <End Role="tb_structure_organization" Type="mfModel.Store.tb_structure_organization" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_organization">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tb_structure_organization">
+        <PropertyRef Name="tb_organization_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_organizationtb_dc">
+    <End Role="tb_organization" Type="mfModel.Store.tb_organization" Multiplicity="1" />
+    <End Role="tb_dc" Type="mfModel.Store.tb_dc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_organization">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tb_dc">
+        <PropertyRef Name="tb_organization_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_organizationtb_tasks">
+    <End Role="tb_organization" Type="mfModel.Store.tb_organization" Multiplicity="1" />
+    <End Role="tb_tasks" Type="mfModel.Store.tb_tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_organization">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tb_tasks">
+        <PropertyRef Name="tb_organization_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_organizationtb_about_organization">
+    <End Role="tb_organization" Type="mfModel.Store.tb_organization" Multiplicity="1" />
+    <End Role="tb_about_organization" Type="mfModel.Store.tb_about_organization" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_organization">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tb_about_organization">
+        <PropertyRef Name="tb_organization_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_organizationtb_news">
+    <End Role="tb_organization" Type="mfModel.Store.tb_organization" Multiplicity="1" />
+    <End Role="tb_news" Type="mfModel.Store.tb_news" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_organization">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tb_news">
+        <PropertyRef Name="tb_organization_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_regiontb_organization">
+    <End Role="tb_region" Type="mfModel.Store.tb_region" Multiplicity="1" />
+    <End Role="tb_organization" Type="mfModel.Store.tb_organization" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_region">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tb_organization">
+        <PropertyRef Name="tb_region_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_langtb_tasks">
+    <End Role="tb_lang" Type="mfModel.Store.tb_lang" Multiplicity="1" />
+    <End Role="tb_tasks" Type="mfModel.Store.tb_tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_lang">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_tasks">
+        <PropertyRef Name="tb_lang_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_langtb_about_organization">
+    <End Role="tb_lang" Type="mfModel.Store.tb_lang" Multiplicity="1" />
+    <End Role="tb_about_organization" Type="mfModel.Store.tb_about_organization" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_lang">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_about_organization">
+        <PropertyRef Name="tb_lang_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_langtb_structure_organization">
+    <End Role="tb_lang" Type="mfModel.Store.tb_lang" Multiplicity="1" />
+    <End Role="tb_structure_organization" Type="mfModel.Store.tb_structure_organization" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_lang">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_structure_organization">
+        <PropertyRef Name="tb_lang_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_langtb_organization">
+    <End Role="tb_lang" Type="mfModel.Store.tb_lang" Multiplicity="1" />
+    <End Role="tb_organization" Type="mfModel.Store.tb_organization" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_lang">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_organization">
+        <PropertyRef Name="tb_lang_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_langtb_economic">
+    <End Role="tb_lang" Type="mfModel.Store.tb_lang" Multiplicity="1" />
+    <End Role="tb_economic" Type="mfModel.Store.tb_economic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_lang">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_economic">
+        <PropertyRef Name="tb_lang_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_langtb_vacancy">
+    <End Role="tb_lang" Type="mfModel.Store.tb_lang" Multiplicity="1" />
+    <End Role="tb_vacancy" Type="mfModel.Store.tb_vacancy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_lang">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_vacancy">
+        <PropertyRef Name="tb_lang_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_organizationtb_vacancy">
+    <End Role="tb_organization" Type="mfModel.Store.tb_organization" Multiplicity="1" />
+    <End Role="tb_vacancy" Type="mfModel.Store.tb_vacancy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_organization">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tb_vacancy">
+        <PropertyRef Name="tb_organization_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_info_mftb_ministr_mf">
+    <End Role="tb_info_mf" Type="mfModel.Store.tb_info_mf" Multiplicity="*" />
+    <End Role="tb_ministr_mf" Type="mfModel.Store.tb_ministr_mf" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="tb_ministr_mf">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tb_info_mf">
+        <PropertyRef Name="tb_ministr_mf_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_info_mftb_zam_mf">
+    <End Role="tb_info_mf" Type="mfModel.Store.tb_info_mf" Multiplicity="1" />
+    <End Role="tb_zam_mf" Type="mfModel.Store.tb_zam_mf" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_info_mf">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tb_zam_mf">
+        <PropertyRef Name="tb_info_mf_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_info_mftb_ruk_depart_mf">
+    <End Role="tb_info_mf" Type="mfModel.Store.tb_info_mf" Multiplicity="1" />
+    <End Role="tb_ruk_depart_mf" Type="mfModel.Store.tb_ruk_depart_mf" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_info_mf">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tb_ruk_depart_mf">
+        <PropertyRef Name="tb_info_mf_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_langtb_info_mf">
+    <End Role="tb_lang" Type="mfModel.Store.tb_lang" Multiplicity="1" />
+    <End Role="tb_info_mf" Type="mfModel.Store.tb_info_mf" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_lang">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_info_mf">
+        <PropertyRef Name="tb_lang_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_langtb_projects">
+    <End Role="tb_lang" Type="mfModel.Store.tb_lang" Multiplicity="1" />
+    <End Role="tb_projects" Type="mfModel.Store.tb_projects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_lang">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_projects">
+        <PropertyRef Name="tb_lang_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="secondary_file_typetb_secondary_files">
+    <End Role="secondary_file_type" Type="mfModel.Store.secondary_file_type" Multiplicity="1" />
+    <End Role="tb_secondary_files" Type="mfModel.Store.tb_secondary_files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="secondary_file_type">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tb_secondary_files">
+        <PropertyRef Name="secondary_file_type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_langtb_events_leaders">
+    <End Role="tb_lang" Type="mfModel.Store.tb_lang" Multiplicity="1" />
+    <End Role="tb_events_leaders" Type="mfModel.Store.tb_events_leaders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_lang">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_events_leaders">
+        <PropertyRef Name="tb_lang_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_ministr_mftb_event_leaders_category">
+    <End Role="tb_ministr_mf" Type="mfModel.Store.tb_ministr_mf" Multiplicity="1" />
+    <End Role="tb_event_leaders_category" Type="mfModel.Store.tb_event_leaders_category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_ministr_mf">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tb_event_leaders_category">
+        <PropertyRef Name="tb_ministr_mf_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_event_leaders_categorytb_events_leaders">
+    <End Role="tb_event_leaders_category" Type="mfModel.Store.tb_event_leaders_category" Multiplicity="1" />
+    <End Role="tb_events_leaders" Type="mfModel.Store.tb_events_leaders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_event_leaders_category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tb_events_leaders">
+        <PropertyRef Name="tb_event_leaders_category_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mfModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="mfEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="mfModel.sysdiagrams" />
+          <EntitySet Name="tb_ads_request" EntityType="mfModel.tb_ads_request" />
+          <EntitySet Name="tb_content" EntityType="mfModel.tb_content" />
+          <EntitySet Name="tb_courses" EntityType="mfModel.tb_courses" />
+          <EntitySet Name="tb_courses_status" EntityType="mfModel.tb_courses_status" />
+          <EntitySet Name="tb_dc" EntityType="mfModel.tb_dc" />
+          <EntitySet Name="tb_dc_type" EntityType="mfModel.tb_dc_type" />
+          <EntitySet Name="tb_donors" EntityType="mfModel.tb_donors" />
+          <EntitySet Name="tb_file_on_page" EntityType="mfModel.tb_file_on_page" />
+          <EntitySet Name="tb_files" EntityType="mfModel.tb_files" />
+          <EntitySet Name="tb_files_category" EntityType="mfModel.tb_files_category" />
+          <EntitySet Name="tb_gallery" EntityType="mfModel.tb_gallery" />
+          <EntitySet Name="tb_gallery_category" EntityType="mfModel.tb_gallery_category" />
+          <EntitySet Name="tb_lang" EntityType="mfModel.tb_lang" />
+          <EntitySet Name="tb_news" EntityType="mfModel.tb_news" />
+          <EntitySet Name="tb_news_type" EntityType="mfModel.tb_news_type" />
+          <EntitySet Name="tb_pages" EntityType="mfModel.tb_pages" />
+          <EntitySet Name="tb_prints" EntityType="mfModel.tb_prints" />
+          <EntitySet Name="tb_prints_content" EntityType="mfModel.tb_prints_content" />
+          <EntitySet Name="tb_projects" EntityType="mfModel.tb_projects" />
+          <EntitySet Name="tb_question_categorys" EntityType="mfModel.tb_question_categorys" />
+          <EntitySet Name="tb_question_sub_categorys" EntityType="mfModel.tb_question_sub_categorys" />
+          <EntitySet Name="tb_questions" EntityType="mfModel.tb_questions" />
+          <EntitySet Name="tb_subscription_request" EntityType="mfModel.tb_subscription_request" />
+          <EntitySet Name="tb_user_in_role" EntityType="mfModel.tb_user_in_role" />
+          <EntitySet Name="tb_user_roles" EntityType="mfModel.tb_user_roles" />
+          <EntitySet Name="tb_users" EntityType="mfModel.tb_users" />
+          <AssociationSet Name="FK_tb_content_tb_lang" Association="mfModel.FK_tb_content_tb_lang">
+            <End Role="tb_lang" EntitySet="tb_lang" />
+            <End Role="tb_content" EntitySet="tb_content" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_file_on_page_tb_content" Association="mfModel.FK_tb_file_on_page_tb_content">
+            <End Role="tb_content" EntitySet="tb_content" />
+            <End Role="tb_file_on_page" EntitySet="tb_file_on_page" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_courses_tb_courses_status" Association="mfModel.FK_tb_courses_tb_courses_status">
+            <End Role="tb_courses_status" EntitySet="tb_courses_status" />
+            <End Role="tb_courses" EntitySet="tb_courses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_dc_tb_dc_type" Association="mfModel.FK_tb_dc_tb_dc_type">
+            <End Role="tb_dc_type" EntitySet="tb_dc_type" />
+            <End Role="tb_dc" EntitySet="tb_dc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_dc_type_tb_lang" Association="mfModel.FK_tb_dc_type_tb_lang">
+            <End Role="tb_lang" EntitySet="tb_lang" />
+            <End Role="tb_dc_type" EntitySet="tb_dc_type" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_file_on_page_tb_files" Association="mfModel.FK_tb_file_on_page_tb_files">
+            <End Role="tb_files" EntitySet="tb_files" />
+            <End Role="tb_file_on_page" EntitySet="tb_file_on_page" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_files_tb_files_category" Association="mfModel.FK_tb_files_tb_files_category">
+            <End Role="tb_files_category" EntitySet="tb_files_category" />
+            <End Role="tb_files" EntitySet="tb_files" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_files_tb_lang" Association="mfModel.FK_tb_files_tb_lang">
+            <End Role="tb_lang" EntitySet="tb_lang" />
+            <End Role="tb_files" EntitySet="tb_files" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_files_category_tb_lang" Association="mfModel.FK_tb_files_category_tb_lang">
+            <End Role="tb_lang" EntitySet="tb_lang" />
+            <End Role="tb_files_category" EntitySet="tb_files_category" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_gallery_tb_gallery_category" Association="mfModel.FK_tb_gallery_tb_gallery_category">
+            <End Role="tb_gallery_category" EntitySet="tb_gallery_category" />
+            <End Role="tb_gallery" EntitySet="tb_gallery" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_news_type_tb_lang" Association="mfModel.FK_tb_news_type_tb_lang">
+            <End Role="tb_lang" EntitySet="tb_lang" />
+            <End Role="tb_news_type" EntitySet="tb_news_type" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_question_categorys_tb_lang" Association="mfModel.FK_tb_question_categorys_tb_lang">
+            <End Role="tb_lang" EntitySet="tb_lang" />
+            <End Role="tb_question_categorys" EntitySet="tb_question_categorys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_question_sub_categorys_tb_lang" Association="mfModel.FK_tb_question_sub_categorys_tb_lang">
+            <End Role="tb_lang" EntitySet="tb_lang" />
+            <End Role="tb_question_sub_categorys" EntitySet="tb_question_sub_categorys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_news_tb_news_type" Association="mfModel.FK_tb_news_tb_news_type">
+            <End Role="tb_news_type" EntitySet="tb_news_type" />
+            <End Role="tb_news" EntitySet="tb_news" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_prints_content_tb_prints" Association="mfModel.FK_tb_prints_content_tb_prints">
+            <End Role="tb_prints" EntitySet="tb_prints" />
+            <End Role="tb_prints_content" EntitySet="tb_prints_content" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_subscription_request_tb_prints" Association="mfModel.FK_tb_subscription_request_tb_prints">
+            <End Role="tb_prints" EntitySet="tb_prints" />
+            <End Role="tb_subscription_request" EntitySet="tb_subscription_request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_questions_tb_question_categorys" Association="mfModel.FK_tb_questions_tb_question_categorys">
+            <End Role="tb_question_categorys" EntitySet="tb_question_categorys" />
+            <End Role="tb_questions" EntitySet="tb_questions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_questions_tb_question_sub_categorys" Association="mfModel.FK_tb_questions_tb_question_sub_categorys">
+            <End Role="tb_question_sub_categorys" EntitySet="tb_question_sub_categorys" />
+            <End Role="tb_questions" EntitySet="tb_questions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_user_in_role_tb_user_roles" Association="mfModel.FK_tb_user_in_role_tb_user_roles">
+            <End Role="tb_user_roles" EntitySet="tb_user_roles" />
+            <End Role="tb_user_in_role" EntitySet="tb_user_in_role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_user_in_role_tb_users" Association="mfModel.FK_tb_user_in_role_tb_users">
+            <End Role="tb_users" EntitySet="tb_users" />
+            <End Role="tb_user_in_role" EntitySet="tb_user_in_role" />
+          </AssociationSet>
+          <EntitySet Name="tb_subscription_news_request" EntityType="mfModel.tb_subscription_news_request" />
+          <EntitySet Name="tb_question_request" EntityType="mfModel.tb_question_request" />
+          <AssociationSet Name="FK_tb_question_request_tb_question_sub_categorys" Association="mfModel.FK_tb_question_request_tb_question_sub_categorys">
+            <End Role="tb_question_sub_categorys" EntitySet="tb_question_sub_categorys" />
+            <End Role="tb_question_request" EntitySet="tb_question_request" />
+          </AssociationSet>
+          <EntitySet Name="tb_organization" EntityType="mfModel.tb_organization" />
+          <EntitySet Name="tb_tasks" EntityType="mfModel.tb_tasks" />
+          <EntitySet Name="tb_about_organization" EntityType="mfModel.tb_about_organization" />
+          <EntitySet Name="tb_structure_organization" EntityType="mfModel.tb_structure_organization" />
+          <AssociationSet Name="tb_organizationtb_files" Association="mfModel.tb_organizationtb_files">
+            <End Role="tb_organization" EntitySet="tb_organization" />
+            <End Role="tb_files" EntitySet="tb_files" />
+          </AssociationSet>
+          <AssociationSet Name="tb_organizationtb_structure_organization" Association="mfModel.tb_organizationtb_structure_organization">
+            <End Role="tb_organization" EntitySet="tb_organization" />
+            <End Role="tb_structure_organization" EntitySet="tb_structure_organization" />
+          </AssociationSet>
+          <AssociationSet Name="tb_organizationtb_dc" Association="mfModel.tb_organizationtb_dc">
+            <End Role="tb_organization" EntitySet="tb_organization" />
+            <End Role="tb_dc" EntitySet="tb_dc" />
+          </AssociationSet>
+          <AssociationSet Name="tb_organizationtb_tasks" Association="mfModel.tb_organizationtb_tasks">
+            <End Role="tb_organization" EntitySet="tb_organization" />
+            <End Role="tb_tasks" EntitySet="tb_tasks" />
+          </AssociationSet>
+          <AssociationSet Name="tb_organizationtb_about_organization" Association="mfModel.tb_organizationtb_about_organization">
+            <End Role="tb_organization" EntitySet="tb_organization" />
+            <End Role="tb_about_organization" EntitySet="tb_about_organization" />
+          </AssociationSet>
+          <AssociationSet Name="tb_organizationtb_news" Association="mfModel.tb_organizationtb_news">
+            <End Role="tb_organization" EntitySet="tb_organization" />
+            <End Role="tb_news" EntitySet="tb_news" />
+          </AssociationSet>
+          <EntitySet Name="tb_region" EntityType="mfModel.tb_region" />
+          <AssociationSet Name="tb_regiontb_organization" Association="mfModel.tb_regiontb_organization">
+            <End Role="tb_region" EntitySet="tb_region" />
+            <End Role="tb_organization" EntitySet="tb_organization" />
+          </AssociationSet>
+          <AssociationSet Name="tb_langtb_tasks" Association="mfModel.tb_langtb_tasks">
+            <End Role="tb_lang" EntitySet="tb_lang" />
+            <End Role="tb_tasks" EntitySet="tb_tasks" />
+          </AssociationSet>
+          <AssociationSet Name="tb_langtb_about_organization" Association="mfModel.tb_langtb_about_organization">
+            <End Role="tb_lang" EntitySet="tb_lang" />
+            <End Role="tb_about_organization" EntitySet="tb_about_organization" />
+          </AssociationSet>
+          <AssociationSet Name="tb_langtb_structure_organization" Association="mfModel.tb_langtb_structure_organization">
+            <End Role="tb_lang" EntitySet="tb_lang" />
+            <End Role="tb_structure_organization" EntitySet="tb_structure_organization" />
+          </AssociationSet>
+          <AssociationSet Name="tb_langtb_organization" Association="mfModel.tb_langtb_organization">
+            <End Role="tb_lang" EntitySet="tb_lang" />
+            <End Role="tb_organization" EntitySet="tb_organization" />
+          </AssociationSet>
+          <EntitySet Name="tb_economic" EntityType="mfModel.tb_economic" />
+          <AssociationSet Name="tb_langtb_economic" Association="mfModel.tb_langtb_economic">
+            <End Role="tb_lang" EntitySet="tb_lang" />
+            <End Role="tb_economic" EntitySet="tb_economic" />
+          </AssociationSet>
+          <EntitySet Name="tb_vacancy" EntityType="mfModel.tb_vacancy" />
+          <AssociationSet Name="tb_langtb_vacancy" Association="mfModel.tb_langtb_vacancy">
+            <End Role="tb_lang" EntitySet="tb_lang" />
+            <End Role="tb_vacancy" EntitySet="tb_vacancy" />
+          </AssociationSet>
+          <AssociationSet Name="tb_organizationtb_vacancy" Association="mfModel.tb_organizationtb_vacancy">
+            <End Role="tb_organization" EntitySet="tb_organization" />
+            <End Role="tb_vacancy" EntitySet="tb_vacancy" />
+          </AssociationSet>
+          <EntitySet Name="tb_secondary_files" EntityType="mfModel.tb_secondary_files" />
+          <EntitySet Name="tb_info_mf" EntityType="mfModel.tb_info_mf" />
+          <EntitySet Name="tb_ministr_mf" EntityType="mfModel.tb_ministr_mf" />
+          <EntitySet Name="tb_zam_mf" EntityType="mfModel.tb_zam_mf" />
+          <EntitySet Name="tb_ruk_depart_mf" EntityType="mfModel.tb_ruk_depart_mf" />
+          <AssociationSet Name="tb_info_mftb_ministr_mf" Association="mfModel.tb_info_mftb_ministr_mf">
+            <End Role="tb_info_mf" EntitySet="tb_info_mf" />
+            <End Role="tb_ministr_mf" EntitySet="tb_ministr_mf" />
+          </AssociationSet>
+          <AssociationSet Name="tb_info_mftb_zam_mf" Association="mfModel.tb_info_mftb_zam_mf">
+            <End Role="tb_info_mf" EntitySet="tb_info_mf" />
+            <End Role="tb_zam_mf" EntitySet="tb_zam_mf" />
+          </AssociationSet>
+          <AssociationSet Name="tb_info_mftb_ruk_depart_mf" Association="mfModel.tb_info_mftb_ruk_depart_mf">
+            <End Role="tb_info_mf" EntitySet="tb_info_mf" />
+            <End Role="tb_ruk_depart_mf" EntitySet="tb_ruk_depart_mf" />
+          </AssociationSet>
+          <AssociationSet Name="tb_langtb_info_mf" Association="mfModel.tb_langtb_info_mf">
+            <End Role="tb_lang" EntitySet="tb_lang" />
+            <End Role="tb_info_mf" EntitySet="tb_info_mf" />
+          </AssociationSet>
+          <AssociationSet Name="tb_langtb_projects" Association="mfModel.tb_langtb_projects">
+            <End Role="tb_lang" EntitySet="tb_lang" />
+            <End Role="tb_projects" EntitySet="tb_projects" />
+          </AssociationSet>
+          <EntitySet Name="secondary_file_type" EntityType="mfModel.secondary_file_type" />
+          <AssociationSet Name="secondary_file_typetb_secondary_files" Association="mfModel.secondary_file_typetb_secondary_files">
+            <End Role="secondary_file_type" EntitySet="secondary_file_type" />
+            <End Role="tb_secondary_files" EntitySet="tb_secondary_files" />
+          </AssociationSet>
+          <EntitySet Name="tb_events_leaders" EntityType="mfModel.tb_events_leaders" />
+          <EntitySet Name="tb_event_leaders_category" EntityType="mfModel.tb_event_leaders_category" />
+          <AssociationSet Name="tb_langtb_events_leaders" Association="mfModel.tb_langtb_events_leaders">
+            <End Role="tb_lang" EntitySet="tb_lang" />
+            <End Role="tb_events_leaders" EntitySet="tb_events_leaders" />
+          </AssociationSet>
+          <AssociationSet Name="tb_ministr_mftb_event_leaders_category" Association="mfModel.tb_ministr_mftb_event_leaders_category">
+            <End Role="tb_ministr_mf" EntitySet="tb_ministr_mf" />
+            <End Role="tb_event_leaders_category" EntitySet="tb_event_leaders_category" />
+          </AssociationSet>
+          <AssociationSet Name="tb_event_leaders_categorytb_events_leaders" Association="mfModel.tb_event_leaders_categorytb_events_leaders">
+            <End Role="tb_event_leaders_category" EntitySet="tb_event_leaders_category" />
+            <End Role="tb_events_leaders" EntitySet="tb_events_leaders" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tb_ads_request">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fio" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="organization" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_content">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="main_id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="fixed_url" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="page_title" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
+          <Property Name="page_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="order_id" Type="Int32" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <Property Name="show_on_menu" Type="Boolean" />
+          <Property Name="lang_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tb_lang" Relationship="mfModel.FK_tb_content_tb_lang" FromRole="tb_content" ToRole="tb_lang" />
+          <NavigationProperty Name="tb_file_on_page" Relationship="mfModel.FK_tb_file_on_page_tb_content" FromRole="tb_content" ToRole="tb_file_on_page" />
+        </EntityType>
+        <EntityType Name="tb_courses">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="value" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="status_id" Type="Int32" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_courses_status" Relationship="mfModel.FK_tb_courses_tb_courses_status" FromRole="tb_courses" ToRole="tb_courses_status" />
+        </EntityType>
+        <EntityType Name="tb_courses_status">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_courses" Relationship="mfModel.FK_tb_courses_tb_courses_status" FromRole="tb_courses_status" ToRole="tb_courses" />
+        </EntityType>
+        <EntityType Name="tb_dc">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" Nullable="false" MaxLength="2048" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="type_id" Type="Int32" Nullable="false" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_dc_type" Relationship="mfModel.FK_tb_dc_tb_dc_type" FromRole="tb_dc" ToRole="tb_dc_type" />
+          <NavigationProperty Name="tb_organization" Relationship="mfModel.tb_organizationtb_dc" FromRole="tb_dc" ToRole="tb_organization" />
+        </EntityType>
+        <EntityType Name="tb_dc_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="lang" Type="Int32" Nullable="false" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_dc" Relationship="mfModel.FK_tb_dc_tb_dc_type" FromRole="tb_dc_type" ToRole="tb_dc" />
+          <NavigationProperty Name="tb_lang" Relationship="mfModel.FK_tb_dc_type_tb_lang" FromRole="tb_dc_type" ToRole="tb_lang" />
+        </EntityType>
+        <EntityType Name="tb_donors">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="logo" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="contacts" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_file_on_page">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="file_id" Type="Int32" Nullable="false" />
+          <Property Name="content_page_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tb_content" Relationship="mfModel.FK_tb_file_on_page_tb_content" FromRole="tb_file_on_page" ToRole="tb_content" />
+          <NavigationProperty Name="tb_files" Relationship="mfModel.FK_tb_file_on_page_tb_files" FromRole="tb_file_on_page" ToRole="tb_files" />
+        </EntityType>
+        <EntityType Name="tb_files">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date_create" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="category_id" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="file_name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="lang_id" Type="Int32" Nullable="false" />
+          <Property Name="public_date" Type="DateTime" Precision="0" />
+          <Property Name="is_main" Type="Boolean" Nullable="false" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_file_on_page" Relationship="mfModel.FK_tb_file_on_page_tb_files" FromRole="tb_files" ToRole="tb_file_on_page" />
+          <NavigationProperty Name="tb_files_category" Relationship="mfModel.FK_tb_files_tb_files_category" FromRole="tb_files" ToRole="tb_files_category" />
+          <NavigationProperty Name="tb_lang" Relationship="mfModel.FK_tb_files_tb_lang" FromRole="tb_files" ToRole="tb_lang" />
+          <NavigationProperty Name="tb_organization" Relationship="mfModel.tb_organizationtb_files" FromRole="tb_files" ToRole="tb_organization" />
+        </EntityType>
+        <EntityType Name="tb_files_category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="is_menu" Type="Boolean" Nullable="false" />
+          <Property Name="lang" Type="Int32" Nullable="false" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_files" Relationship="mfModel.FK_tb_files_tb_files_category" FromRole="tb_files_category" ToRole="tb_files" />
+          <NavigationProperty Name="tb_lang" Relationship="mfModel.FK_tb_files_category_tb_lang" FromRole="tb_files_category" ToRole="tb_lang" />
+        </EntityType>
+        <EntityType Name="tb_gallery">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="category_id" Type="Int32" Nullable="false" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_gallery_category" Relationship="mfModel.FK_tb_gallery_tb_gallery_category" FromRole="tb_gallery" ToRole="tb_gallery_category" />
+        </EntityType>
+        <EntityType Name="tb_gallery_category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="order_id" Type="Int32" />
+          <Property Name="image" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_gallery" Relationship="mfModel.FK_tb_gallery_tb_gallery_category" FromRole="tb_gallery_category" ToRole="tb_gallery" />
+        </EntityType>
+        <EntityType Name="tb_lang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="code" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_content" Relationship="mfModel.FK_tb_content_tb_lang" FromRole="tb_lang" ToRole="tb_content" />
+          <NavigationProperty Name="tb_dc_type" Relationship="mfModel.FK_tb_dc_type_tb_lang" FromRole="tb_lang" ToRole="tb_dc_type" />
+          <NavigationProperty Name="tb_files" Relationship="mfModel.FK_tb_files_tb_lang" FromRole="tb_lang" ToRole="tb_files" />
+          <NavigationProperty Name="tb_files_category" Relationship="mfModel.FK_tb_files_category_tb_lang" FromRole="tb_lang" ToRole="tb_files_category" />
+          <NavigationProperty Name="tb_news_type" Relationship="mfModel.FK_tb_news_type_tb_lang" FromRole="tb_lang" ToRole="tb_news_type" />
+          <NavigationProperty Name="tb_question_categorys" Relationship="mfModel.FK_tb_question_categorys_tb_lang" FromRole="tb_lang" ToRole="tb_question_categorys" />
+          <NavigationProperty Name="tb_question_sub_categorys" Relationship="mfModel.FK_tb_question_sub_categorys_tb_lang" FromRole="tb_lang" ToRole="tb_question_sub_categorys" />
+          <NavigationProperty Name="tb_tasks" Relationship="mfModel.tb_langtb_tasks" FromRole="tb_lang" ToRole="tb_tasks" />
+          <NavigationProperty Name="tb_about_organization" Relationship="mfModel.tb_langtb_about_organization" FromRole="tb_lang" ToRole="tb_about_organization" />
+          <NavigationProperty Name="tb_structure_organization" Relationship="mfModel.tb_langtb_structure_organization" FromRole="tb_lang" ToRole="tb_structure_organization" />
+          <NavigationProperty Name="tb_organization" Relationship="mfModel.tb_langtb_organization" FromRole="tb_lang" ToRole="tb_organization" />
+          <NavigationProperty Name="tb_economic" Relationship="mfModel.tb_langtb_economic" FromRole="tb_lang" ToRole="tb_economic" />
+          <NavigationProperty Name="tb_vacancy" Relationship="mfModel.tb_langtb_vacancy" FromRole="tb_lang" ToRole="tb_vacancy" />
+          <NavigationProperty Name="tb_info_mf" Relationship="mfModel.tb_langtb_info_mf" FromRole="tb_lang" ToRole="tb_info_mf" />
+          <NavigationProperty Name="tb_projects" Relationship="mfModel.tb_langtb_projects" FromRole="tb_lang" ToRole="tb_projects" />
+          <NavigationProperty Name="tb_events_leaders" Relationship="mfModel.tb_langtb_events_leaders" FromRole="tb_lang" ToRole="tb_events_leaders" />
+        </EntityType>
+        <EntityType Name="tb_news">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="descriptoin" Type="String" Nullable="false" MaxLength="2024" FixedLength="false" Unicode="true" />
+          <Property Name="text" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="event_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="type_id" Type="Int32" Nullable="false" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_news_type" Relationship="mfModel.FK_tb_news_tb_news_type" FromRole="tb_news" ToRole="tb_news_type" />
+          <NavigationProperty Name="tb_organization" Relationship="mfModel.tb_organizationtb_news" FromRole="tb_news" ToRole="tb_organization" />
+          <Property Name="is_important" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tb_news_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <Property Name="show_on_main" Type="Boolean" Nullable="false" />
+          <Property Name="lang" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tb_lang" Relationship="mfModel.FK_tb_news_type_tb_lang" FromRole="tb_news_type" ToRole="tb_lang" />
+          <NavigationProperty Name="tb_news" Relationship="mfModel.FK_tb_news_tb_news_type" FromRole="tb_news_type" ToRole="tb_news" />
+        </EntityType>
+        <EntityType Name="tb_pages">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="main_category_id" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
+          <Property Name="is_active" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tb_prints">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="published_since" Type="DateTime" Precision="0" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_prints_content" Relationship="mfModel.FK_tb_prints_content_tb_prints" FromRole="tb_prints" ToRole="tb_prints_content" />
+          <NavigationProperty Name="tb_subscription_request" Relationship="mfModel.FK_tb_subscription_request_tb_prints" FromRole="tb_prints" ToRole="tb_subscription_request" />
+        </EntityType>
+        <EntityType Name="tb_prints_content">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="year" Type="Int32" />
+          <Property Name="month" Type="Int32" />
+          <Property Name="date_print" Type="DateTime" Precision="3" />
+          <Property Name="image" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="prints_id" Type="Int32" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_prints" Relationship="mfModel.FK_tb_prints_content_tb_prints" FromRole="tb_prints_content" ToRole="tb_prints" />
+        </EntityType>
+        <EntityType Name="tb_projects">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="full_text" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_lang" Relationship="mfModel.tb_langtb_projects" FromRole="tb_projects" ToRole="tb_lang" />
+        </EntityType>
+        <EntityType Name="tb_question_categorys">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="show_on_the_main" Type="Boolean" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
+          <Property Name="lang" Type="Int32" Nullable="false" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_lang" Relationship="mfModel.FK_tb_question_categorys_tb_lang" FromRole="tb_question_categorys" ToRole="tb_lang" />
+          <NavigationProperty Name="tb_questions" Relationship="mfModel.FK_tb_questions_tb_question_categorys" FromRole="tb_question_categorys" ToRole="tb_questions" />
+        </EntityType>
+        <EntityType Name="tb_question_sub_categorys">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="lang" Type="Int32" Nullable="false" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_lang" Relationship="mfModel.FK_tb_question_sub_categorys_tb_lang" FromRole="tb_question_sub_categorys" ToRole="tb_lang" />
+          <NavigationProperty Name="tb_questions" Relationship="mfModel.FK_tb_questions_tb_question_sub_categorys" FromRole="tb_question_sub_categorys" ToRole="tb_questions" />
+          <NavigationProperty Name="tb_question_request" Relationship="mfModel.FK_tb_question_request_tb_question_sub_categorys" FromRole="tb_question_sub_categorys" ToRole="tb_question_request" />
+        </EntityType>
+        <EntityType Name="tb_questions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="category_id" Type="Int32" Nullable="false" />
+          <Property Name="category_sub_id" Type="Int32" Nullable="false" />
+          <Property Name="date_create" Type="DateTime" Precision="3" />
+          <Property Name="question_title" Type="String" Nullable="false" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="question_date" Type="DateTime" Precision="3" />
+          <Property Name="question" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="question_author_fio" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="question_author_email" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="answer_date" Type="DateTime" Precision="3" />
+          <Property Name="answer_author_fio" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="answer_author_position" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_question_categorys" Relationship="mfModel.FK_tb_questions_tb_question_categorys" FromRole="tb_questions" ToRole="tb_question_categorys" />
+          <NavigationProperty Name="tb_question_sub_categorys" Relationship="mfModel.FK_tb_questions_tb_question_sub_categorys" FromRole="tb_questions" ToRole="tb_question_sub_categorys" />
+        </EntityType>
+        <EntityType Name="tb_subscription_request">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fio" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="organization" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="position" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="print_id" Type="Int32" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_prints" Relationship="mfModel.FK_tb_subscription_request_tb_prints" FromRole="tb_subscription_request" ToRole="tb_prints" />
+        </EntityType>
+        <EntityType Name="tb_user_in_role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="role_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tb_user_roles" Relationship="mfModel.FK_tb_user_in_role_tb_user_roles" FromRole="tb_user_in_role" ToRole="tb_user_roles" />
+          <NavigationProperty Name="tb_users" Relationship="mfModel.FK_tb_user_in_role_tb_users" FromRole="tb_user_in_role" ToRole="tb_users" />
+        </EntityType>
+        <EntityType Name="tb_user_roles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_user_in_role" Relationship="mfModel.FK_tb_user_in_role_tb_user_roles" FromRole="tb_user_roles" ToRole="tb_user_in_role" />
+        </EntityType>
+        <EntityType Name="tb_users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fio" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_user_in_role" Relationship="mfModel.FK_tb_user_in_role_tb_users" FromRole="tb_users" ToRole="tb_user_in_role" />
+        </EntityType>
+        <Association Name="FK_tb_content_tb_lang">
+          <End Type="mfModel.tb_lang" Role="tb_lang" Multiplicity="1" />
+          <End Type="mfModel.tb_content" Role="tb_content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_lang">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_content">
+              <PropertyRef Name="lang_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_file_on_page_tb_content">
+          <End Type="mfModel.tb_content" Role="tb_content" Multiplicity="1" />
+          <End Type="mfModel.tb_file_on_page" Role="tb_file_on_page" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_content">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_file_on_page">
+              <PropertyRef Name="content_page_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_courses_tb_courses_status">
+          <End Type="mfModel.tb_courses_status" Role="tb_courses_status" Multiplicity="0..1" />
+          <End Type="mfModel.tb_courses" Role="tb_courses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_courses_status">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_courses">
+              <PropertyRef Name="status_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_dc_tb_dc_type">
+          <End Type="mfModel.tb_dc_type" Role="tb_dc_type" Multiplicity="1" />
+          <End Type="mfModel.tb_dc" Role="tb_dc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_dc_type">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_dc">
+              <PropertyRef Name="type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_dc_type_tb_lang">
+          <End Type="mfModel.tb_lang" Role="tb_lang" Multiplicity="1" />
+          <End Type="mfModel.tb_dc_type" Role="tb_dc_type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_lang">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_dc_type">
+              <PropertyRef Name="lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_file_on_page_tb_files">
+          <End Type="mfModel.tb_files" Role="tb_files" Multiplicity="1" />
+          <End Type="mfModel.tb_file_on_page" Role="tb_file_on_page" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_files">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_file_on_page">
+              <PropertyRef Name="file_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_files_tb_files_category">
+          <End Type="mfModel.tb_files_category" Role="tb_files_category" Multiplicity="1" />
+          <End Type="mfModel.tb_files" Role="tb_files" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_files_category">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_files">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_files_tb_lang">
+          <End Type="mfModel.tb_lang" Role="tb_lang" Multiplicity="1" />
+          <End Type="mfModel.tb_files" Role="tb_files" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_lang">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_files">
+              <PropertyRef Name="lang_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_files_category_tb_lang">
+          <End Type="mfModel.tb_lang" Role="tb_lang" Multiplicity="1" />
+          <End Type="mfModel.tb_files_category" Role="tb_files_category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_lang">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_files_category">
+              <PropertyRef Name="lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_gallery_tb_gallery_category">
+          <End Type="mfModel.tb_gallery_category" Role="tb_gallery_category" Multiplicity="1" />
+          <End Type="mfModel.tb_gallery" Role="tb_gallery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_gallery_category">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_gallery">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_news_type_tb_lang">
+          <End Type="mfModel.tb_lang" Role="tb_lang" Multiplicity="1" />
+          <End Type="mfModel.tb_news_type" Role="tb_news_type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_lang">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_news_type">
+              <PropertyRef Name="lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_question_categorys_tb_lang">
+          <End Type="mfModel.tb_lang" Role="tb_lang" Multiplicity="1" />
+          <End Type="mfModel.tb_question_categorys" Role="tb_question_categorys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_lang">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_question_categorys">
+              <PropertyRef Name="lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_question_sub_categorys_tb_lang">
+          <End Type="mfModel.tb_lang" Role="tb_lang" Multiplicity="1" />
+          <End Type="mfModel.tb_question_sub_categorys" Role="tb_question_sub_categorys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_lang">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_question_sub_categorys">
+              <PropertyRef Name="lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_news_tb_news_type">
+          <End Type="mfModel.tb_news_type" Role="tb_news_type" Multiplicity="1" />
+          <End Type="mfModel.tb_news" Role="tb_news" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_news_type">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_news">
+              <PropertyRef Name="type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_prints_content_tb_prints">
+          <End Type="mfModel.tb_prints" Role="tb_prints" Multiplicity="0..1" />
+          <End Type="mfModel.tb_prints_content" Role="tb_prints_content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_prints">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_prints_content">
+              <PropertyRef Name="prints_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_subscription_request_tb_prints">
+          <End Type="mfModel.tb_prints" Role="tb_prints" Multiplicity="0..1" />
+          <End Type="mfModel.tb_subscription_request" Role="tb_subscription_request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_prints">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_subscription_request">
+              <PropertyRef Name="print_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_questions_tb_question_categorys">
+          <End Type="mfModel.tb_question_categorys" Role="tb_question_categorys" Multiplicity="1" />
+          <End Type="mfModel.tb_questions" Role="tb_questions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_question_categorys">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_questions">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_questions_tb_question_sub_categorys">
+          <End Type="mfModel.tb_question_sub_categorys" Role="tb_question_sub_categorys" Multiplicity="1" />
+          <End Type="mfModel.tb_questions" Role="tb_questions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_question_sub_categorys">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_questions">
+              <PropertyRef Name="category_sub_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_user_in_role_tb_user_roles">
+          <End Type="mfModel.tb_user_roles" Role="tb_user_roles" Multiplicity="1" />
+          <End Type="mfModel.tb_user_in_role" Role="tb_user_in_role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_user_roles">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_user_in_role">
+              <PropertyRef Name="role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_user_in_role_tb_users">
+          <End Type="mfModel.tb_users" Role="tb_users" Multiplicity="1" />
+          <End Type="mfModel.tb_user_in_role" Role="tb_user_in_role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_user_in_role">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tb_subscription_news_request">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fio" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="organization" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="position" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_question_request">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fio" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="organization" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="position" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="category_id" Type="Int32" />
+          <Property Name="question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_question_sub_categorys" Relationship="mfModel.FK_tb_question_request_tb_question_sub_categorys" FromRole="tb_question_request" ToRole="tb_question_sub_categorys" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="FK_tb_question_request_tb_question_sub_categorys">
+          <End Type="mfModel.tb_question_sub_categorys" Role="tb_question_sub_categorys" Multiplicity="0..1" />
+          <End Type="mfModel.tb_question_request" Role="tb_question_request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_question_sub_categorys">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_question_request">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tb_organization">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" />
+          <Property Name="link" Type="String" Nullable="false" />
+          <Property Name="index" Type="String" Nullable="false" />
+          <NavigationProperty Name="tb_files" Relationship="mfModel.tb_organizationtb_files" FromRole="tb_organization" ToRole="tb_files" />
+          <NavigationProperty Name="tb_structure_organization" Relationship="mfModel.tb_organizationtb_structure_organization" FromRole="tb_organization" ToRole="tb_structure_organization" />
+          <NavigationProperty Name="tb_dc" Relationship="mfModel.tb_organizationtb_dc" FromRole="tb_organization" ToRole="tb_dc" />
+          <NavigationProperty Name="tb_tasks" Relationship="mfModel.tb_organizationtb_tasks" FromRole="tb_organization" ToRole="tb_tasks" />
+          <NavigationProperty Name="tb_about_organization" Relationship="mfModel.tb_organizationtb_about_organization" FromRole="tb_organization" ToRole="tb_about_organization" />
+          <NavigationProperty Name="tb_news" Relationship="mfModel.tb_organizationtb_news" FromRole="tb_organization" ToRole="tb_news" />
+          <NavigationProperty Name="tb_region" Relationship="mfModel.tb_regiontb_organization" FromRole="tb_organization" ToRole="tb_region" />
+          <NavigationProperty Name="tb_lang" Relationship="mfModel.tb_langtb_organization" FromRole="tb_organization" ToRole="tb_lang" />
+          <NavigationProperty Name="tb_vacancy" Relationship="mfModel.tb_organizationtb_vacancy" FromRole="tb_organization" ToRole="tb_vacancy" />
+        </EntityType>
+        <EntityType Name="tb_tasks">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="text" Type="String" Nullable="false" />
+          <NavigationProperty Name="tb_organization" Relationship="mfModel.tb_organizationtb_tasks" FromRole="tb_tasks" ToRole="tb_organization" />
+          <NavigationProperty Name="tb_lang" Relationship="mfModel.tb_langtb_tasks" FromRole="tb_tasks" ToRole="tb_lang" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_about_organization">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="address" Type="String" Nullable="false" />
+          <Property Name="full_name" Type="String" Nullable="false" />
+          <Property Name="short_name" Type="String" Nullable="false" />
+          <Property Name="code" Type="String" Nullable="false" />
+          <Property Name="site" Type="String" Nullable="false" />
+          <Property Name="phone" Type="String" Nullable="false" />
+          <Property Name="email" Type="String" Nullable="false" />
+          <NavigationProperty Name="tb_organization" Relationship="mfModel.tb_organizationtb_about_organization" FromRole="tb_about_organization" ToRole="tb_organization" />
+          <NavigationProperty Name="tb_lang" Relationship="mfModel.tb_langtb_about_organization" FromRole="tb_about_organization" ToRole="tb_lang" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_structure_organization">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="tb_organization" Relationship="mfModel.tb_organizationtb_structure_organization" FromRole="tb_structure_organization" ToRole="tb_organization" />
+          <NavigationProperty Name="tb_lang" Relationship="mfModel.tb_langtb_structure_organization" FromRole="tb_structure_organization" ToRole="tb_lang" />
+          <Property Name="name_director" Type="String" Nullable="false" />
+          <Property Name="last_name_director" Type="String" Nullable="false" />
+          <Property Name="full_name_director" Type="String" Nullable="false" />
+          <Property Name="picture_director" Type="String" Nullable="false" />
+          <Property Name="bio_director" Type="String" Nullable="false" />
+          <Property Name="text_for_nachalniki" Type="String" Nullable="false" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <Association Name="tb_organizationtb_files">
+          <End Type="mfModel.tb_organization" Role="tb_organization" Multiplicity="1" />
+          <End Type="mfModel.tb_files" Role="tb_files" Multiplicity="*" />
+        </Association>
+        <Association Name="tb_organizationtb_structure_organization">
+          <End Type="mfModel.tb_organization" Role="tb_organization" Multiplicity="1" />
+          <End Type="mfModel.tb_structure_organization" Role="tb_structure_organization" Multiplicity="*" />
+        </Association>
+        <Association Name="tb_organizationtb_dc">
+          <End Type="mfModel.tb_organization" Role="tb_organization" Multiplicity="1" />
+          <End Type="mfModel.tb_dc" Role="tb_dc" Multiplicity="*" />
+        </Association>
+        <Association Name="tb_organizationtb_tasks">
+          <End Type="mfModel.tb_organization" Role="tb_organization" Multiplicity="1" />
+          <End Type="mfModel.tb_tasks" Role="tb_tasks" Multiplicity="*" />
+        </Association>
+        <Association Name="tb_organizationtb_about_organization">
+          <End Type="mfModel.tb_organization" Role="tb_organization" Multiplicity="1" />
+          <End Type="mfModel.tb_about_organization" Role="tb_about_organization" Multiplicity="*" />
+        </Association>
+        <Association Name="tb_organizationtb_news">
+          <End Type="mfModel.tb_organization" Role="tb_organization" Multiplicity="1" />
+          <End Type="mfModel.tb_news" Role="tb_news" Multiplicity="*" />
+        </Association>
+        <EntityType Name="tb_region">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_tj" Type="String" Nullable="false" />
+          <Property Name="name_ru" Type="String" Nullable="false" />
+          <Property Name="name_en" Type="String" Nullable="false" />
+          <NavigationProperty Name="tb_organization" Relationship="mfModel.tb_regiontb_organization" FromRole="tb_region" ToRole="tb_organization" />
+        </EntityType>
+        <Association Name="tb_regiontb_organization">
+          <End Type="mfModel.tb_region" Role="tb_region" Multiplicity="1" />
+          <End Type="mfModel.tb_organization" Role="tb_organization" Multiplicity="*" />
+        </Association>
+        <Association Name="tb_langtb_tasks">
+          <End Type="mfModel.tb_lang" Role="tb_lang" Multiplicity="1" />
+          <End Type="mfModel.tb_tasks" Role="tb_tasks" Multiplicity="*" />
+        </Association>
+        <Association Name="tb_langtb_about_organization">
+          <End Type="mfModel.tb_lang" Role="tb_lang" Multiplicity="1" />
+          <End Type="mfModel.tb_about_organization" Role="tb_about_organization" Multiplicity="*" />
+        </Association>
+        <Association Name="tb_langtb_structure_organization">
+          <End Type="mfModel.tb_lang" Role="tb_lang" Multiplicity="1" />
+          <End Type="mfModel.tb_structure_organization" Role="tb_structure_organization" Multiplicity="*" />
+        </Association>
+        <Association Name="tb_langtb_organization">
+          <End Type="mfModel.tb_lang" Role="tb_lang" Multiplicity="1" />
+          <End Type="mfModel.tb_organization" Role="tb_organization" Multiplicity="*" />
+        </Association>
+        <EntityType Name="tb_economic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="tb_lang" Relationship="mfModel.tb_langtb_economic" FromRole="tb_economic" ToRole="tb_lang" />
+          <Property Name="name" Type="String" Nullable="false" />
+          <Property Name="value" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="tb_langtb_economic">
+          <End Type="mfModel.tb_lang" Role="tb_lang" Multiplicity="1" />
+          <End Type="mfModel.tb_economic" Role="tb_economic" Multiplicity="*" />
+        </Association>
+        <EntityType Name="tb_vacancy">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="tb_lang" Relationship="mfModel.tb_langtb_vacancy" FromRole="tb_vacancy" ToRole="tb_lang" />
+          <NavigationProperty Name="tb_organization" Relationship="mfModel.tb_organizationtb_vacancy" FromRole="tb_vacancy" ToRole="tb_organization" />
+          <Property Name="open_date" Type="DateTime" Nullable="false" />
+          <Property Name="close_date" Type="DateTime" Nullable="false" />
+          <Property Name="is_closed" Type="Boolean" Nullable="false" />
+          <Property Name="title" Type="String" Nullable="false" />
+          <Property Name="description" Type="String" Nullable="false" />
+          <Property Name="text" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="tb_langtb_vacancy">
+          <End Type="mfModel.tb_lang" Role="tb_lang" Multiplicity="1" />
+          <End Type="mfModel.tb_vacancy" Role="tb_vacancy" Multiplicity="*" />
+        </Association>
+        <Association Name="tb_organizationtb_vacancy">
+          <End Type="mfModel.tb_organization" Role="tb_organization" Multiplicity="1" />
+          <End Type="mfModel.tb_vacancy" Role="tb_vacancy" Multiplicity="*" />
+        </Association>
+        <EntityType Name="tb_secondary_files">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pub_date" Type="DateTime" Nullable="false" />
+          <Property Name="file_name" Type="String" Nullable="false" />
+          <Property Name="descreption" Type="String" Nullable="false" />
+          <Property Name="is_active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="secondary_file_type" Relationship="mfModel.secondary_file_typetb_secondary_files" FromRole="tb_secondary_files" ToRole="secondary_file_type" />
+          <Property Name="name" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_info_mf">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="tb_ministr_mf" Relationship="mfModel.tb_info_mftb_ministr_mf" FromRole="tb_info_mf" ToRole="tb_ministr_mf" />
+          <NavigationProperty Name="tb_zam_mf" Relationship="mfModel.tb_info_mftb_zam_mf" FromRole="tb_info_mf" ToRole="tb_zam_mf" />
+          <NavigationProperty Name="tb_ruk_depart_mf" Relationship="mfModel.tb_info_mftb_ruk_depart_mf" FromRole="tb_info_mf" ToRole="tb_ruk_depart_mf" />
+          <NavigationProperty Name="tb_lang" Relationship="mfModel.tb_langtb_info_mf" FromRole="tb_info_mf" ToRole="tb_lang" />
+        </EntityType>
+        <EntityType Name="tb_ministr_mf">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="tb_info_mf" Relationship="mfModel.tb_info_mftb_ministr_mf" FromRole="tb_ministr_mf" ToRole="tb_info_mf" />
+          <Property Name="name" Type="String" Nullable="false" />
+          <Property Name="full_name" Type="String" Nullable="false" />
+          <Property Name="last_name" Type="String" Nullable="false" />
+          <Property Name="bio" Type="String" Nullable="false" />
+          <Property Name="logo_file_name" Type="String" Nullable="false" />
+          <Property Name="contact_info" Type="String" Nullable="false" />
+          <NavigationProperty Name="tb_event_leaders_category" Relationship="mfModel.tb_ministr_mftb_event_leaders_category" FromRole="tb_ministr_mf" ToRole="tb_event_leaders_category" />
+        </EntityType>
+        <EntityType Name="tb_zam_mf">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="tb_info_mf" Relationship="mfModel.tb_info_mftb_zam_mf" FromRole="tb_zam_mf" ToRole="tb_info_mf" />
+          <Property Name="doljnost" Type="String" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" />
+          <Property Name="last_name" Type="String" Nullable="false" />
+          <Property Name="full_name" Type="String" Nullable="false" />
+          <Property Name="bio" Type="String" Nullable="false" />
+          <Property Name="logo_file_name" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_ruk_depart_mf">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="tb_info_mf" Relationship="mfModel.tb_info_mftb_ruk_depart_mf" FromRole="tb_ruk_depart_mf" ToRole="tb_info_mf" />
+          <Property Name="doljnost" Type="String" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" />
+          <Property Name="last_name" Type="String" Nullable="false" />
+          <Property Name="full_name" Type="String" Nullable="false" />
+          <Property Name="bio" Type="String" Nullable="false" />
+          <Property Name="logo_file_name" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="tb_info_mftb_ministr_mf">
+          <End Type="mfModel.tb_info_mf" Role="tb_info_mf" Multiplicity="1" />
+          <End Type="mfModel.tb_ministr_mf" Role="tb_ministr_mf" Multiplicity="1" />
+        </Association>
+        <Association Name="tb_info_mftb_zam_mf">
+          <End Type="mfModel.tb_info_mf" Role="tb_info_mf" Multiplicity="1" />
+          <End Type="mfModel.tb_zam_mf" Role="tb_zam_mf" Multiplicity="*" />
+        </Association>
+        <Association Name="tb_info_mftb_ruk_depart_mf">
+          <End Type="mfModel.tb_info_mf" Role="tb_info_mf" Multiplicity="1" />
+          <End Type="mfModel.tb_ruk_depart_mf" Role="tb_ruk_depart_mf" Multiplicity="*" />
+        </Association>
+        <Association Name="tb_langtb_info_mf">
+          <End Type="mfModel.tb_lang" Role="tb_lang" Multiplicity="1" />
+          <End Type="mfModel.tb_info_mf" Role="tb_info_mf" Multiplicity="*" />
+        </Association>
+        <Association Name="tb_langtb_projects">
+          <End Type="mfModel.tb_lang" Role="tb_lang" Multiplicity="1" />
+          <End Type="mfModel.tb_projects" Role="tb_projects" Multiplicity="*" />
+        </Association>
+        <EntityType Name="secondary_file_type">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" />
+          <NavigationProperty Name="tb_secondary_files" Relationship="mfModel.secondary_file_typetb_secondary_files" FromRole="secondary_file_type" ToRole="tb_secondary_files" />
+        </EntityType>
+        <Association Name="secondary_file_typetb_secondary_files">
+          <End Type="mfModel.secondary_file_type" Role="secondary_file_type" Multiplicity="1" />
+          <End Type="mfModel.tb_secondary_files" Role="tb_secondary_files" Multiplicity="*" />
+        </Association>
+        <EntityType Name="tb_events_leaders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" Nullable="false" />
+          <Property Name="description" Type="String" Nullable="false" />
+          <Property Name="text" Type="String" Nullable="false" />
+          <Property Name="pub_date" Type="DateTime" Nullable="false" />
+          <Property Name="image" Type="String" Nullable="false" />
+          <NavigationProperty Name="tb_lang" Relationship="mfModel.tb_langtb_events_leaders" FromRole="tb_events_leaders" ToRole="tb_lang" />
+          <NavigationProperty Name="tb_event_leaders_category" Relationship="mfModel.tb_event_leaders_categorytb_events_leaders" FromRole="tb_events_leaders" ToRole="tb_event_leaders_category" />
+        </EntityType>
+        <EntityType Name="tb_event_leaders_category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" />
+          <NavigationProperty Name="tb_ministr_mf" Relationship="mfModel.tb_ministr_mftb_event_leaders_category" FromRole="tb_event_leaders_category" ToRole="tb_ministr_mf" />
+          <NavigationProperty Name="tb_events_leaders" Relationship="mfModel.tb_event_leaders_categorytb_events_leaders" FromRole="tb_event_leaders_category" ToRole="tb_events_leaders" />
+        </EntityType>
+        <Association Name="tb_langtb_events_leaders">
+          <End Type="mfModel.tb_lang" Role="tb_lang" Multiplicity="1" />
+          <End Type="mfModel.tb_events_leaders" Role="tb_events_leaders" Multiplicity="*" />
+        </Association>
+        <Association Name="tb_ministr_mftb_event_leaders_category">
+          <End Type="mfModel.tb_ministr_mf" Role="tb_ministr_mf" Multiplicity="1" />
+          <End Type="mfModel.tb_event_leaders_category" Role="tb_event_leaders_category" Multiplicity="*" />
+        </Association>
+        <Association Name="tb_event_leaders_categorytb_events_leaders">
+          <End Type="mfModel.tb_event_leaders_category" Role="tb_event_leaders_category" Multiplicity="1" />
+          <End Type="mfModel.tb_events_leaders" Role="tb_events_leaders" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mfModelStoreContainer" CdmEntityContainer="mfEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.sysdiagrams)">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ads_request">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_ads_request)">
+        <MappingFragment StoreEntitySet="tb_ads_request">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fio" ColumnName="fio" />
+          <ScalarProperty Name="organization" ColumnName="organization" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_content">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_content)">
+        <MappingFragment StoreEntitySet="tb_content">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="main_id" ColumnName="main_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="fixed_url" ColumnName="fixed_url" />
+          <ScalarProperty Name="page_title" ColumnName="page_title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="page_content" ColumnName="page_content" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="show_on_menu" ColumnName="show_on_menu" />
+          <ScalarProperty Name="lang_id" ColumnName="lang_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_courses">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_courses)">
+        <MappingFragment StoreEntitySet="tb_courses">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_courses_status">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_courses_status)">
+        <MappingFragment StoreEntitySet="tb_courses_status">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_dc">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_dc)">
+        <MappingFragment StoreEntitySet="tb_dc">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_dc_type">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_dc_type)">
+        <MappingFragment StoreEntitySet="tb_dc_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="lang" ColumnName="lang" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_donors">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_donors)">
+        <MappingFragment StoreEntitySet="tb_donors">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="contacts" ColumnName="contacts" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_file_on_page">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_file_on_page)">
+        <MappingFragment StoreEntitySet="tb_file_on_page">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="file_id" ColumnName="file_id" />
+          <ScalarProperty Name="content_page_id" ColumnName="content_page_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_files">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_files)">
+        <MappingFragment StoreEntitySet="tb_files">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="date_create" ColumnName="date_create" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="file_name" ColumnName="file_name" />
+          <ScalarProperty Name="lang_id" ColumnName="lang_id" />
+          <ScalarProperty Name="public_date" ColumnName="public_date" />
+          <ScalarProperty Name="is_main" ColumnName="is_main" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_files_category">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_files_category)">
+        <MappingFragment StoreEntitySet="tb_files_category">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="is_menu" ColumnName="is_menu" />
+          <ScalarProperty Name="lang" ColumnName="lang" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_gallery">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_gallery)">
+        <MappingFragment StoreEntitySet="tb_gallery">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_gallery_category">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_gallery_category)">
+        <MappingFragment StoreEntitySet="tb_gallery_category">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_lang">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_lang)">
+        <MappingFragment StoreEntitySet="tb_lang">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_news">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_news)">
+        <MappingFragment StoreEntitySet="tb_news">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="descriptoin" ColumnName="descriptoin" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="event_date" ColumnName="event_date" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="is_important" ColumnName="is_important" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_news_type">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_news_type)">
+        <MappingFragment StoreEntitySet="tb_news_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="show_on_main" ColumnName="show_on_main" />
+          <ScalarProperty Name="lang" ColumnName="lang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_pages">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_pages)">
+        <MappingFragment StoreEntitySet="tb_pages">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="main_category_id" ColumnName="main_category_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_prints">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_prints)">
+        <MappingFragment StoreEntitySet="tb_prints">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="published_since" ColumnName="published_since" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_prints_content">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_prints_content)">
+        <MappingFragment StoreEntitySet="tb_prints_content">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="date_print" ColumnName="date_print" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="prints_id" ColumnName="prints_id" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_projects">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_projects)">
+        <MappingFragment StoreEntitySet="tb_projects">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="full_text" ColumnName="full_text" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_question_categorys">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_question_categorys)">
+        <MappingFragment StoreEntitySet="tb_question_categorys">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="show_on_the_main" ColumnName="show_on_the_main" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="lang" ColumnName="lang" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_question_sub_categorys">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_question_sub_categorys)">
+        <MappingFragment StoreEntitySet="tb_question_sub_categorys">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="lang" ColumnName="lang" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_questions">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_questions)">
+        <MappingFragment StoreEntitySet="tb_questions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="category_sub_id" ColumnName="category_sub_id" />
+          <ScalarProperty Name="date_create" ColumnName="date_create" />
+          <ScalarProperty Name="question_title" ColumnName="question_title" />
+          <ScalarProperty Name="question_date" ColumnName="question_date" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="question_author_fio" ColumnName="question_author_fio" />
+          <ScalarProperty Name="question_author_email" ColumnName="question_author_email" />
+          <ScalarProperty Name="answer_date" ColumnName="answer_date" />
+          <ScalarProperty Name="answer_author_fio" ColumnName="answer_author_fio" />
+          <ScalarProperty Name="answer_author_position" ColumnName="answer_author_position" />
+          <ScalarProperty Name="answer" ColumnName="answer" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_subscription_request">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_subscription_request)">
+        <MappingFragment StoreEntitySet="tb_subscription_request">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fio" ColumnName="fio" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="organization" ColumnName="organization" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="print_id" ColumnName="print_id" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_user_in_role">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_user_in_role)">
+        <MappingFragment StoreEntitySet="tb_user_in_role">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_user_roles">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_user_roles)">
+        <MappingFragment StoreEntitySet="tb_user_roles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_users">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_users)">
+        <MappingFragment StoreEntitySet="tb_users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fio" ColumnName="fio" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_subscription_news_request">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_subscription_news_request)">
+        <MappingFragment StoreEntitySet="tb_subscription_news_request">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fio" ColumnName="fio" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="organization" ColumnName="organization" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_question_request">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_question_request)">
+        <MappingFragment StoreEntitySet="tb_question_request">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fio" ColumnName="fio" />
+          <ScalarProperty Name="organization" ColumnName="organization" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_organization">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_organization)">
+        <MappingFragment StoreEntitySet="tb_organization">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="index" ColumnName="index" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_tasks">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_tasks)">
+        <MappingFragment StoreEntitySet="tb_tasks">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_about_organization">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_about_organization)">
+        <MappingFragment StoreEntitySet="tb_about_organization">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="short_name" ColumnName="short_name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="site" ColumnName="site" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_structure_organization">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_structure_organization)">
+        <MappingFragment StoreEntitySet="tb_structure_organization">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name_director" ColumnName="name_director" />
+          <ScalarProperty Name="last_name_director" ColumnName="last_name_director" />
+          <ScalarProperty Name="full_name_director" ColumnName="full_name_director" />
+          <ScalarProperty Name="picture_director" ColumnName="picture_director" />
+          <ScalarProperty Name="bio_director" ColumnName="bio_director" />
+          <ScalarProperty Name="text_for_nachalniki" ColumnName="text_for_nachalniki" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_region">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_region)">
+        <MappingFragment StoreEntitySet="tb_region">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name_tj" ColumnName="name_tj" />
+          <ScalarProperty Name="name_ru" ColumnName="name_ru" />
+          <ScalarProperty Name="name_en" ColumnName="name_en" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_economic">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_economic)">
+        <MappingFragment StoreEntitySet="tb_economic">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_vacancy">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_vacancy)">
+        <MappingFragment StoreEntitySet="tb_vacancy">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="open_date" ColumnName="open_date" />
+          <ScalarProperty Name="close_date" ColumnName="close_date" />
+          <ScalarProperty Name="is_closed" ColumnName="is_closed" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="text" ColumnName="text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_secondary_files">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_secondary_files)">
+        <MappingFragment StoreEntitySet="tb_secondary_files">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="pub_date" ColumnName="pub_date" />
+          <ScalarProperty Name="file_name" ColumnName="file_name" />
+          <ScalarProperty Name="descreption" ColumnName="descreption" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_info_mf">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_info_mf)">
+        <MappingFragment StoreEntitySet="tb_info_mf">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ministr_mf">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_ministr_mf)">
+        <MappingFragment StoreEntitySet="tb_ministr_mf">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="bio" ColumnName="bio" />
+          <ScalarProperty Name="logo_file_name" ColumnName="logo_file_name" />
+          <ScalarProperty Name="contact_info" ColumnName="contact_info" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_zam_mf">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_zam_mf)">
+        <MappingFragment StoreEntitySet="tb_zam_mf">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="doljnost" ColumnName="doljnost" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="bio" ColumnName="bio" />
+          <ScalarProperty Name="logo_file_name" ColumnName="logo_file_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ruk_depart_mf">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_ruk_depart_mf)">
+        <MappingFragment StoreEntitySet="tb_ruk_depart_mf">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="doljnost" ColumnName="doljnost" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="bio" ColumnName="bio" />
+          <ScalarProperty Name="logo_file_name" ColumnName="logo_file_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="secondary_file_type">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.secondary_file_type)">
+        <MappingFragment StoreEntitySet="secondary_file_type">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_events_leaders">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_events_leaders)">
+        <MappingFragment StoreEntitySet="tb_events_leaders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="pub_date" ColumnName="pub_date" />
+          <ScalarProperty Name="image" ColumnName="image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_event_leaders_category">
+      <EntityTypeMapping TypeName="IsTypeOf(mfModel.tb_event_leaders_category)">
+        <MappingFragment StoreEntitySet="tb_event_leaders_category">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="tb_organizationtb_files" TypeName="mfModel.tb_organizationtb_files" StoreEntitySet="tb_files">
+      <EndProperty Name="tb_organization">
+        <ScalarProperty Name="Id" ColumnName="tb_organization_Id" />
+      </EndProperty>
+      <EndProperty Name="tb_files">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_organizationtb_structure_organization" TypeName="mfModel.tb_organizationtb_structure_organization" StoreEntitySet="tb_structure_organization">
+      <EndProperty Name="tb_organization">
+        <ScalarProperty Name="Id" ColumnName="tb_organization_Id" />
+      </EndProperty>
+      <EndProperty Name="tb_structure_organization">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_organizationtb_dc" TypeName="mfModel.tb_organizationtb_dc" StoreEntitySet="tb_dc">
+      <EndProperty Name="tb_organization">
+        <ScalarProperty Name="Id" ColumnName="tb_organization_Id" />
+      </EndProperty>
+      <EndProperty Name="tb_dc">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_organizationtb_tasks" TypeName="mfModel.tb_organizationtb_tasks" StoreEntitySet="tb_tasks">
+      <EndProperty Name="tb_organization">
+        <ScalarProperty Name="Id" ColumnName="tb_organization_Id" />
+      </EndProperty>
+      <EndProperty Name="tb_tasks">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_organizationtb_about_organization" TypeName="mfModel.tb_organizationtb_about_organization" StoreEntitySet="tb_about_organization">
+      <EndProperty Name="tb_organization">
+        <ScalarProperty Name="Id" ColumnName="tb_organization_Id" />
+      </EndProperty>
+      <EndProperty Name="tb_about_organization">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_organizationtb_news" TypeName="mfModel.tb_organizationtb_news" StoreEntitySet="tb_news">
+      <EndProperty Name="tb_organization">
+        <ScalarProperty Name="Id" ColumnName="tb_organization_Id" />
+      </EndProperty>
+      <EndProperty Name="tb_news">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_regiontb_organization" TypeName="mfModel.tb_regiontb_organization" StoreEntitySet="tb_organization">
+      <EndProperty Name="tb_region">
+        <ScalarProperty Name="Id" ColumnName="tb_region_Id" />
+      </EndProperty>
+      <EndProperty Name="tb_organization">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_langtb_tasks" TypeName="mfModel.tb_langtb_tasks" StoreEntitySet="tb_tasks">
+      <EndProperty Name="tb_lang">
+        <ScalarProperty Name="id" ColumnName="tb_lang_id" />
+      </EndProperty>
+      <EndProperty Name="tb_tasks">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_langtb_about_organization" TypeName="mfModel.tb_langtb_about_organization" StoreEntitySet="tb_about_organization">
+      <EndProperty Name="tb_lang">
+        <ScalarProperty Name="id" ColumnName="tb_lang_id" />
+      </EndProperty>
+      <EndProperty Name="tb_about_organization">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_langtb_structure_organization" TypeName="mfModel.tb_langtb_structure_organization" StoreEntitySet="tb_structure_organization">
+      <EndProperty Name="tb_lang">
+        <ScalarProperty Name="id" ColumnName="tb_lang_id" />
+      </EndProperty>
+      <EndProperty Name="tb_structure_organization">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_langtb_organization" TypeName="mfModel.tb_langtb_organization" StoreEntitySet="tb_organization">
+      <EndProperty Name="tb_lang">
+        <ScalarProperty Name="id" ColumnName="tb_lang_id" />
+      </EndProperty>
+      <EndProperty Name="tb_organization">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_langtb_economic" TypeName="mfModel.tb_langtb_economic" StoreEntitySet="tb_economic">
+      <EndProperty Name="tb_lang">
+        <ScalarProperty Name="id" ColumnName="tb_lang_id" />
+      </EndProperty>
+      <EndProperty Name="tb_economic">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_langtb_vacancy" TypeName="mfModel.tb_langtb_vacancy" StoreEntitySet="tb_vacancy">
+      <EndProperty Name="tb_lang">
+        <ScalarProperty Name="id" ColumnName="tb_lang_id" />
+      </EndProperty>
+      <EndProperty Name="tb_vacancy">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_organizationtb_vacancy" TypeName="mfModel.tb_organizationtb_vacancy" StoreEntitySet="tb_vacancy">
+      <EndProperty Name="tb_organization">
+        <ScalarProperty Name="Id" ColumnName="tb_organization_Id" />
+      </EndProperty>
+      <EndProperty Name="tb_vacancy">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_info_mftb_ministr_mf" TypeName="mfModel.tb_info_mftb_ministr_mf" StoreEntitySet="tb_info_mf">
+      <EndProperty Name="tb_ministr_mf">
+        <ScalarProperty Name="Id" ColumnName="tb_ministr_mf_Id" />
+      </EndProperty>
+      <EndProperty Name="tb_info_mf">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_info_mftb_zam_mf" TypeName="mfModel.tb_info_mftb_zam_mf" StoreEntitySet="tb_zam_mf">
+      <EndProperty Name="tb_info_mf">
+        <ScalarProperty Name="Id" ColumnName="tb_info_mf_Id" />
+      </EndProperty>
+      <EndProperty Name="tb_zam_mf">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_info_mftb_ruk_depart_mf" TypeName="mfModel.tb_info_mftb_ruk_depart_mf" StoreEntitySet="tb_ruk_depart_mf">
+      <EndProperty Name="tb_info_mf">
+        <ScalarProperty Name="Id" ColumnName="tb_info_mf_Id" />
+      </EndProperty>
+      <EndProperty Name="tb_ruk_depart_mf">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_langtb_info_mf" TypeName="mfModel.tb_langtb_info_mf" StoreEntitySet="tb_info_mf">
+      <EndProperty Name="tb_lang">
+        <ScalarProperty Name="id" ColumnName="tb_lang_id" />
+      </EndProperty>
+      <EndProperty Name="tb_info_mf">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_langtb_projects" TypeName="mfModel.tb_langtb_projects" StoreEntitySet="tb_projects">
+      <EndProperty Name="tb_lang">
+        <ScalarProperty Name="id" ColumnName="tb_lang_id" />
+      </EndProperty>
+      <EndProperty Name="tb_projects">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="secondary_file_typetb_secondary_files" TypeName="mfModel.secondary_file_typetb_secondary_files" StoreEntitySet="tb_secondary_files">
+      <EndProperty Name="secondary_file_type">
+        <ScalarProperty Name="Id" ColumnName="secondary_file_type_Id" />
+      </EndProperty>
+      <EndProperty Name="tb_secondary_files">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_langtb_events_leaders" TypeName="mfModel.tb_langtb_events_leaders" StoreEntitySet="tb_events_leaders">
+      <EndProperty Name="tb_lang">
+        <ScalarProperty Name="id" ColumnName="tb_lang_id" />
+      </EndProperty>
+      <EndProperty Name="tb_events_leaders">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_ministr_mftb_event_leaders_category" TypeName="mfModel.tb_ministr_mftb_event_leaders_category" StoreEntitySet="tb_event_leaders_category">
+      <EndProperty Name="tb_ministr_mf">
+        <ScalarProperty Name="Id" ColumnName="tb_ministr_mf_Id" />
+      </EndProperty>
+      <EndProperty Name="tb_event_leaders_category">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_event_leaders_categorytb_events_leaders" TypeName="mfModel.tb_event_leaders_categorytb_events_leaders" StoreEntitySet="tb_events_leaders">
+      <EndProperty Name="tb_event_leaders_category">
+        <ScalarProperty Name="Id" ColumnName="tb_event_leaders_category_Id" />
+      </EndProperty>
+      <EndProperty Name="tb_events_leaders">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

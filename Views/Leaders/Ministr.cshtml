@@ -1,0 +1,26 @@
+﻿@using mf_frontend.Models
+@{
+    ViewBag.Title = ViewBag.EventCategory;
+}
+
+<h2 style="padding-top:20px">@ViewBag.EventCategory Мининстр финансов</h2>
+<div style="padding-top:40px; width: 700px; float:left;">
+
+    @foreach (tb_events_leaders row in ViewBag.News)
+    {
+        <div style="padding-top:2px; background-color: #486078; color:white; width: 80px; text-align:center; font-size:12px; float:left">
+            @row.pub_date.ToString().Substring(0, 10)
+        </div>
+        <div>
+            <a href="@("/"+System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/Leaders/Item/"+row.Id)" style="text-decoration:none">
+                <h1 style="color: #486078; font-size:16px; margin-left:90px; margin-top:-3px; line-height: 30px;">
+                    @row.title
+                </h1>
+            </a>
+        </div>
+        <div style="padding-top:5px; font-size:13px; line-height:18px; ">
+            @row.description
+        </div>
+        <hr style="margin-top:20px; margin-bottom:20px;" />
+    }
+</div>

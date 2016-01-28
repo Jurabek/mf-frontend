@@ -7,34 +7,37 @@
     ViewBag.Title = GlobalRes.FilesArchive;
 }
 
-<h2 style="margin-bottom:20px; margin-top: 20px;">@GlobalRes.FilesArchive / @ViewBag.CatName</h2>
+<h2>@GlobalRes.FilesArchive / @ViewBag.CatName</h2>
 
 <form action="@("/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/Files")" method="get">
     <table>
         <tr>
             <td style="width:150px; height:40px;">Категория</td>
-            <td>@Html.DropDownList("Category", null, "Все категории", new { style = "width:400px;" })</td>
+            <td>@Html.DropDownList("Category", null, "...", new { style = "width:400px;" })</td>
         </tr>
         <tr>
-            <td style="height:30px;">
+            <td style="vertical-align:middle;">
                 Название или описание файла
             </td>
             <td style="vertical-align:middle">
-                    <input style="width:388px; font-weight:100;" class="text-box" type="text" name="name" placeholder="Поиск по имени или описанию файла" value="@ViewBag.Name" />                
+                <div class="mdl-textfield mdl-js-textfield" style="width:395px">
+                    <input style="font-weight:100;" class="mdl-textfield__input" type="text" name="name" placeholder="" value="@ViewBag.Name" />
+                    <label class="mdl-textfield__label" for="sample1">Поиск по имени или описанию файла</label>
+                </div>
             </td>
         </tr>
         <tr>
             <td></td>
             <td style="padding-top:10px;">
-                <input type="submit"  value="Фильтровать" class="btn" /> | <a href="@("/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/Files")">Убрать фильтр</a>
+                <input type="submit" value="Фильтровать" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="text-transform:capitalize" /> | <a href="@("/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/Files")">Убрать фильтр</a>
             </td>
         </tr>
     </table>
 </form>
 <br /><br />
 <table style="width:100%;">
-    <tr style="background-color: #486078; color: white">
-        <td style="height: 55px; text-align:center; padding-right:10px; padding-left: 10px; width: 100px; vertical-align:middle">Дата <br/> публикации</td>
+    <tr style="color: white" class="colored">
+        <td style="height: 55px; text-align:center; padding-right:10px; padding-left: 10px; width: 100px; vertical-align:middle">Дата <br /> публикации</td>
         <td style="height: 45px; line-height:45px;text-align:center;vertical-align:middle ">Категория</td>
         <td style="height: 45px; line-height:45px; width:650px; vertical-align:middle;padding-left:10px;">Файл</td>
     </tr>
@@ -52,5 +55,5 @@
 <br />
 Страница @(ViewBag.Files.PageCount < ViewBag.Files.PageNumber ? 0 : ViewBag.Files.PageNumber) из @ViewBag.Files.PageCount
 
-@Html.PagedListPager(Model, page => Url.Action("Index", new { page, name = Request.Params["name"] }))
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, name = Request.Params["name"], category = ViewBag.CategoryId }))
 

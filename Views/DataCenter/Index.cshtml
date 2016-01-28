@@ -1,5 +1,7 @@
-﻿@using mf_frontend.Models;
+﻿@model PagedList.IPagedList<mf_frontend.Models.tb_dc>
+@using mf_frontend.Models;
 @using mf_frontend.App_LocalResources;
+@using PagedList.Mvc;
 @{
     ViewBag.Title = GlobalRes.DataCenter;
 }
@@ -9,10 +11,11 @@
 
 <h2>
     @GlobalRes.DataCenter
-    
-    @if (ViewBag.CurrentCategory != null) { 
+
+    @if (ViewBag.CurrentCategory != null)
+    {
         <span> / @ViewBag.CurrentCategory</span>
-        
+
     }
 </h2>
 
@@ -21,28 +24,35 @@
     <table>
         <tr>
             <td style="width:40px; height:40px;">@*Категория*@</td>
-            <td>@Html.DropDownList("Category", null, "Все категории", new { style = "width:400px;" })
-                <input type="submit" value="Фильтровать" class="btn" />
+            <td>
+                @Html.DropDownList("Category", null, "Все категории", new { style = "width:400px;" })
+                <input type="submit" value="Фильтровать" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" />
             </td>
         </tr>
-        @*<tr>
-            <td></td>
-            <td style="padding-top:10px;">
-                <input type="submit" value="Фильтровать" class="btn" /> | <a href="@("/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/DataCenter")">Убрать фильтр</a>
-            </td>
-        </tr>*@
     </table>
 </form>
 <br />
-@foreach (tb_dc row in ViewBag.DC) { 
-    <div style="border: 1px solid lightgray; float:left; margin:5px;">
-    <div class="dc-title">@row.title</div>
-    <div class="dc-image">
-        <a href="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_dc/" + row.image)" rel="@("lightgallery["+row.id.ToString()+"]")">
-            <div style="width: 455px; height:242px; margin:5px; background-image: url(@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_dc/" + row.image));background-position:center; background-repeat:no-repeat; background-size: 455px;">
+<div style="display:block; width:70%">
+    @foreach (tb_dc row in ViewBag.DC)
+    {
+        <div style="border: 1px solid lightgray; float:left; margin:5px; width:95%; padding:10px 10px 10px 10px">
+            <div class="dc-title">@row.title</div>
+            <div class="dc-image">
+                <a href="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_dc/" + row.image)" rel="@("lightgallery["+row.id.ToString()+"]")">
+                    <div style="width: 455px; height:242px; margin:5px; background-image: url(@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_dc/" + row.image));background-position:center; background-repeat:no-repeat; background-size: 455px;">
+                    </div>
+                </a>
             </div>
-        </a>
-</div>
+            <div class="mdl-typography--display-1">
+                @row.description
+            </div>
+        </div>
+    }
+    <div style="float:left; margin:10px 10px 10px 10px">
+        Страница @(ViewBag.DC.PageCount < ViewBag.DC.PageNumber ? 0 : ViewBag.DC.PageNumber) из @ViewBag.DC.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, Category = ViewBag.CategoryId }))
     </div>
-}
+</div>
+
 

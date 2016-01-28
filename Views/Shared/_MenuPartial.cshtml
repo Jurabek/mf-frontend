@@ -1,0 +1,138 @@
+﻿@using mf_frontend.Models;
+@using mf_frontend.App_LocalResources;
+<div>
+    <a href="@("http://moliya.tj/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/Home/Index")"
+       style='text-transform:capitalize; color:white' class="mdl-button mdl-js-button">
+        @GlobalRes.main
+    </a>
+</div>
+<div>
+    <button id="about" style='text-transform:capitalize; color:white' class="mdl-button mdl-js-button">
+        @GlobalRes.AboutMinistry
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="about">
+        @GetSubMenu(2, 35, 41)
+    </ul>
+</div>
+
+
+<div>
+    <button id="hot-line" style='text-transform:capitalize; color:white' class="mdl-button mdl-js-button">
+        @GlobalRes.HotLine
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+        for="hot-line">
+        @GetSubMenu(3, 36, 43)
+        <li style="border-top: 1px dotted lightgray; margin-top:5px;"></li>
+        @GetQuestionCategory()
+    </ul>
+</div>
+
+
+<div>
+    <button id="media" style="color:white; text-transform:capitalize;" class="mdl-button mdl-js-button">
+        @GlobalRes.Media
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+        for="media">
+        @GetSubMenu(4, 37, 44)
+        <li style="border-top: 1px dotted lightgray; margin-top:5px;"></li>
+        @GetNewsType()
+    </ul>
+</div>
+
+
+<div>
+    <button id="info" style="color:white; text-transform:capitalize;" class="mdl-button mdl-js-button">
+        @GlobalRes.RegulatoryInformation
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+        for="info">
+        @GetSubMenu(5, 38, 45)
+        <li style="border-top: 1px dotted lightgray; margin-top:5px;"></li>
+        @GetFileCategorys()
+    </ul>
+</div>
+
+
+<div>
+    <button id="analytics" style="color:white; text-transform:capitalize;" class="mdl-button mdl-js-button">
+        @GlobalRes.Analytics
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+        for="analytics">
+        @GetSubMenu(6, 39, 46)
+    </ul>
+</div>
+
+<div>
+    <button id="perform" style="color:white; text-transform:capitalize;" class="mdl-button mdl-js-button">
+        @GlobalRes.PFMReforms
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+        for="perform">
+        @GetSubMenu(49, 51, 52)
+    </ul>
+</div>
+
+<div>
+    <button id="prints" style="color:white; text-transform:capitalize;" class="mdl-button mdl-js-button">
+        @GlobalRes.Prints
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+        for="prints">
+        @GetSubMenu(7, 40, 47)
+    </ul>
+</div>
+@helper GetSubMenu(int main_id, int main_id_tj, int main_id_en)
+{
+mfEntities db = new mfEntities();
+IEnumerable<tb_content> content = db.tb_content.Where(t => t.main_id == main_id && t.is_active == true).OrderBy(t => t.order_id); ;
+if (System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "tg")
+{
+    content = db.tb_content.Where(t => t.main_id == main_id_tj && t.is_active == true).OrderBy(t => t.order_id);
+}
+if (System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "en")
+{
+    content = db.tb_content.Where(t => t.main_id == main_id_en && t.is_active == true).OrderBy(t => t.order_id);
+}
+foreach (tb_content row in content)
+{
+    if (row.fixed_url != null)
+    {
+            @Html.Raw("<a href='http://moliya.tj/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + row.fixed_url + "'><li class='mdl-menu__item'>" + row.name + "</li></a>")
+    }
+    else
+    {
+            @Html.Raw("<a href='http://moliya.tj/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/Content/Item/" + row.id + "'><li class='mdl-menu__item'>" + row.name + "</li></a>")
+    }
+}
+}
+@helper GetQuestionCategory()
+{
+mfEntities db = new mfEntities();
+IEnumerable<tb_question_categorys> qc = db.tb_question_categorys.Where(t => t.is_active == true && t.tb_lang.code == System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName);
+foreach (tb_question_categorys row in qc)
+{
+        @Html.Raw("<a href='http://moliya.tj/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/Question/Index?Category=" + row.id + "'><li class='mdl-menu__item'>" + row.name + "</li></a>")
+}
+}
+@helper GetNewsType()
+{
+mfEntities db = new mfEntities();
+IEnumerable<tb_news_type> nt = db.tb_news_type.Where(t => t.is_active == true && t.tb_lang.code == System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName);
+foreach (tb_news_type row in nt)
+{
+        @Html.Raw("<a href='http://moliya.tj/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/News/Index/" + row.id + "'><li class='mdl-menu__item'>" + row.name + "</li></a>")
+}
+}
+@helper GetFileCategorys()
+{
+mfEntities db = new mfEntities();
+IEnumerable<tb_files_category> fc = db.tb_files_category.Where(t => t.is_active == true && t.is_menu == true && t.tb_lang.code == System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName);
+foreach (tb_files_category row in fc)
+{
+        @Html.Raw("<a href='http://moliya.tj/" + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName + "/Files?Category=" + row.id + "'><li class='mdl-menu__item'>" + row.name + "</li></a>")
+}
+}
+

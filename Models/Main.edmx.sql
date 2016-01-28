@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/13/2016 13:59:55
+-- Date Created: 01/20/2016 09:30:33
 -- Generated from EDMX file: C:\builds\mf\mf-frontend\mf-frontend\Models\Main.edmx
 -- --------------------------------------------------
 
@@ -140,6 +140,15 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_secondary_file_typetb_secondary_files]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[tb_secondary_files] DROP CONSTRAINT [FK_secondary_file_typetb_secondary_files];
 GO
+IF OBJECT_ID(N'[dbo].[FK_tb_langtb_events_leaders]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tb_events_leaders] DROP CONSTRAINT [FK_tb_langtb_events_leaders];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tb_event_leaders_categorytb_events_leaders]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tb_events_leaders] DROP CONSTRAINT [FK_tb_event_leaders_categorytb_events_leaders];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tb_ministr_mftb_event_leaders_category]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tb_event_leaders_category] DROP CONSTRAINT [FK_tb_ministr_mftb_event_leaders_category];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -270,6 +279,12 @@ IF OBJECT_ID(N'[dbo].[tb_ruk_depart_mf]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[secondary_file_type]', 'U') IS NOT NULL
     DROP TABLE [dbo].[secondary_file_type];
+GO
+IF OBJECT_ID(N'[dbo].[tb_events_leaders]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_events_leaders];
+GO
+IF OBJECT_ID(N'[dbo].[tb_event_leaders_category]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_event_leaders_category];
 GO
 
 -- --------------------------------------------------
@@ -721,7 +736,8 @@ CREATE TABLE [dbo].[tb_ministr_mf] (
     [full_name] nvarchar(max)  NOT NULL,
     [last_name] nvarchar(max)  NOT NULL,
     [bio] nvarchar(max)  NOT NULL,
-    [logo_file_name] nvarchar(max)  NOT NULL
+    [logo_file_name] nvarchar(max)  NOT NULL,
+    [contact_info] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -755,6 +771,27 @@ GO
 CREATE TABLE [dbo].[secondary_file_type] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [name] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'tb_events_leaders'
+CREATE TABLE [dbo].[tb_events_leaders] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [title] nvarchar(max)  NOT NULL,
+    [description] nvarchar(max)  NOT NULL,
+    [text] nvarchar(max)  NOT NULL,
+    [pub_date] datetime  NOT NULL,
+    [image] nvarchar(max)  NOT NULL,
+    [tb_lang_id] int  NOT NULL,
+    [tb_event_leaders_category_Id] int  NOT NULL
+);
+GO
+
+-- Creating table 'tb_event_leaders_category'
+CREATE TABLE [dbo].[tb_event_leaders_category] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [name] nvarchar(max)  NOT NULL,
+    [tb_ministr_mf_Id] int  NOT NULL
 );
 GO
 
@@ -1011,6 +1048,18 @@ GO
 -- Creating primary key on [Id] in table 'secondary_file_type'
 ALTER TABLE [dbo].[secondary_file_type]
 ADD CONSTRAINT [PK_secondary_file_type]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'tb_events_leaders'
+ALTER TABLE [dbo].[tb_events_leaders]
+ADD CONSTRAINT [PK_tb_events_leaders]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'tb_event_leaders_category'
+ALTER TABLE [dbo].[tb_event_leaders_category]
+ADD CONSTRAINT [PK_tb_event_leaders_category]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -1631,6 +1680,51 @@ GO
 CREATE INDEX [IX_FK_secondary_file_typetb_secondary_files]
 ON [dbo].[tb_secondary_files]
     ([secondary_file_type_Id]);
+GO
+
+-- Creating foreign key on [tb_lang_id] in table 'tb_events_leaders'
+ALTER TABLE [dbo].[tb_events_leaders]
+ADD CONSTRAINT [FK_tb_langtb_events_leaders]
+    FOREIGN KEY ([tb_lang_id])
+    REFERENCES [dbo].[tb_lang]
+        ([id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tb_langtb_events_leaders'
+CREATE INDEX [IX_FK_tb_langtb_events_leaders]
+ON [dbo].[tb_events_leaders]
+    ([tb_lang_id]);
+GO
+
+-- Creating foreign key on [tb_ministr_mf_Id] in table 'tb_event_leaders_category'
+ALTER TABLE [dbo].[tb_event_leaders_category]
+ADD CONSTRAINT [FK_tb_ministr_mftb_event_leaders_category]
+    FOREIGN KEY ([tb_ministr_mf_Id])
+    REFERENCES [dbo].[tb_ministr_mf]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tb_ministr_mftb_event_leaders_category'
+CREATE INDEX [IX_FK_tb_ministr_mftb_event_leaders_category]
+ON [dbo].[tb_event_leaders_category]
+    ([tb_ministr_mf_Id]);
+GO
+
+-- Creating foreign key on [tb_event_leaders_category_Id] in table 'tb_events_leaders'
+ALTER TABLE [dbo].[tb_events_leaders]
+ADD CONSTRAINT [FK_tb_event_leaders_categorytb_events_leaders]
+    FOREIGN KEY ([tb_event_leaders_category_Id])
+    REFERENCES [dbo].[tb_event_leaders_category]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tb_event_leaders_categorytb_events_leaders'
+CREATE INDEX [IX_FK_tb_event_leaders_categorytb_events_leaders]
+ON [dbo].[tb_events_leaders]
+    ([tb_event_leaders_category_Id]);
 GO
 
 -- --------------------------------------------------

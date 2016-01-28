@@ -1,0 +1,15 @@
+﻿@model mf_frontend.Models.tb_ministr_mf
+
+<div style="margin:40px 40px 40px 40px">
+    <h2>Биография</h2>
+    <div>
+        <img style="float: left;
+            margin: 0 20px 20px 0; max-height:400px; width:40%; height:60%; max-width:1000px;"
+             src="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"] + "upload_files/"+ Model.logo_file_name)" />
+
+        <p style="text-align: justify; text-indent: 2em;">
+            @Html.Raw(Model.bio)
+        </p>
+    </div>
+    
+</div>

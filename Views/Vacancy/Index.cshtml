@@ -1,0 +1,75 @@
+﻿@model IEnumerable<mf_frontend.Models.tb_vacancy>
+@using mf_frontend.Models
+@using mf_frontend.App_LocalResources
+
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<link rel="stylesheet" href="~/Content/expand.css" />
+
+@{
+    ViewBag.Title = "Вакансии";
+}
+<h2>Вакансии</h2>
+<div style="margin:30px 30px 30px 30px">
+    <div style="display:inline-grid">
+        @using (Html.BeginForm("Index", "Vacancy", FormMethod.Post, new { id = "orgForm" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <h3>Вакансии</h3>
+            @Html.DropDownList("tb_organization_Id", null, null, new { id = "orgDropDown" })
+        }
+        <script>
+            $('#orgDropDown').on('change', function (e) {
+                document.getElementById('orgForm').submit();
+            });
+        </script>
+    </div>
+
+    <div style="margin-top:50px">
+        @foreach (tb_vacancy row in ViewBag.Vacancy)
+        {
+            <section>
+                <article>
+                    <details>
+                        <summary class="noselect">@row.title</summary>
+                        <p>
+                            @Html.ActionLink(@row.description, "Details/" + row.Id, "Vacancy")
+                        </p>
+                    </details>
+                </article>
+            </section>
+        }
+    </div>
+
+    <h4 style="border-bottom: 1px solid lightgray; padding-top:30px;">Нормативно-правовые документы</h4>
+
+    <table class="table-files">
+        <tr>
+            <th style="width: 100px;">Дата загрузки</th>
+            <th style="width: 250px;">Имя файла</th>
+            <th>
+                Описание
+            </th>
+        </tr>
+
+
+        @foreach (tb_secondary_files row in ViewBag.Files)
+        {
+            <tr>
+                <td>
+                    @(row.pub_date.Date.ToString().Substring(0, 10))
+                </td>
+                <td>
+                    <a href="@(System.Web.Configuration.WebConfigurationManager.AppSettings["admin-url"]+"upload_files/"+row.file_name)">
+                        @row.name
+                    </a>
+                </td>
+                <td>
+                    @row.descreption
+                </td>
+            </tr>
+
+        }
+    </table>
+</div>
+

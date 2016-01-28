@@ -40,17 +40,17 @@ time, mark, audio, video {
 }
 
 article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+footer, header, hgroup, menu, section {
     display: block;
 }
 
-    nav ul, nav li {
-        margin: 0;
-    }
+/*nav ul, nav li {
+		margin: 0;
+	}
 
-    nav ul, ul {
-        list-style: none;
-    }
+	nav ul, ul {
+		list-style: none;
+	}*/
 
 #container ul {
     list-style: square;
@@ -77,11 +77,18 @@ footer, header, hgroup, menu, nav, section {
     }
 
 .span1 {
+    margin-left: 8px;
     width: 24.25%;
+    margin-top: 15px;
 }
 
 .span2 {
     width: 49.5%;
+    margin-top: 15px;
+}
+
+.margin8 {
+    margin-left: 8px;
 }
 
 .span3 {
@@ -90,7 +97,7 @@ footer, header, hgroup, menu, nav, section {
 
 .span4 {
     width: 100%;
-    margin-left: 0;
+    margin: 5px 0 15px 0;
 }
 
 body {
@@ -148,48 +155,36 @@ header {
     letter-spacing: 0.05em;
 }
 
-/* NAVIGATION */
-
-nav {
-    margin: 7px 0 7px 0;
-    background-color: #2a8460;
-}
-
-    nav ul {
-        text-align: right;
-        overflow: auto;
-        width: 100%;
-    }
-
-        nav ul li {
-            margin: 0 0 0 0;
-            text-align: center;
-            overflow: auto;
-            float: left;
-            width: 33%;
-        }
-
-    nav a {
-        text-decoration: none;
-        margin: 0;
-        display: block;
-        padding: 7px 0 7px 5%;
-        margin: 0 0 0 4%;
-        background-color: rgba(255,255,255,0.1);
-    }
-
-
-/* MEDIA QUERIES */
 
 /* Responsify Defaults */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 950px) {
     .main {
         position: relative;
         width: 100%;
     }
 
     nav .span1 {
+        width: 100%;
+    }
+
+    .span1 {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .span2 {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .span3 {
+        width: 100%;
+    }
+
+    .span4 {
         width: 100%;
     }
 
@@ -246,10 +241,6 @@ nav {
 
 /* ================ My css ================ */
 @media screen and (min-width: 1080px) {
-    .main {
-        width: 1000px;
-        margin: auto;
-    }
 }
 
 footer {
@@ -266,16 +257,7 @@ footer {
     float: left;
 }
 
-.banner {
-    /*background-image: url(images/banner-main.jpg);*/
-    /*height: 220px;*/
-    width: 100%;
-}
 
-.inner {
-    background-color: #2a8460;
-    height: 33px;
-}
 
 
 /*Menu*/
@@ -403,8 +385,8 @@ border-left:solid #fff thin;
 
 .news {
     float: left;
-    margin-left: 14px;
-    width: 400px;
+    margin-left: 8px;
+    width: 49.5%;
 }
 
 .news-body {
@@ -417,8 +399,13 @@ border-left:solid #fff thin;
     height: 25px;
 }
 
+.quotes {
+    display: block;
+    margin-top:20px;
+}
+
 .q-button {
-    width: 231px;
+    width: 250px;
     height: 69px;
     background-image: url(images/q-button.jpg);
     float: left;
@@ -430,7 +417,6 @@ border-left:solid #fff thin;
 }
 
 .faq {
-    width: 475px;
     height: 311px;
     float: left;
     border: solid lightgray 1px;
@@ -497,7 +483,7 @@ border-left:solid #fff thin;
     border: solid lightgray 1px;
 }
 
-.colored {
+.faq-colored {
     background-color: #EFEFEF;
 }
 
@@ -528,7 +514,6 @@ border-left:solid #fff thin;
     padding-top: 8px;
     padding-bottom: 5px;
     border-bottom: dotted lightgray 1px;
-    font-size: 12px;
     line-height: 18px;
     padding-left: 15px;
     padding-right: 5px;
@@ -559,11 +544,13 @@ border-left:solid #fff thin;
 
 .dc-image {
     text-align: center;
-    padding-top: 10px;
+    height: 290px;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .dc-body {
-    height: 295px;
+    height: 370px;
     background-color: white;
 }
 
@@ -621,134 +608,6 @@ a {
     a:hover {
         text-decoration: none;
     }
-
-
-
-.accordion {
-    padding: 0;
-    background: #006FB7;
-    width: 100%;
-    overflow: hidden;
-    font-size: 1em;
-
-}
-
-.accordion__title {
-    background: #006FB7;
-    height: 20px;
-    color: rgba(255,255,255, 0.9);
-    float: left;
-    padding: 6px;
-    padding-left: 15px;
-    padding-right: 15px;
-    font-size: 12px;
-    cursor: pointer;
-}
-
-.no-js .accordion__title {
-    float: none;
-    height: auto;
-    cursor: auto;
-    margin: 0;
-    padding: 0 2em;
-}
-
-.accordion__content {
-    float: right;
-    width: 440px;
-    margin: 32px 0 0 -100%;
-    background: #EFEFEF;
-}
-
-.no-js .accordion__content {
-    float: left;
-    margin: 0;
-}
-
-.accordion__title:hover{
-    background: #B7C5D6 !important;
-    color: #ffffff;
-}
-.accordion__title.active {
-    background: #f80101 !important;
-    color: #ffffff;
-}
-
-.no-js .accordion__title:hover {
-    background-color: #ccc;
-    color: #222;
-}
-
-.accordion__title.active {
-    border-top-color: lime;
-}
-
-@media (max-width: 48em) {
-
-    .accordion {
-        border: 1px solid grey;
-    }
-
-    .accordion__title,
-    .accordion__content {
-        float: none;
-        margin: 0;
-    }
-
-        .accordion__title:first-child {
-            border: none;
-        }
-
-        .accordion__title.active {
-            border-top-color: #eee;
-        }
-
-        .accordion__title.active, .accordion__title:hover {
-            background: #777;
-        }
-
-        .accordion__title:before {
-            content: "+";
-            text-align: center;
-            width: 2em;
-            display: inline-block;
-        }
-
-        .accordion__title.active:before {
-            content: "-";
-        }
-
-    .overflow-scrolling {
-        overflow-y: scroll;
-        height: 11em;
-        padding: 1em 1em 0 1em;
-        /* Warning: momemtum scrolling seems buggy on iOS 7  */
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .accordion__content {
-        position: relative;
-        overflow: hidden;
-        padding: 0;
-    }
-
-    .no-js .accordion__content {
-        padding: 1em;
-        overflow: auto;
-        display: block;
-    }
-
-    .accordion__content:after {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        height: 50px;
-        border-radius: 10px 0 0 10px / 50% 0 0 50%;
-        box-shadow: -5px 0 10px rgba(0, 0, 0, 0.5);
-        content: '';
-    }
-}
 
 
 
@@ -857,9 +716,14 @@ select {
 }
 
 .scroller {
-    height: 250px;
+    margin-top: 10px;
+    height: 300px;
     overflow: hidden;
     padding: 15px;
+}
+
+.capitalize {
+    text-transform: capitalize;
 }
 
 #frame {
@@ -869,4 +733,71 @@ select {
     #frame div {
         /*height: 30px;
 	line-height: 30px;*/
+    }
+
+/* ==========  Select Field Variables ========== */
+/* ==========  Select Field ========== */
+/* Style Select Field */
+select {
+    font-family: inherit;
+    background-color: transparent;
+    width: 100%;
+    padding: 4px 0;
+    font-size: 16px;
+    color: rgba(13, 13, 13, 0.58);
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0, 0.12);
+}
+
+    /* Remove focus */
+    select:focus {
+        outline: none;
+    }
+
+/* Hide label */
+.mdl-selectfield label {
+    display: none;
+}
+
+/* Use custom arrow */
+.mdl-selectfield select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.description {
+    font-size:13px;color: #545454;
+}
+.title {
+    color: #1a0dab;
+    max-width: 700px;
+    font-size: 18px;
+    line-height: 1.2;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+.text-wrap {
+    overflow: hidden;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+}
+.mdl-selectfield {
+    font-family: Roboto;
+    position: relative;
+}
+
+    .mdl-selectfield:after {
+        position: absolute;
+        top: 0.75em;
+        right: 0.5em;
+        /* Styling the down arrow */
+        width: 0;
+        height: 0;
+        padding: 0;
+        content: '';
+        border-left: .25em solid transparent;
+        border-right: .25em solid transparent;
+        border-top: 0.375em solid rgba(0,0,0, 0.12);
+        pointer-events: none;
     }

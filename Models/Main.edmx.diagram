@@ -120,7 +120,7 @@
         </AssociationConnector>
         <EntityTypeShape EntityType="mfModel.tb_secondary_files" Width="1.875" PointX="15.75" PointY="21.875" />
         <EntityTypeShape EntityType="mfModel.tb_info_mf" Width="1.5" PointX="10.875" PointY="25" />
-        <EntityTypeShape EntityType="mfModel.tb_ministr_mf" Width="1.5" PointX="14.625" PointY="26" />
+        <EntityTypeShape EntityType="mfModel.tb_ministr_mf" Width="1.5" PointX="15.125" PointY="25.375" />
         <EntityTypeShape EntityType="mfModel.tb_zam_mf" Width="1.5" PointX="9.625" PointY="28.75" />
         <EntityTypeShape EntityType="mfModel.tb_ruk_depart_mf" Width="1.5" PointX="13.125" PointY="28.625" />
         <AssociationConnector Association="mfModel.tb_info_mftb_ministr_mf" />
@@ -130,6 +130,11 @@
         <AssociationConnector Association="mfModel.tb_langtb_projects" />
         <EntityTypeShape EntityType="mfModel.secondary_file_type" Width="1.5" PointX="18.25" PointY="19.125" />
         <AssociationConnector Association="mfModel.secondary_file_typetb_secondary_files" />
+        <EntityTypeShape EntityType="mfModel.tb_events_leaders" Width="2" PointX="19.875" PointY="25" />
+        <EntityTypeShape EntityType="mfModel.tb_event_leaders_category" Width="2.125" PointX="17.5" PointY="29.25" />
+        <AssociationConnector Association="mfModel.tb_langtb_events_leaders" />
+        <AssociationConnector Association="mfModel.tb_ministr_mftb_event_leaders_category" />
+        <AssociationConnector Association="mfModel.tb_event_leaders_categorytb_events_leaders" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
